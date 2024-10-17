@@ -17,7 +17,7 @@
     <header class="header_section" id="barraTarefa">
         <div class="container">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span>
                 Feane
               </span>
@@ -44,7 +44,7 @@
                     <button>Entrar</button>
                 </p>
 
-                <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+                <p>Não tem conta? <a href="cadastro.php">Cadastre-se</a></p>
             </form>
         </div>
     </div>
