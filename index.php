@@ -42,7 +42,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="">
             <span>
               Feane
             </span>
@@ -130,7 +130,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="login.html" class="Login">
+              <a href="login.php" class="Login">
                 Login
               </a>
             </div>

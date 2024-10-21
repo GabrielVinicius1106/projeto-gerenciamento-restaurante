@@ -31,11 +31,11 @@
 
     <div class="container" id="containerLogin">
         <div class="info-box">
-            <form id="form-login">
+            <form id="form-login" action="">
 
                 <p>
                     <h1>Login</h1>
-                    <input type="email" placeholder="Email" required />
+                    <input type="email" placeholder="Usuário" required />
                 </p>
                 <p>
                     <input type="password" placeholder="Senha" required />
