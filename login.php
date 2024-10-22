@@ -31,14 +31,14 @@
 
     <div class="container" id="containerLogin">
         <div class="info-box">
-            <form id="form-login" action="../php/validation.php">
+            <form id="form-login" action="php/validaLogin.php" method="POST" >
 
                 <p>
                     <h1>Login</h1>
-                    <input type="email" placeholder="Usuário" required />
+                    <input type="email" placeholder="Usuário" name="nUsuario" required />
                 </p>
                 <p>
-                    <input type="password" placeholder="Senha" required />
+                    <input type="password" placeholder="Senha" name="nSenha" required />
                 </p>
                 <p> 
                     <input type="submit" value="Entrar">
