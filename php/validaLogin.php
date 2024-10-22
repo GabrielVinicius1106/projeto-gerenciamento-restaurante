@@ -25,13 +25,32 @@ $sql = "SELECT * FROM usuario "
 // die();
 
 $resultLogin = mysqli_query($conn,$sql);
-
-var_dump($resultLogin);
-die();
-
 mysqli_close($conn);
 
 
+//Validar se tem retorno do BD
+if (mysqli_num_rows($resultLogin) > 0) {  
+        
+    //enviarLogin('destino@email.com.br','Mensagem de e-mail para SA','Teste SA','Eu mesmo');
+
+    foreach ($resultLogin as $coluna) {
+                    
+        //***Verificar os dados da consulta SQL
+        $_SESSION['idTipoUsuario'] = $coluna['tipo_usuario_id_tipo_usuario'];
+        $_SESSION['logado']        = 1;
+        $_SESSION['idLogin']       = $coluna['id_usuario'];
+        $_SESSION['NomeLogin']     = $coluna['login'];
+        $_SESSION['FotoLogin']     = $coluna['Foto'];
+        $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
+
+        //Acessar a tela inicial
+        header('location: ../menu.php');
+        
+    }        
+}else{
+    //Acessar a tela inicial
+    header('location: ../login.php');
+} 
 
 
 ?>
