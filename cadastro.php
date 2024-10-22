@@ -6,10 +6,10 @@
     <title>Login e Cadastro</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
      
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="dist/css/style.css" rel="stylesheet" />
 
 </head>
 <body id="bodyCadastro">

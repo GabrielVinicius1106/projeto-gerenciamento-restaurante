@@ -6,10 +6,10 @@
     <title>Tela Inicial</title>
     
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="dist/css/style.css" rel="stylesheet" />
 
     <style>
         /* Estilos para os botões grandes */
@@ -65,7 +65,7 @@
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            Feane
+            Daniel
           </span>
         </a>
       </nav>
