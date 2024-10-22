@@ -19,10 +19,10 @@ include("conection.php");
 
 $sql = "SELECT * FROM usuario "
         ." WHERE login = '$login'"
-        ." AND senha = $senha;";
+        ." AND senha = 12345;";
 
-var_dump($sql);
-die();
+// var_dump($sql);
+// die();
 
 $resultLogin = mysqli_query($conn,$sql);
 
