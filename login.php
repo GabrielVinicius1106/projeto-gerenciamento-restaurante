@@ -35,7 +35,7 @@
 
                 <p>
                     <h1>Login</h1>
-                    <input type="email" placeholder="Usuário" name="nUsuario" required />
+                    <input type="text" placeholder="Usuário" name="nUsuario" required />
                 </p>
                 <p>
                     <input type="password" placeholder="Senha" name="nSenha" required />
