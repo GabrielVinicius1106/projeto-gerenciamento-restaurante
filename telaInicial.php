@@ -84,13 +84,13 @@
                 <button class="btn btn-large">Cardapio</button>
             </div>
             <div class="btn-item">
-                <button class="btn btn-large">Botão 4</button>
+                <button class="btn btn-large">Caixa</button>
             </div>
             <div class="btn-item">
-                <button class="btn btn-large">Botão 5</button>
+                <button class="btn btn-large">Cozinha</button>
             </div>
             <div class="btn-item">
-                <button class="btn btn-large">Botão 6</button>
+                <button class="btn btn-large">Bar</button>
             </div>
         </div>
     </div>

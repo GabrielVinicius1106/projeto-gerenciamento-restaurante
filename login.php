@@ -43,8 +43,6 @@
                 <p> 
                     <input type="submit" value="Entrar">
                 </p>
-
-                <p>Não tem conta? <a href="cadastro.php">Cadastre-se</a></p>
             </form>
         </div>
     </div>
