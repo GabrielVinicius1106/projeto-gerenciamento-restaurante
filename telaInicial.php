@@ -160,7 +160,7 @@
       <div class="container">
         <div class="button-container">
             <div class="btn-item">
-                <button class="btn btn-large">Mesas</button>
+                <button class="btn btn-large"><a href="mesas.php">Mesas</a></button>
             </div>
             <div class="btn-item">
                 <button class="btn btn-large">Pedidos</button>
