@@ -21,9 +21,6 @@ $sql = "SELECT * FROM usuario "
         ." WHERE login = '$login'"
         ." AND senha = 12345;";
 
-// var_dump($sql);
-// die();
-
 $resultLogin = mysqli_query($conn,$sql);
 mysqli_close($conn);
 
@@ -44,8 +41,7 @@ if (mysqli_num_rows($resultLogin) > 0) {
         $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
 
         //Acessar a tela inicial
-        header('location: ../menu.php');
-        
+        header('location: ../telainicial.php');
     }        
 }else{
     //Acessar a tela inicial

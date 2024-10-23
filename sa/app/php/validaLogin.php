@@ -20,7 +20,7 @@
             ." AND senha = md5('$senha');";
     $resultLogin = mysqli_query($conn,$sql);
     mysqli_close($conn);
-        
+
     //Validar se tem retorno do BD
     if (mysqli_num_rows($resultLogin) > 0) {  
         
@@ -40,7 +40,7 @@
             header('location: ../painel.php');
             
         }        
-    }else{
+    }else{''''''''''''''''''''                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         //Acessar a tela inicial
         header('location: ../');
     } 
