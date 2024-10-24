@@ -81,13 +81,13 @@
                 <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="app/menu.php">Menu</a>
+                <a class="nav-link" href="menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="app/about.php">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="app/book.php">Book Table</a>
+                <a class="nav-link" href="book.php">Book Table</a>
               </li>
             </ul>
             <div class="user_option">
@@ -166,7 +166,7 @@
                 <button class="btn btn-large">Pedidos</button>
             </div>
             <div class="btn-item">
-                <button class="btn btn-large">Cardapio</button>
+                <button class="btn btn-large"><a href="cardapio.php">Cardapio</a></button>
             </div>
             <div class="btn-item">
                 <button class="btn btn-large">Caixa</button>
