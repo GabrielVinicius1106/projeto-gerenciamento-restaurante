@@ -19,7 +19,7 @@ include("conection.php");
 
 $sql = "SELECT * FROM usuario "
         ." WHERE login = '$login'"
-        ." AND senha = 12345;";
+        ." AND senha = $senha;";
 
 $resultLogin = mysqli_query($conn,$sql);
 mysqli_close($conn);
@@ -41,7 +41,7 @@ if (mysqli_num_rows($resultLogin) > 0) {
         $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
 
         //Acessar a tela inicial
-        header('location: ../telainicial.php');
+        header('location: ../telaInicial.php');
     }        
 }else{
     //Acessar a tela inicial

@@ -6,20 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesas</title>
+
+    <link rel="stylesheet" href="dist/css/global.css">
+
 </head>
 <body>
     <?php
      include("php/funcoes.php");
     ?>
-    <h1>Bem vindo</h1>
-    <table border = 1px> 
+    <a href="telainicial.php">Voltar</a>
+    <h1>Mesas</h1>
+    <table> 
       <tr>
-         <th>id_mesa</th>
-         <th>capacidade</th>
-         <th>status_mesa</th>
+         <th>Número</th>
+         <th>Capacidade</th>
+         <th>Ocupado</th>
       </tr>
       <?php 
-         echo carregamesas();
+         echo carregaMesa();
       ?>
    </table>
 </body>
