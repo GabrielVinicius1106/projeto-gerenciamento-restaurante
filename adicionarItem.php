@@ -20,7 +20,7 @@
                     <option value="">Bebida</option>
                   </select>
     </p>
-    <p>Disponibilidade: <select name="" id="">
+    <p>Disponibilidade: <select name="nDisponibilidade" id="">
                             <option value=""></option>
                             <option value="">Disponível</option>
                             <option value="">Indisponível</option>
