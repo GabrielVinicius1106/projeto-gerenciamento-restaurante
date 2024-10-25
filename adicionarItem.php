@@ -12,19 +12,22 @@
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Adicionar Item</h1>
-    <p>Nome: <input type="text" name="nItem" id=""></p>
-    <p>Preço: <input type="number" name="nValor" id=""></p>
-    <p>Categoria: <select name="nCategoria" id="">
-                    <option value=""></option>
-                    <option value="">Comida</option>
-                    <option value="">Bebida</option>
-                  </select>
-    </p>
-    <p>Disponibilidade: <select name="nDisponibilidade" id="">
-                            <option value=""></option>
-                            <option value="">Disponível</option>
-                            <option value="">Indisponível</option>
-                        </select>
-    </p>
+    <form action="php/funcoesItem.php?id=insert" method="POST">
+        <p>Nome: <input type="text" name="nItem" id=""></p>
+        <p>Preço: <input type="number" name="nValor" id=""></p>
+        <p>Categoria: <select name="nCategoria" id="">
+                        <option value=""></option>
+                        <option value="">Comida</option>
+                        <option value="">Bebida</option>
+                      </select>
+        </p>
+        <p>Disponibilidade: <select name="nDisponibilidade" id="">
+                                <option value=""></option>
+                                <option value="">Disponível</option>
+                                <option value="">Indisponível</option>
+                            </select>
+        </p>
+        <input type="submit" value="Adicionar">
+    </form>
 </body>
 </html>
