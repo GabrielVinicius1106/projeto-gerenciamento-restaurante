@@ -40,11 +40,11 @@
             header('location: ../painel.php');
             
         }        
-    }else{''''''''''''''''''''                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-        //Acessar a tela inicial
-        header('location: ../');
-    } 
-
+    } else {
+        // Acessar a tela inicial
+        header('Location: ../');
+        
+    }
     
 
 ?>
