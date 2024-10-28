@@ -26,7 +26,7 @@ function carregaCardapio(){
     
     $lista = '';
 
-    include("conection.php");
+    include('conection.php');
 
     $sql = "SELECT * 
             FROM item;";
@@ -48,6 +48,25 @@ function carregaCardapio(){
     }
 
     return $lista;
+}
+
+function listCategorias(){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT descricao
+            FROM tipo_item;";
+        
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        
+    } else {
+        return 0;
+    }
 }
 
 ?>
