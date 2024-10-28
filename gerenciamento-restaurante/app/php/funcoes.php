@@ -1,61 +1,71 @@
-<?PHP
+<?php 
+function carregaMesa(){
+    $lista = '';
 
-include("funcaoCategoria.php");
-include("funcaoMenu.php");
-include("funcaoProduto.php");
-include("funcaoTipoUsuario.php");
-include("funcaoUsuario.php");
-    
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+    include("conection.php");
 
-//Função que envia o e-mail com a nova senha para o usuário
-function enviarEmail($email,$msg,$assunto,$nome){
+    $sql = "SELECT * FROM mesa;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
 
-    require '../PHPMailer/vendor/autoload.php';
-	$mail = new PHPMailer(true);
-
-    try {
-        //Server settings
-        $mail->isSMTP();                                            // Set mailer to use SMTP
-        //$mail->SMTPDebug  = 3;                                    // Enable verbose debug output
-        $mail->Host       = 'smtp.hostinger.com.br';                // Specify main and backup SMTP servers
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'sa@alphatechsolucoes.com.br';          // SMTP username
-        $mail->Password   = 'Senai@2024';                           // SMTP password
-        $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
-        $mail->Port       = 465;                                    // TCP port to connect to    
-        $mail->CharSet    = 'UTF-8';
-        
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        ));
-
-        //Recipients
-        $mail->setFrom('sa@alphatechsolucoes.com.br', 'SA - SENAI');
-        $mail->addAddress($email, $nome);                   
-
-        // Content
-        $mail->isHTML(true);                                        // Set email format to HTML
-        $mail->Subject = $assunto;
-        $mail->Body    = $msg;
-        $mail->AltBody = 'SA';
-
-        //$mail->send();
-        if ($mail->send()){
-            header('location:../');
+    if(mysqli_num_rows($result) > 0){
+        //carrega as linhas
+        foreach($result as $campo){
+            $lista .= '<tr>'
+                        .'<td>'.$campo['id_mesa'].'</td>'
+                        .'<td>'.$campo['capacidade'].'</td>'
+                        .'<td><input type="checkbox"></td>'
+                    .'</tr>';
         }
+    }
+
+    return $lista;
+}
+
+function carregaCardapio(){
+    
+    $lista = '';
+
+    include('conection.php');
+
+    $sql = "SELECT * 
+            FROM item;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
         
+        //Carrega as linhas do cardápio
+        foreach($result as $campo){
+            $lista .= '<tr>'
+                        .'<td>'.$campo['descricao_item'].'</td>'   
+                        .'<td>'.$campo['valor_item'].'</td>'
+                        .'<td><a href="alterarItem.php"><input type="button" value="Alterar"></a></td>'
+                        .'<td><input type="button" value="Excluir"></td>'
+                    .'</tr>';
+        }
+    }
 
-    } catch (Exception $e) {
+    return $lista;
+}
 
-        //$_SESSION['msg-senha'] = $mail->ErrorInfo;
-        $_SESSION['msg-senha'] = 'Houve uma falha no envio da nova senha. Verifique com seu administrador.';
-        header('location: '.$_SERVER['HTTP_REFERER']);
+function listCategorias(){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT descricao
+            FROM tipo_item;";
+        
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        
+    } else {
+        return 0;
     }
 }
 

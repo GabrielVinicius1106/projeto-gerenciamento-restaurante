@@ -10,7 +10,7 @@
 	<body>
     
         <a href="app/">
-            <input type="button" value="ACESSO">
+            <input type="button" value="ACESSAR">
         </a>
 		
 	</body>

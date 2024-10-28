@@ -1,50 +1,52 @@
-<?php
-    if(session_status() !== PHP_SESSION_ACTIVE){
-        session_start();
-    }
+<?php 
 
-    include("funcoes.php");
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 
-    $_SESSION['logado'] = 0;
+include("funcoes.php");
 
-    $email = stripslashes($_POST["nEmail"]);
-    $senha = stripslashes($_POST["nSenha"]);
+$_SESSION['logado'] = 0;
 
-    //$_POST - Valor enviado pelo FORM através da propriedade NAME do elemento HTML 
-    //$_GET - Valor enviado pelo FORM através da URL
-    //$_SESSION - Variável criada pelo usuário no PHP
+$login = $_POST["nUsuario"];
+$senha = $_POST["nSenha"];
 
-    include("conexao.php");
-    $sql = "SELECT * FROM usuarios "
-            ." WHERE login = '$email' "
-            ." AND senha = md5('$senha');";
-    $resultLogin = mysqli_query($conn,$sql);
-    mysqli_close($conn);
+//$_POST - Valor enviado pelo FORM através da propriedade NAME do elemento HTML 
+//$_GET - Valor enviado pelo FORM através da URL
+//$_SESSION - Variável criada pelo usuário no PHP
 
-    //Validar se tem retorno do BD
-    if (mysqli_num_rows($resultLogin) > 0) {  
+include("conection.php");
+
+$sql = "SELECT * FROM usuario "
+        ." WHERE login = '$login'"
+        ." AND senha = $senha;";
+
+$resultLogin = mysqli_query($conn,$sql);
+mysqli_close($conn);
+
+
+//Validar se tem retorno do BD
+if (mysqli_num_rows($resultLogin) > 0) {  
         
-        //enviarEmail('destino@email.com.br','Mensagem de e-mail para SA','Teste SA','Eu mesmo');
+    //enviarLogin('destino@email.com.br','Mensagem de e-mail para SA','Teste SA','Eu mesmo');
 
-        foreach ($resultLogin as $coluna) {
-                        
-            //***Verificar os dados da consulta SQL
-            $_SESSION['idTipoUsuario'] = $coluna['idTipoUsuario'];
-            $_SESSION['logado']        = 1;
-            $_SESSION['idLogin']       = $coluna['idUsuario'];
-            $_SESSION['NomeLogin']     = $coluna['Nome'];
-            $_SESSION['FotoLogin']     = $coluna['Foto'];
-            $_SESSION['AtivoLogin']    = $coluna['FlgAtivo'];
+    foreach ($resultLogin as $coluna) {
+                    
+        //***Verificar os dados da consulta SQL
+        $_SESSION['idTipoUsuario'] = $coluna['tipo_usuario_id_tipo_usuario'];
+        $_SESSION['logado']        = 1;
+        $_SESSION['idLogin']       = $coluna['id_usuario'];
+        $_SESSION['NomeLogin']     = $coluna['login'];
+        $_SESSION['FotoLogin']     = $coluna['Foto'];
+        $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
 
-            //Acessar a tela inicial
-            header('location: ../painel.php');
-            
-        }        
-    }else{''''''''''''''''''''                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         //Acessar a tela inicial
-        header('location: ../');
-    } 
+        header('location: ../telaInicial.php');
+    }        
+}else{
+    //Acessar a tela inicial
+    header('location: ../login.php');
+} 
 
-    
 
 ?>
