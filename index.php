@@ -130,7 +130,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="app/login.php" class="Login">
+              <a href="login.php" class="Login">
                 Login
               </a>
             </div>
