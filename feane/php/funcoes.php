@@ -1,4 +1,6 @@
 <?php 
+
+
 function carregaMesa(){
     $lista = '';
 
@@ -15,6 +17,8 @@ function carregaMesa(){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['capacidade'].'</td>'
                         .'<td><input type="checkbox"></td>'
+                        .'<td><a href ="opcoesmesa.php"><input type="button" value="Editar"></td>
+                        '
                     .'</tr>';
         }
     }
