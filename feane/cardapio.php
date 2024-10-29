@@ -20,8 +20,7 @@
         <tr>
             <th>Descrição</th>
             <th>Valor Unitário</th>
-            <th>Categoria</th>
-            <th colspan="2">Opões</th>
+            <th>Disponibilidade</th>
         </tr>
         </thead>
         <tbody>

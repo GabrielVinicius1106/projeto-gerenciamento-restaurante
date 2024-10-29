@@ -21,6 +21,7 @@
          <th>Número</th>
          <th>Capacidade</th>
          <th>Ocupado</th>
+         <th>Editar</th>
       </tr>
       <?php 
          echo carregaMesa();

@@ -1,4 +1,6 @@
 <?php 
+
+
 function carregaMesa(){
     $lista = '';
 
@@ -15,6 +17,8 @@ function carregaMesa(){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['capacidade'].'</td>'
                         .'<td><input type="checkbox"></td>'
+                        .'<td><a href ="opcoesmesa.php"><input type="button" value="Editar"></td>
+                        '
                     .'</tr>';
         }
     }
@@ -38,11 +42,18 @@ function carregaCardapio(){
         
         //Carrega as linhas do cardápio
         foreach($result as $campo){
+
+            if ($campo['disponibilidade'] == 1){
+                $disponibilidade = "Disponível";
+            } else {
+                $disponibilidade = "Indisponível";
+            }
+
             $lista .= '<tr>'
                         .'<td>'.$campo['descricao_item'].'</td>'   
                         .'<td>'.$campo['valor_item'].'</td>'
-                        .'<td><a href="alterarItem.php"><input type="button" value="Alterar"></a></td>'
-                        .'<td><input type="button" value="Excluir"></td>'
+                        .'<td>'.$disponibilidade.'</td>'
+                        .'<td><a href="editarItem.php?id='.$campo['id_item'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -52,11 +63,12 @@ function carregaCardapio(){
 
 function listCategorias(){
 
-    $list = '';
+    $list = '<select name="nCategoria">
+                <option>Selecione</option>';
 
     include('conection.php');
 
-    $sql = "SELECT descricao
+    $sql = "SELECT *
             FROM tipo_item;";
         
     $result = mysqli_query($conn, $sql);
@@ -64,8 +76,13 @@ function listCategorias(){
 
     if (mysqli_num_rows($result) > 0) {
         
-    } else {
-        return 0;
+        foreach($result as $campo){
+            $list .= "<option value='".$campo['id_tipo_item']."'>".$campo['descricao']."</option>";
+        }
+
+        $list .= "</select>";
+
+        return $list;
     }
 }
 

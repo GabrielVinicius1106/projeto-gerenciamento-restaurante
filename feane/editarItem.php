@@ -10,15 +10,15 @@ include('php/funcoes.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cárdapio | Adicionar Item</title>
+    <title>Cárdapio | Editar Item</title>
 
     <link rel="stylesheet" href="dist/css/global.css">
 
 </head>
 <body>
     <a href="cardapio.php">Voltar</a>
-    <h1>Adicionar Item</h1>
-    <form action="php/crudItem.php?id=insert" method="POST">
+    <h1>Editar Item</h1>
+    <form action="#" method="POST">
         <p>Descrição: <input type="text" name="nItem"></p>
         <p>Preço: <input type="text" name="nValor"></p>
         <p>Categoria: 
