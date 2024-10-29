@@ -60,12 +60,12 @@ function carregaCardapio(){
 
 function listCategorias(){
 
-    $list = "<select name='nCategoria'>
-                <option>Selecione</option>";
+    $list = '<select name="nCategoria">
+                <option>Selecione</option>';
 
     include('conection.php');
 
-    $sql = "SELECT descricao
+    $sql = "SELECT *
             FROM tipo_item;";
         
     $result = mysqli_query($conn, $sql);

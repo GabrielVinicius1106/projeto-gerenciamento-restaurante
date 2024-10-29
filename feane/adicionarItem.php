@@ -20,8 +20,10 @@ include('php/funcoes.php');
     <h1>Adicionar Item</h1>
     <form action="php/crudItem.php?id=insert" method="POST">
         <p>Descrição: <input type="text" name="nItem"></p>
-        <p>Preço: <input type="number" name="nValor"></p>
-        <p>Categoria: <?php echo listCategorias();?></p>
+        <p>Preço: <input type="text" name="nValor"></p>
+        <p>Categoria: 
+            <?php echo listCategorias();?>
+        </p>
         <p>Disponibilidade: <select name="nDisponibilidade">
                                 <option value=""></option>
                                 <option value="1">Disponível</option>
