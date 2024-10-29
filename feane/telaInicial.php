@@ -177,6 +177,9 @@
             <div class="btn-item">
                 <button class="btn btn-large">Bar</button>
             </div>
+            <div class="btn-item">
+                <button class="btn btn-large">Usuários</button>
+            </div>
         </div>
     </div>
     </section>

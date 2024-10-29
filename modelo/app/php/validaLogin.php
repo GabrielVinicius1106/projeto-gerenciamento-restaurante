@@ -7,8 +7,8 @@
 
     $_SESSION['logado'] = 0;
 
-    $email = stripslashes($_POST["nEmail"]);
-    $senha = stripslashes($_POST["nSenha"]);
+    $email = $_POST["nEmail"];
+    $senha = $_POST["nSenha"];
 
     //$_POST - Valor enviado pelo FORM através da propriedade NAME do elemento HTML 
     //$_GET - Valor enviado pelo FORM através da URL
@@ -17,7 +17,8 @@
     include("conexao.php");
     $sql = "SELECT * FROM usuarios "
             ." WHERE login = '$email' "
-            ." AND senha = md5('$senha');";
+            ." AND senha = md5($senha);";
+
     $resultLogin = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -40,11 +41,9 @@
             header('location: ../painel.php');
             
         }        
-    }else{''''''''''''''''''''                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-        //Acessar a tela inicial
-        header('location: ../');
-    } 
-
     
-
+    } else {''''''''''''''''''''                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        //Acessar a tela inicial
+        header('location: index.php');
+    }
 ?>
