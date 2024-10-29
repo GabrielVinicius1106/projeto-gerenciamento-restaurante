@@ -92,16 +92,32 @@ function carregaValores($id, $informação){
 
     include('conection.php');
 
-    $sql = "SELECT ".$informação."
+    $sql = "SELECT *
             FROM item
             WHERE id_item = ".$id.";";
+
         
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
     if (mysqli_num_rows($result) > 0){
         
-        return $result;
+        foreach ($result as $campo){
+            
+            if ($informação == 'disponibilidade' && $campo[$informação] == 1){
+                $list = 'Disponível';
+            } else if ($informação == 'disponibilidade' && $campo[$informação] == 0){
+                $list = 'Indisponível';
+            } else {
+                $list = $campo[$informação];
+            }
+
+            return $list;
+            // var_dump($list);
+            // die();
+            
+        }
+
     }
 }
 
