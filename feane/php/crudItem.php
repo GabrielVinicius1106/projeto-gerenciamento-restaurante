@@ -22,6 +22,7 @@ if ($id == 'insert'){
     // die();
 } else if ($id == 'update'){
     // Update
+    
 } else if ($id = 'delete'){
     // Delete
 }

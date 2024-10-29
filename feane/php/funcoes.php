@@ -49,8 +49,7 @@ function carregaCardapio(){
                         .'<td>'.$campo['descricao_item'].'</td>'   
                         .'<td>'.$campo['valor_item'].'</td>'
                         .'<td>'.$disponibilidade.'</td>'
-                        .'<td><a href="alterarItem.php"><input type="button" value="Alterar"></a></td>'
-                        .'<td><input type="button" value="Excluir"></td>'
+                        .'<td><a href="editarItem.php?id='.$campo['id_item'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
