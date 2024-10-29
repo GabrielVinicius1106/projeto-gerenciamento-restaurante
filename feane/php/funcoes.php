@@ -61,7 +61,7 @@ function carregaCardapio(){
     return $lista;
 }
 
-function listCategorias(){
+function carregaCategorias(){
 
     $list = '<select name="nCategoria">
                 <option>Selecione</option>';
@@ -85,5 +85,25 @@ function listCategorias(){
         return $list;
     }
 }
+
+function carregaValores($id, $informação){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT ".$informação."
+            FROM item
+            WHERE id_item = ".$id.";";
+        
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        return $result;
+    }
+}
+
 
 ?>
