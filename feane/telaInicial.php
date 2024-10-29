@@ -15,8 +15,8 @@
         /* Estilos para os botões grandes */
         .btn-large {
             width: 100%;
-            height: 150px;
-            font-size: 24px;
+            height: 200px;
+            font-size: 30px;
             margin: 10px 0;
             background-color: white;
             color: black;
@@ -77,24 +77,13 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.php">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="book.php">Book Table</a>
-              </li>
+              
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -170,12 +159,6 @@
             </div>
             <div class="btn-item">
                 <button class="btn btn-large">Caixa</button>
-            </div>
-            <div class="btn-item">
-                <button class="btn btn-large">Cozinha</button>
-            </div>
-            <div class="btn-item">
-                <button class="btn btn-large">Bar</button>
             </div>
             <div class="btn-item">
                 <button class="btn btn-large">Usuários</button>

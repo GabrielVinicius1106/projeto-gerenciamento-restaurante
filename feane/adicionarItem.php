@@ -1,6 +1,6 @@
 <?php 
 
-include('funcoesItem.php');
+include('php/funcoes.php');
 
 ?>
 
@@ -18,19 +18,16 @@ include('funcoesItem.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Adicionar Item</h1>
-    <form action="php/funcoesItem.php?id=insert" method="POST">
-        <p>Nome: <input type="text" name="nItem"></p>
-        <p>Preço: <input type="number" name="nValor"></p>
-        <!-- <p>Categoria: <select name="nCategoria" id="">
-                        <option value=""></option>
-                        <option value="Comida">Pizza</option>
-                        <option value="Bebida">Sobremesa</option>
-                      </select> -->
+    <form action="php/crudItem.php?id=insert" method="POST">
+        <p>Descrição: <input type="text" name="nItem"></p>
+        <p>Preço: <input type="text" name="nValor"></p>
+        <p>Categoria: 
+            <?php echo listCategorias();?>
         </p>
-        <p>Disponibilidade: <select name="nDisponibilidade" id="">
-                                <option value="0"></option>
-                                <option value="S">Disponível</option>
-                                <option value="N">Indisponível</option>
+        <p>Disponibilidade: <select name="nDisponibilidade">
+                                <option value=""></option>
+                                <option value="1">Disponível</option>
+                                <option value="0">Indisponível</option>
                             </select>
         </p>
         <input type="submit" value="Adicionar">
