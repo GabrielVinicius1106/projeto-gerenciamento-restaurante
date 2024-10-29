@@ -38,9 +38,17 @@ function carregaCardapio(){
         
         //Carrega as linhas do cardápio
         foreach($result as $campo){
+
+            if ($campo['disponibilidade'] == 1){
+                $disponibilidade = "Disponível";
+            } else {
+                $disponibilidade = "Indisponível";
+            }
+
             $lista .= '<tr>'
                         .'<td>'.$campo['descricao_item'].'</td>'   
                         .'<td>'.$campo['valor_item'].'</td>'
+                        .'<td>'.$disponibilidade.'</td>'
                         .'<td><a href="alterarItem.php"><input type="button" value="Alterar"></a></td>'
                         .'<td><input type="button" value="Excluir"></td>'
                     .'</tr>';
@@ -52,7 +60,8 @@ function carregaCardapio(){
 
 function listCategorias(){
 
-    $list = '';
+    $list = "<select name='nCategoria'>
+                <option>Selecione</option>";
 
     include('conection.php');
 
@@ -64,8 +73,13 @@ function listCategorias(){
 
     if (mysqli_num_rows($result) > 0) {
         
-    } else {
-        return 0;
+        foreach($result as $campo){
+            $list .= "<option value='".$campo['id_tipo_item']."'>".$campo['descricao']."</option>";
+        }
+
+        $list .= "</select>";
+
+        return $list;
     }
 }
 
