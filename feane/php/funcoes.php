@@ -1,5 +1,28 @@
 <?php 
+function carregaopcoesmesa(){
+    $id = $_GET['id'];
+    $lista = '';
 
+    include("conection.php");
+
+    $sql = "SELECT capacidade FROM mesa WHERE id_mesa = $id;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result) > 0){
+        //carrega as linhas
+        foreach($result as $campo){
+            $lista .= '<tr>'
+                        .'<td>'.$campo['id_mesa'].'</td>'
+                        .'<td><input type="button" value="Ocupar" id="V1"></td>
+                        <td><a href ="opcoesmesa.php"><input type="button" value="Fazer Pedido"></td>
+                        '
+                    .'</tr>';
+        }
+    }
+
+    return $lista;
+}
 
 function carregaMesa(){
     $lista = '';
@@ -17,7 +40,7 @@ function carregaMesa(){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['capacidade'].'</td>'
                         .'<td><input type="checkbox"></td>'
-                        .'<td><a href ="opcoesmesa.php"><input type="button" value="Editar"></td>
+                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Editar"></td>
                         '
                     .'</tr>';
         }
