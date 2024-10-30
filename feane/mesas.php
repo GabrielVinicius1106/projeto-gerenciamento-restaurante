@@ -18,7 +18,7 @@
     <h1>Mesas</h1>
     <table> 
       <tr>
-         <th>Número</th>
+         <th>Nr Mesa</th>
          <th>Capacidade</th>
          <th>Ocupado</th>
          <th>Editar</th>
