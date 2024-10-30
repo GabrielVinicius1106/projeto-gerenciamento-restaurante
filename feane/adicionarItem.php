@@ -21,7 +21,7 @@ include('php/funcoes.php');
     <form action="php/crudItem.php?id=insert" method="POST">
         <p>Descrição: <input type="text" name="nItem"></p>
         <p>Preço: <input type="text" name="nValor"></p>
-        <p>Categoria: 
+        <p>Tipo de Item: 
             <?php echo carregaCategorias();?>
         </p>
         <p>Disponibilidade: <select name="nDisponibilidade">

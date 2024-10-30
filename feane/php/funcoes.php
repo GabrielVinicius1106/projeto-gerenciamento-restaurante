@@ -121,5 +121,31 @@ function carregaValores($id, $informação){
     }
 }
 
+function getCategoria($id){
 
+    $list = '';
+
+    
+
+}
+
+function carregaCategoriasValores($id, $informação){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT tipo_item_id_tipo_item
+            FROM item
+            WHERE id_item = $id;";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        $id_tipo_item = $campo[$informação];
+        $list = getCategoria($id_tipo_item);
+    }
+
+}
 ?>
