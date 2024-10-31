@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesas</title>
 
-    <link rel="stylesheet" href="dist/css/global.css">
-
+    <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+   
 </head>
 <body>
     <?php
      include("php/funcoes.php");
     ?>
     <a href="telainicial.php">Voltar</a>
-    <h1>Mesas</h1>
+    <h1 style="text-align: center;">Mesas</h1>
     <table> 
       <tr>
          <th>Nr Mesa</th>
