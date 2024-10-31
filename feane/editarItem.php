@@ -19,19 +19,21 @@ include('php/funcoes.php');
     <a href="cardapio.php">Voltar</a>
     <h1>Editar Item</h1>
     <form action="#" method="POST">
-        <p>Descrição: <input type="text" name="nItem"></p>
-        <p>Preço: <input type="text" name="nValor"></p>
+        <p>Descrição: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
+        <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
         <p>Categoria: 
-            <?php echo listCategorias();?>
+            <!-- <?php echo carregaCategoriasValores($_GET['id'], 'tipo_item_id_tipo_item');?> -->
         </p>
-        <p>Disponibilidade: <select name="nDisponibilidade">
-                                <option value=""></option>
-                                <option value="1">Disponível</option>
-                                <option value="0">Indisponível</option>
-                            </select>
-        </p>
-        <input type="submit" value="Adicionar">
-        <input type="reset" value="Limpar">
+        <!-- <p>Disponibilidade: 
+            <select name="nDisponibilidade">
+                <option value="<?php ?>"><?php echo carregaValores($_GET['id'], 'disponibilidade');?></option>
+                <option value="1">Disponível</option>
+                <option value="0">Indisponível</option>
+            </select>
+        </p> -->
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Excluir">
+        <a href="cardapio.php"><input type="button" value="Cancelar"></a>
     </form>
 </body>
 </html>
