@@ -1,6 +1,5 @@
 <?php 
-function carregaopcoesmesa(){
-    $id = $_GET['id'];
+function carregaCapacidade($id){
     $lista = '';
 
     include("conection.php");
@@ -12,15 +11,9 @@ function carregaopcoesmesa(){
     if(mysqli_num_rows($result) > 0){
         //carrega as linhas
         foreach($result as $campo){
-            $lista .= '<tr>'
-                        .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td><input type="button" value="Ocupar" id="V1"></td>
-                        <td><a href ="opcoesmesa.php"><input type="button" value="Fazer Pedido"></td>
-                        '
-                    .'</tr>';
-        }
+            $lista = $campo['capacidade'];
+        }    
     }
-
     return $lista;
 }
 
