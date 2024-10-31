@@ -14,7 +14,7 @@
      include("php/funcoes.php");
     ?>
     <a href="telainicial.php">Voltar</a>
-    <h1>Mesas</h1>
+    <h1 style="text-align: center;">Mesas</h1>
     <table> 
       <tr>
          <th>Nr Mesa</th>

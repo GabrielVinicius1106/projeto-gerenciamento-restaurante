@@ -1,9 +1,14 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 body {
   background-color:  #222831;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif; /* Usando a fonte principal */
+  color: #fff;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive; /* Usando a fonte secundária */
+  font-size: 70px; 
 }
 
 a {
@@ -13,11 +18,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 20px;
 }
 
 table {
@@ -32,13 +32,14 @@ table {
 
 th, td {
   padding: 12px;
-  border: 1px solid #000; /*bordas*/
+  border: 1px solid #000; /* bordas */
   text-align: center;
   background-color: #fff; 
 }
 
 th {
   background-color: rgb(61, 61, 61);
+  color: #fff;
 }
 
 tr:nth-child(even) {
