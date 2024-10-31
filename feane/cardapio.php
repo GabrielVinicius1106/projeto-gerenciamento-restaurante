@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
 
-    <link rel="stylesheet" href="dist/css/global.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
 
 </head>
-<body>
+<body id="bodyCardapio" class="pagina-cardapio">
     <?php
         include("php/funcoes.php");
     ?>
@@ -21,6 +21,7 @@
             <th>Descrição</th>
             <th>Valor Unitário</th>
             <th>Disponibilidade</th>
+            <th>Editar</th>
         </tr>
         </thead>
         <tbody>

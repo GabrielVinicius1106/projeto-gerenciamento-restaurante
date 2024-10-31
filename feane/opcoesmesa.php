@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Seja bem vindo</h1>
-</body>
-</html>
+<?php
+    include("php/funcoes.php");
+    $id1 = $_GET['id'];
+
+
+?>
+<h1>Mesa - <?php echo $id1 ?></h1>
+<p>Capacidade : <input type="text" value = "<?php echo carregaCapacidade($_GET['id']) ?>"></p>
+<p>Ocupação : <select name="nOcup">
+                                <option value="op1">1</option>
+                                <option value="op2">2</option>
+                                <option value="op3">3</option>
+                                <option value="op4">4</option>
+                                <option value="op5">5</option>
+                                <option value="op6">6</option>
+                                <option value="op7">7</option>
+                                <option value="op8">8</option>
+                                <option value="op9">9</option>
+                                <option value="op10">10</option>
+                            </select>
+    </p>
