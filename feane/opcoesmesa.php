@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+
 <?php
     include("php/funcoes.php");
     $id1 = $_GET['id'];

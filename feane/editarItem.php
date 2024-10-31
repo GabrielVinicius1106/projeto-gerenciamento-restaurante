@@ -12,7 +12,7 @@ include('php/funcoes.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cárdapio | Editar Item</title>
 
-    <link rel="stylesheet" href="dist/css/global.css">
+    <link rel="stylesheet" href="dist/css/elisson.css">
 
 </head>
 <body>
