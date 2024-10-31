@@ -1,4 +1,29 @@
 <?php 
+function carregaopcoesmesa(){
+    $id = $_GET['id'];
+    $lista = '';
+
+    include("conection.php");
+
+    $sql = "SELECT capacidade FROM mesa WHERE id_mesa = $id;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result) > 0){
+        //carrega as linhas
+        foreach($result as $campo){
+            $lista .= '<tr>'
+                        .'<td>'.$campo['id_mesa'].'</td>'
+                        .'<td><input type="button" value="Ocupar" id="V1"></td>
+                        <td><a href ="opcoesmesa.php"><input type="button" value="Fazer Pedido"></td>
+                        '
+                    .'</tr>';
+        }
+    }
+
+    return $lista;
+}
+
 function carregaMesa(){
     $lista = '';
 
@@ -15,6 +40,8 @@ function carregaMesa(){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['capacidade'].'</td>'
                         .'<td><input type="checkbox"></td>'
+                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Editar"></td>
+                        '
                     .'</tr>';
         }
     }
@@ -49,8 +76,7 @@ function carregaCardapio(){
                         .'<td>'.$campo['descricao_item'].'</td>'   
                         .'<td>'.$campo['valor_item'].'</td>'
                         .'<td>'.$disponibilidade.'</td>'
-                        .'<td><a href="alterarItem.php"><input type="button" value="Alterar"></a></td>'
-                        .'<td><input type="button" value="Excluir"></td>'
+                        .'<td><a href="editarItem.php?id='.$campo['id_item'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -58,14 +84,14 @@ function carregaCardapio(){
     return $lista;
 }
 
-function listCategorias(){
+function carregaCategorias(){
 
-    $list = "<select name='nCategoria'>
-                <option>Selecione</option>";
+    $list = '<select name="nCategoria">
+                <option>Selecione</option>';
 
     include('conection.php');
 
-    $sql = "SELECT descricao
+    $sql = "SELECT *
             FROM tipo_item;";
         
     $result = mysqli_query($conn, $sql);
@@ -83,4 +109,66 @@ function listCategorias(){
     }
 }
 
+function carregaValores($id, $informação){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT *
+            FROM item
+            WHERE id_item = ".$id.";";
+
+        
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        foreach ($result as $campo){
+            
+            if ($informação == 'disponibilidade' && $campo[$informação] == 1){
+                $list = 'Disponível';
+            } else if ($informação == 'disponibilidade' && $campo[$informação] == 0){
+                $list = 'Indisponível';
+            } else {
+                $list = $campo[$informação];
+            }
+
+            return $list;
+            // var_dump($list);
+            // die();
+            
+        }
+
+    }
+}
+
+function getCategoria($id){
+
+    $list = '';
+
+    
+
+}
+
+function carregaCategoriasValores($id, $informação){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT tipo_item_id_tipo_item
+            FROM item
+            WHERE id_item = $id;";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        $id_tipo_item = $campo[$informação];
+        $list = getCategoria($id_tipo_item);
+    }
+
+}
 ?>

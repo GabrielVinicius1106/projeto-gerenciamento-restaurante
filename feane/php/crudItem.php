@@ -6,8 +6,8 @@ $valorItem = $_POST['nValor'];
 $categoriaItem = $_POST['nCategoria'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
 
-var_dump($id, $nomeItem, $valorItem, $categoriaItem, $disponibilidadeItem);
-die();
+// var_dump($id, $nomeItem, $valorItem, $categoriaItem, $disponibilidadeItem);
+// die();
 
 if ($id == 'insert'){
     //Insert
@@ -18,19 +18,19 @@ if ($id == 'insert'){
                 ".$disponibilidadeItem.",
                 ".$categoriaItem."
             );";
-    var_dump($sql);
-    die();
+    // var_dump($sql);
+    // die();
 } else if ($id == 'update'){
     // Update
+    
 } else if ($id = 'delete'){
     // Delete
 }
 
+include('conection.php');
+
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
-
-// var_dump($result);
-// die();
 
 header("location: ../cardapio.php");
 

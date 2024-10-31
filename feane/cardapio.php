@@ -21,7 +21,6 @@
             <th>Descrição</th>
             <th>Valor Unitário</th>
             <th>Disponibilidade</th>
-            <th colspan="2">Opções</th>
         </tr>
         </thead>
         <tbody>
