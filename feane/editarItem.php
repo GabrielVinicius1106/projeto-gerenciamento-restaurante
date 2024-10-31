@@ -22,15 +22,8 @@ include('php/funcoes.php');
         <p>Descrição: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
         <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
         <p>Categoria: 
-            <!-- <?php echo carregaCategoriasValores($_GET['id'], 'tipo_item_id_tipo_item');?> -->
+            <?php echo carregaCategoriasValores($_GET['id'], 'tipo_item_id_tipo_item');?>
         </p>
-        <!-- <p>Disponibilidade: 
-            <select name="nDisponibilidade">
-                <option value="<?php ?>"><?php echo carregaValores($_GET['id'], 'disponibilidade');?></option>
-                <option value="1">Disponível</option>
-                <option value="0">Indisponível</option>
-            </select>
-        </p> -->
         <input type="submit" value="Salvar">
         <input type="reset" value="Excluir">
         <a href="cardapio.php"><input type="button" value="Cancelar"></a>

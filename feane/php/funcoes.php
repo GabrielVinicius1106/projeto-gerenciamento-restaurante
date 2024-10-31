@@ -86,7 +86,7 @@ function carregaCategorias(){
     }
 }
 
-function carregaValores($id, $informação){
+function carregaValores($id, $informacao){
 
     $list = '';
 
@@ -104,18 +104,15 @@ function carregaValores($id, $informação){
         
         foreach ($result as $campo){
             
-            if ($informação == 'disponibilidade' && $campo[$informação] == 1){
+            if ($informacao == 'disponibilidade' && $campo[$informacao] == 1){
                 $list = 'Disponível';
-            } else if ($informação == 'disponibilidade' && $campo[$informação] == 0){
+            } else if ($informacao == 'disponibilidade' && $campo[$informacao] == 0){
                 $list = 'Indisponível';
             } else {
-                $list = $campo[$informação];
+                $list = $campo[$informacao];
             }
 
-            return $list;
-            // var_dump($list);
-            // die();
-            
+            return $list;           
         }
 
     }
@@ -123,15 +120,42 @@ function carregaValores($id, $informação){
 
 function getCategoria($id){
 
-    $list = '';
+    include('conection.php');
 
-    
+    $sql = "SELECT categoria_id_categoria
+            FROM tipo_item
+            WHERE id_tipo_item = $id;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        foreach($result as $campo){
+
+            $id_categoria = $campo['categoria_id_categoria'];
+
+            include('conection.php');
+
+            $sql = "SELECT descricao_categoria
+                    FROM categoria
+                    WHERE id_categoria = $id_categoria;";
+            
+            $result = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+
+            if (mysqli_num_rows($result) > 0){
+                foreach ($result as $campo){
+                    $descricao_categoria = $campo['descricao_categoria']; 
+                    return $descricao_categoria;
+                }
+            }
+
+        }
+    }
 
 }
 
-function carregaCategoriasValores($id, $informação){
-
-    $list = '';
+function carregaCategoriasValores($id, $informacao){
 
     include('conection.php');
 
@@ -143,8 +167,13 @@ function carregaCategoriasValores($id, $informação){
     mysqli_close($conn);
 
     if (mysqli_num_rows($result) > 0){
-        $id_tipo_item = $campo[$informação];
-        $list = getCategoria($id_tipo_item);
+        
+        foreach ($result as $campo) {
+            $id_tipo_item = $campo[$informacao];
+            $categoria = getCategoria($id_tipo_item);
+            
+            return $categoria;
+        }
     }
 
 }
