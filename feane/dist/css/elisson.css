@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 body {
+  
   background-color:  #222831;
   font-family: "Open Sans", sans-serif; /* Usando a fonte principal */
   color: #fff;
@@ -21,7 +22,7 @@ a:hover {
   text-decoration: underline;
 }
 
-table {
+#tableCardapio {
   width: 70%;
   margin: 20px auto;
   border-collapse: collapse;
@@ -29,11 +30,13 @@ table {
   background-repeat: no-repeat;
   background-position: center;
   color: #222831;
+  border-radius: 10px;
+  overflow: hidden; 
 }
 
 th, td {
   padding: 12px;
-  border: 1px solid #000; /* bordas */
+  border: 2px solid #000;
   text-align: center;
   background-color: #fff; 
 }
@@ -43,10 +46,13 @@ th {
   color: #fff;
 }
 
-tr:nth-child(even) {
-  background-color: rgba(34, 34, 34, 0.9);
+p{
+  text-align: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
-tr:hover {
-  background-color: rgba(68, 68, 68, 0.9);
+form{
+  text-align: center;
 }
