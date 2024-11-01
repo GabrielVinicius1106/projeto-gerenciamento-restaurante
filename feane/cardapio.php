@@ -15,7 +15,7 @@
     ?>
     <a href="telainicial.php">Voltar</a>
     <h1>Cardápio</h1>
-    <table>
+    <table id="tableCardapio">
         <thead>
         <tr>
             <th>Descrição</th>
