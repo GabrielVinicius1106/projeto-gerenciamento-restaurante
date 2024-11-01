@@ -21,8 +21,14 @@ include('php/funcoes.php');
     <form action="#" method="POST">
         <p>Descrição: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
         <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
+        <p>Tipo de Item: 
+            <select name="nTipo">
+                <option value="<?php echo idTipoItem($_GET['id']);?>"> <?php echo descricaoTipoItem($_GET['id']);?> </option>
+                <?php echo carregaTipoItem(idTipoItem($_GET['id']));?>
+            </select>
+        </p>
         <p>Categoria: 
-            <?php echo carregaCategoriasValores($_GET['id'], 'tipo_item_id_tipo_item');?>
+            <?php echo carregaCategoria($_GET['id']);?>
         </p>
         <input type="submit" value="Salvar">
         <input type="reset" value="Excluir">
