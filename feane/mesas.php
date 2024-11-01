@@ -13,7 +13,7 @@
     ?>
     <a href="telainicial.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <table> 
+    <table id="tableCardapio"> 
       <tr>
          <th>Nr Mesa</th>
          <th>Capacidade</th>

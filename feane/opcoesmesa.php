@@ -3,11 +3,11 @@
 <?php
     include("php/funcoes.php");
     $id1 = $_GET['id'];
-
-
 ?>
+
+<a href="telainicial.php">Voltar</a>
 <h1>Mesa <?php echo $id1 ?></h1>
-<div class="container">
+<div class="container" id="additem">
 <p class="p1">Capacidade : <input type="text" value = "<?php echo carregaCapacidade($_GET['id']) ?>"></p>
 <p class="p2">Ocupação : <select name="nOcup">
                                 <option value="op1">1</option>

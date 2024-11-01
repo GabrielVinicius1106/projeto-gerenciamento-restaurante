@@ -18,7 +18,7 @@ include('php/funcoes.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Adicionar Item</h1>
-    <div class="container">
+    <div class="container" id="additem">
         <form action="php/crudItem.php?id=insert" method="POST">
             <p>Descrição: <input type="text" name="nItem"></p>
             <p>Preço: <input type="text" name="nValor"></p>
