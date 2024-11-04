@@ -18,8 +18,6 @@ if ($id == 'insert'){
                 ".$disponibilidadeItem.",
                 ".$categoriaItem."
             );";
-    // var_dump($sql);
-    // die();
 } else if ($id == 'update'){
     // Update
     
