@@ -16,9 +16,9 @@
     <table id="tableCardapio"> 
       <tr>
          <th>Nr Mesa</th>
-         <th>Capacidade</th>
          <th>Ocupado</th>
-         <th>Editar</th>
+         <th>Ocupar</th>
+         <th>Fazer pedido</th>
       </tr>
       <?php 
          echo carregaMesa();
