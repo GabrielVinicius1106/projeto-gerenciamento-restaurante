@@ -32,8 +32,8 @@ function carregaMesa(){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['capacidade'].'</td>'
-                        .'<td><input type="checkbox"></td>'
-                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Editar"></td>
+                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>'
+                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Fazer pedido"></td>
                         '
                     .'</tr>';
         }
@@ -77,7 +77,7 @@ function carregaCardapio(){
     return $lista;
 }
 
-function carregaCategorias(){
+function carregaTiposItem(){
 
     $list = '<select name="nCategoria">
                 <option>Selecione</option>';
@@ -171,13 +171,19 @@ function getCategoria($id){
 
 }
 
-function carregaCategoriasValores($id, $informacao){
+function carregaCategoria($id_item){
+
+    $categoria = '';
 
     include('conection.php');
 
-    $sql = "SELECT tipo_item_id_tipo_item
-            FROM item
-            WHERE id_item = $id;";
+    $sql = "SELECT ca.descricao_categoria AS Descricao
+            FROM item it 
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            INNER JOIN categoria ca
+            ON ca.id_categoria = ti.categoria_id_categoria
+            WHERE it.id_item = $id_item;";
     
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
@@ -185,12 +191,85 @@ function carregaCategoriasValores($id, $informacao){
     if (mysqli_num_rows($result) > 0){
         
         foreach ($result as $campo) {
-            $id_tipo_item = $campo[$informacao];
-            $categoria = getCategoria($id_tipo_item);
-            
-            return $categoria;
+            $categoria = $campo['Descricao'];
         }
     }
+
+    return $categoria;
+}
+
+function carregaTipoItem($id_tipo){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT *
+            FROM tipo_item
+            WHERE id_tipo_item <> $id_tipo
+            ORDER BY descricao;";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        foreach ($result as $campo){
+            
+            $list .= '<option value="'.$campo['id_tipo_item'].'">'.$campo['descricao'].'</option>';
+
+        }
+        return $list;   
+    }
+}
+
+function descricaoTipoItem($id_item){
+
+    $descricao = '';
+
+    include('conection.php');
+
+    $sql = "SELECT ti.descricao AS Descricao
+            FROM item it 
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            WHERE it.id_item = $id_item;";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        foreach ($result as $campo) {
+            $descricao = $campo['Descricao'];
+        }
+    }
+
+    return $descricao;
+}
+
+function idTipoItem($id_item){
+    
+    $id_tipo_item = '';
+
+    include('conection.php');
+
+    $sql = "SELECT ti.id_tipo_item AS ID
+            FROM item it 
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            WHERE it.id_item = $id_item;";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        foreach ($result as $campo) {
+            $id_tipo_item = $campo['ID'];
+        }
+    }
+
+    return $id_tipo_item;
 
 }
 ?>
