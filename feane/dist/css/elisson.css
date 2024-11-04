@@ -7,7 +7,7 @@ body {
   color: #fff;
 }
 .container {
-  width: 100%; /* outra largura específica */
+  width: 100%; /* largura específica */
   max-width: 600px; /* largura máxima */
   margin: 0 auto; /* centraliza o container na página */
   padding: 20px; /* espaçamento interno */
@@ -31,7 +31,7 @@ h1 {
   font-size: 30px;
 }
 
-.p1, .p2 {
+.p1 .p2 {
   text-align: center; 
   width: 100%; 
 }
