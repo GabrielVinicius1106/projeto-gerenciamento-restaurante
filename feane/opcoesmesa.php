@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opções | Mesa</title>
-</head>
-<link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
-
-<?php
+    <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    
+    <?php
     include("php/funcoes.php");
     $id1 = $_GET['id'];
-?>
+    ?>
 
+</head>
 <body>
 
 
@@ -21,6 +21,13 @@
         <div class="container" id="additem">
             <p class="p1">Capacidade : <input type="text" value = "<?php echo carregaCapacidade($_GET['id']) ?>"></p>
             <p class="p2">Ocupação : <select name="nOcup">
+=======
+<a href="mesas.php">Voltar</a>
+<h1>Mesa <?php echo $id1 ?></h1>
+<div class="container" id="additem">
+<p class="p1">Capacidade : <input type="text" value = "<?php echo carregaCapacidade($_GET['id']) ?>"></p>
+<p class="p2">Ocupação : <select name="nOcup">
+>>>>>>> 484221d1f3646773fc9534220f552ee52a5cedb6
                                 <option value="op1">1</option>
                                 <option value="op2">2</option>
                                 <option value="op3">3</option>
