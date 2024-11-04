@@ -10,7 +10,7 @@ include('php/funcoes.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cárdapio | Editar Item</title>
+    <title>Cárdapio | Excluir Item</title>
 
     <link rel="stylesheet" href="dist/css/elisson.css">
 
@@ -31,7 +31,6 @@ include('php/funcoes.php');
             <?php echo carregaCategoria($_GET['id']);?>
         </p>
         <input type="submit" value="Salvar">
-        <a href="confirmarExclusaoItem.php"><input type="reset" value="Excluir"></a>
         <a href="cardapio.php"><input type="button" value="Cancelar"></a>
     </form>
 </body>
