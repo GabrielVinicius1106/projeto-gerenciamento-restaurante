@@ -7,13 +7,12 @@
 
     <!-- Custom styles for this template -->
     <link href="dist/css/elisson.css" rel="stylesheet" />
-
 </head>
 <body id="bodyLogin">
 
 <h1>Site</h1>
 
-    <div class="container" id="containerLogin">
+    <div class="container " id="containerLogin">
         <div class="info-box">
             <form id="form-login" action="php/validaLogin.php" method="POST" >
 
