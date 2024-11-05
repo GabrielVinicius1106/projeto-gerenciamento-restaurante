@@ -7,18 +7,24 @@ body {
   color: #fff;
 }
 .container {
-  width: 100%; /* largura específica */
-  max-width: 600px; /* largura máxima */
-  margin: 0 auto; /* centraliza o container na página */
-  padding: 20px; /* espaçamento interno */
-  border: 2px solid rgb(255, 255, 255); /* borda de 2px, sólida e branca */
-  border-radius: 8px; /* cantos arredondados */
-  display: flex; /* habilita flexbox */
-  flex-direction: column; /* organiza em coluna */
-  align-items: center; /* central horizontal */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
   color: #000;
+  background-image: url('../images/amadeirado.jpg');
+  background-size: cover;  /* Faz a imagem cobrir toda a área do container */
+  background-position: center; /* Alinha a imagem ao centro */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
 }
+
+
 
 h1 {
   text-align: center;
