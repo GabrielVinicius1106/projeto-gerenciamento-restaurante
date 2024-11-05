@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
 }
-#containerLogin {
+.container1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 300px; /* largura do quadrado */
+  width: 200px; /* largura do quadrado */
 }
 
 
