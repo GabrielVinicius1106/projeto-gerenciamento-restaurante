@@ -13,7 +13,8 @@
     ?>
     <a href="telainicial.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <table id="tableCardapio"> 
+    <div class="container">
+    <table id="tableCardapio" > 
       <tr>
          <th>Nr Mesa</th>
          <th>Ocupado</th>
@@ -24,5 +25,6 @@
          echo carregaMesa();
       ?>
    </table>
+</div>
 </body>
 </html>
