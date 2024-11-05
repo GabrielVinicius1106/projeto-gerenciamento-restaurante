@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Cadastro</title>
-    
-     <!-- bootstrap core css -->
-     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/style.css" rel="stylesheet" />
+    <link href="dist/css/elisson.css" rel="stylesheet" />
 
 </head>
 <body id="bodyLogin">
@@ -21,7 +18,7 @@
             <form id="form-login" action="php/validaLogin.php" method="POST" >
 
                 <p>
-                    <h1>Login</h1>
+                    <h2>Login</h2>
                     <input type="text" placeholder="Usuário" name="nUsuario" required />
                 </p>
                 <p>

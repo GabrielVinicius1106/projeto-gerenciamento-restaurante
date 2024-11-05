@@ -9,13 +9,6 @@
   justify-content: center;
   align-items: center;
 }
-
-h1 {
-  text-align: center;
-  font-family: 'Dancing Script', cursive; /* Usando a fonte secundária */
-  font-size: 70px; 
-}
-
 #containerLogin {
   display: flex;
   justify-content: center;
