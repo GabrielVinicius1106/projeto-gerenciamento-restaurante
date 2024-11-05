@@ -16,7 +16,7 @@
 <body>
 
 
-<a href="telainicial.php">Voltar</a>
+<a href="mesas.php">Voltar</a>
     <h1>Mesa <?php echo $id1 ?></h1>
         <div class="container" id="additem">
             <p class="p1">Capacidade : <input type="text" value = "<?php echo carregaCapacidade($_GET['id']) ?>"></p>
