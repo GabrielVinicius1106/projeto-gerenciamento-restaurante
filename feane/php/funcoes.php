@@ -17,6 +17,7 @@ function carregaCapacidade($id){
     return $lista;
 }
 
+
 function carregaMesa(){
     $lista = '';
 
