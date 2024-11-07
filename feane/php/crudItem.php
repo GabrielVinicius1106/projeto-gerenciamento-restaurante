@@ -2,12 +2,15 @@
 
 $id = $_GET['id'];
 $nomeItem = $_POST['nItem'];
-$valorItem = $_POST['nValor'];
+$valorItem = (float)$_POST['nValor'];
 $categoriaItem = $_POST['nCategoria'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
 
 // var_dump($id, $nomeItem, $valorItem, $categoriaItem, $disponibilidadeItem);
 // die();
+
+// var_dump($valorItem);
+// die(); 
 
 if ($id == 'insert'){
     //Insert
