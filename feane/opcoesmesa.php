@@ -17,12 +17,15 @@
 <body>
 
 
-<a href="telainicial.php">Voltar</a>
+<a href="mesas.php">Voltar</a>
     <h1>Mesa <?php echo $id1 ?></h1>
         <div class="container" id="additem">
-            <p class="p2">Quantidade de pessoas :  <input type="number" name="nV1">
-            <p><input type="button" value="Salvar"></p>                
+            <p class="p2">Quantidade de pessoas :  <input type="number" name="nInput">
+            <p><input type="submit" value="Salvar" ></p>                
             </p>
         </div>
+
+</form>
+
 </body>
 </html>

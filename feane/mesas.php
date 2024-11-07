@@ -11,19 +11,18 @@
     <?php
      include("php/funcoes.php");
     ?>
+    
     <a href="telainicial.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <div class="container">
-    <table id="tableCardapio" > 
+    <table id="tableCardapio"> 
       <tr>
          <th>Nr Mesa</th>
-         <th>Ocupação</th>
+         <th>Ocupado</th>
          <th>Ocupar</th>
       </tr>
       <?php 
          echo carregaMesa();
       ?>
    </table>
-</div>
 </body>
 </html>

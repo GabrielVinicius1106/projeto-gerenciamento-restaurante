@@ -34,7 +34,7 @@ body {
   align-items: center;
   background-color: #fff;
   color: #000;
-  background-image: url('../images/amadeirado.jpg');
+  background-image: url('../images/fundo.jpg');
   background-size: cover;  /* Faz a imagem cobrir toda a área do container */
   background-position: center; /* Alinha a imagem ao centro */
   background-repeat: no-repeat; /* Evita a repetição da imagem */
@@ -91,10 +91,6 @@ th, td {
   background-color: #fff; 
 }
 
-th {
-  background-color: rgb(80, 80, 80);
-  color: #fff;
-}
 
 p{
   text-align: center;
