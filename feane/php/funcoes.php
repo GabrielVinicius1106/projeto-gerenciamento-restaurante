@@ -34,7 +34,7 @@ function carregaMesa(){
         foreach($result as $campo){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td>'.$campo['capacidade']. '|' .$campo['status_mesa'].'</td>'
+                        .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
                         .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>
                         '
                     .'</tr>';

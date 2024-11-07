@@ -16,7 +16,7 @@
 </head>
 <body>
 
-
+<form action="php/salvarocupacao.php?id=<?php echo $_GET["id"];?>" method="POST"></form>
 <a href="mesas.php">Voltar</a>
     <h1>Mesa <?php echo $id1 ?></h1>
         <div class="container" id="additem">
