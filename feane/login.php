@@ -12,7 +12,7 @@
 
 <h1>Site</h1>
 
-    <div class="container " id="containerLogin">
+    <div class="container1" id="containerLogin">
         <div class="info-box">
             <form id="form-login" action="php/validaLogin.php" method="POST" >
 
