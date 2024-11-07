@@ -1,11 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
+
 body {
-  
-  background-color:  #222831;
-  font-family: "Open Sans", sans-serif; /* Usando a fonte principal */
+  animation: animarGradiente 10s infinite alternate;
+  background: linear-gradient(90deg, rgb(25, 37, 49), rgb(52, 62, 80), rgb(38, 53, 83));
+  background-size: 300% 100%;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
+
+  @keyframes animarGradiente {
+    0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 .container {
   width: 100%;
   max-width: 600px;
