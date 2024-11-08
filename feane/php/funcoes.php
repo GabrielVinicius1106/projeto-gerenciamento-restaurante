@@ -279,6 +279,9 @@ function carregarItem($id){
 
     $lista = '';
 
+    // var_dump($lista);
+    // die();
+
     include('conection.php');
 
     $sql = "SELECT * 
@@ -290,7 +293,7 @@ function carregarItem($id){
 
     if (mysqli_num_rows($result) > 0){
         
-        //Carrega as linhas do cardápio
+        //Carrega a linha do item
         foreach($result as $campo){
 
             if ($campo['disponibilidade'] == 1){
@@ -299,10 +302,10 @@ function carregarItem($id){
                 $disponibilidade = "Indisponível";
             }
 
-            $lista = "<p>ID Item: $campo['id_item']</p>
-                       <p>Valor: $campo['valor_item']</p>
-                       <p>Descrição: $campo['descricao_item']</p>
-                       <p>Disponibilidade: $disponibilidade</p>";
+            $lista .= '<p>ID Item: '.$campo['id_item'].'</p>'
+                       .'<p>Valor:'.$campo['valor_item'].'</p>'
+                       .'<p>Descrição:'.$campo['descricao_item'].'</p>'
+                       .'<p>Disponibilidade:'.$disponibilidade.'</p>';
         }
     }
 

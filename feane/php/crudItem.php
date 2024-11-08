@@ -1,18 +1,13 @@
 <?php 
 
+$operacao = $_GET['operacao'];
 $id = $_GET['id'];
 $nomeItem = $_POST['nItem'];
 $valorItem = (float)$_POST['nValor'];
 $categoriaItem = $_POST['nCategoria'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
 
-// var_dump($id, $nomeItem, $valorItem, $categoriaItem, $disponibilidadeItem);
-// die();
-
-// var_dump($valorItem);
-// die(); 
-
-if ($id == 'insert'){
+if ($operacao == 'insert'){
     //Insert
     $sql = "INSERT INTO item (valor_item, descricao_item, disponibilidade, tipo_item_id_tipo_item)
             VALUES (
@@ -21,11 +16,13 @@ if ($id == 'insert'){
                 ".$disponibilidadeItem.",
                 ".$categoriaItem."
             );";
-} else if ($id == 'update'){
+} else if ($operacao == 'update'){
     // Update
     
-} else if ($id = 'delete'){
+} else if ($operacao == 'delete'){
     // Delete
+    $sql = "DELETE FROM item
+            WHERE id_item = $id;";
 }
 
 include('conection.php');

@@ -18,9 +18,11 @@ include('php/funcoes.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Excluir Item</h1>
-    <form action="#" method="POST">
+    <form action="php/crudItem.php?operacao=delete&id=<?php echo $_GET['id'];?>" method="POST">
         <h3>Deseja realmente EXCLUIR?</h3>
-        
+        <p>
+            <?php echo carregarItem($_GET['id']);?>
+        </p>
         <input type="submit" value="Confirmar">
         <a href="cardapio.php"><input type="button" value="Cancelar"></a>
     </form>
