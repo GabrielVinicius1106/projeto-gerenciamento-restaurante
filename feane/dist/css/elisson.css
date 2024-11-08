@@ -2,8 +2,8 @@
 
 
 body {
-  animation: animarGradiente 10s infinite alternate;
-  background: linear-gradient(90deg, rgb(25, 37, 49), rgb(52, 62, 80), rgb(38, 53, 83));
+  animation: animarGradiente 7s infinite alternate;
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(52, 62, 80), rgb(49, 68, 107));
   background-size: 300% 100%;
   font-family: "Open Sans", sans-serif;
   color: #fff;
@@ -44,8 +44,10 @@ body {
 
 h1 {
   text-align: center;
-  font-family: 'Dancing Script', cursive; /* Usando a fonte secundária */
-  font-size: 70px; 
+  font-family: 'Dancing Script', cursive; /* Fonte bonita */
+  font-size: 70px;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+
 }
 
 #additem{
