@@ -6,7 +6,7 @@
     <title>Tela Inicial</title>
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/style.css" rel="stylesheet" />
+    <link href="dist/css/style.css" rel="stylesheet"/>
 
 </head>
 <body id="bodytelainicial">
