@@ -5,7 +5,6 @@
     <title>Mesas</title>
 
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
-   
 </head>
 <body>
     <?php
