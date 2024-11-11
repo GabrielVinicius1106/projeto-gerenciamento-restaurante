@@ -4,10 +4,15 @@ $operacao = $_GET['operacao'];
 $id = $_GET['id'];
 $nomeItem = $_POST['nItem'];
 $valorItem = (float)$_POST['nValor'];
-$tipoItem = $_POST['nCategoria'];
+$idTipoItem = $_POST['nTipo'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
+if ($disponibilidadeItem == 'on'){
+    $disponibilidadeItem = 1;
+} else {
+    $disponibilidadeItem = 0;
+}
 
-// var_dump($operacao, $id, $nomeItem, $valorItem, $tipoItem, $disponibilidadeItem);
+// var_dump($operacao, $id, $nomeItem, $valorItem, $idTipoItem, $disponibilidadeItem);
 // die();
 
 if ($operacao == 'insert'){
@@ -17,12 +22,12 @@ if ($operacao == 'insert'){
                 ".$valorItem.",
                 '".$nomeItem."',
                 ".$disponibilidadeItem.",
-                ".$tipoItem."
+                ".$idTipoItem."
             );";
 } else if ($operacao == 'update'){
     // Update
     $sql = "UPDATE item
-            SET valor_item = $valorItem, descricao_item = $nomeItem, disponibilidade = $disponibilidadeItem, tipo_item_id_tipo_item = $tipoItem
+            SET valor_item = $valorItem, descricao_item = '$nomeItem', disponibilidade = $disponibilidadeItem, tipo_item_id_tipo_item = $idTipoItem
             WHERE id_item = $id;";
 
 } else if ($operacao == 'delete'){
@@ -30,6 +35,9 @@ if ($operacao == 'insert'){
     $sql = "DELETE FROM item
             WHERE id_item = $id;";
 }
+
+// var_dump($sql);
+// die();
 
 include('conection.php');
 
