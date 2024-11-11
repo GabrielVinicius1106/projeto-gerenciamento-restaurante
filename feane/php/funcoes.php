@@ -193,12 +193,39 @@ function carregaCategoria($id_item){
     if (mysqli_num_rows($result) > 0){
         
         foreach ($result as $campo) {
-            $categoria = $campo['Descricao'];
+            $categoria = "&nbsp;&nbsp;".$campo['Descricao'];
         }
     }
 
     return $categoria;
 }
+
+function carregaDisponibilidade($id_item){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT *
+            FROM item
+            WHERE id_item = $id_item";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        foreach ($result as $campo){
+
+            if ($campo['disponibilidade'] == 1){
+                $list = '<input type="checkbox" checked>';
+            } else if ($campo['disponibilidade'] == 0){
+                $list = '<input type="checkbox">';
+            }
+        }
+        return $list;   
+    }
+
+}   
 
 function carregaTipoItem($id_tipo){
 
@@ -278,9 +305,6 @@ function idTipoItem($id_item){
 function carregarItem($id){
 
     $lista = '';
-
-    // var_dump($lista);
-    // die();
 
     include('conection.php');
 
