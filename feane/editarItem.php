@@ -31,7 +31,7 @@ include('php/funcoes.php');
             <span id="categoriaTipo"></span>
         </p>
         <input type="submit" value="Salvar">
-        <a href="confirmarExclusaoItem.php"><input type="reset" value="Excluir"></a>
+        <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
         <a href="cardapio.php"><input type="button" value="Cancelar"></a>
     </form>
 

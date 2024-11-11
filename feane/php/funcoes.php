@@ -1,4 +1,6 @@
 <?php 
+
+
 function carregaCapacidade($id){
     $lista = '';
 
@@ -32,7 +34,7 @@ function carregaMesa(){
         foreach($result as $campo){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td>'.$campo['capacidade']. '|' .$campo['status_mesa'].'</td>'
+                        .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
                         .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>
                         '
                     .'</tr>';
@@ -272,4 +274,43 @@ function idTipoItem($id_item){
     return $id_tipo_item;
 
 }
+
+function carregarItem($id){
+
+    $lista = '';
+
+    // var_dump($lista);
+    // die();
+
+    include('conection.php');
+
+    $sql = "SELECT * 
+            FROM item
+            WHERE id_item = $id;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        //Carrega a linha do item
+        foreach($result as $campo){
+
+            if ($campo['disponibilidade'] == 1){
+                $disponibilidade = "Disponível";
+            } else {
+                $disponibilidade = "Indisponível";
+            }
+
+            $lista .= '<p>ID Item: '.$campo['id_item'].'</p>'
+                       .'<p>Valor:'.$campo['valor_item'].'</p>'
+                       .'<p>Descrição:'.$campo['descricao_item'].'</p>'
+                       .'<p>Disponibilidade:'.$disponibilidade.'</p>';
+        }
+    }
+
+    return $lista;
+}
+
+
 ?>
