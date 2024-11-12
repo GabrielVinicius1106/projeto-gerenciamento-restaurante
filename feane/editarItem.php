@@ -18,27 +18,29 @@ include('php/funcoes.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Editar Item</h1>
-    <form action="php/crudItem.php?operacao=update&id=<?php echo $_GET['id'];?>" method="POST">
-        <p>Nome: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
-        <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
-        <p>Tipo de Item: 
-            <select name="nTipo" id="tipoItem">
-                <option value="<?php echo idTipoItem($_GET['id']);?>"> <?php echo descricaoTipoItem($_GET['id']);?> </option>
-                <?php echo carregaTipoItem(idTipoItem($_GET['id']));?>
-            </select>
-        </p>
-        <p>Categoria:   
-            <span id="categoriaTipo">
-              <?php echo carregaCategoria($_GET['id']);?>
-            </span>
-        </p>
-        <p>Disponível: 
-              <?php echo carregaDisponibilidade($_GET['id']);?>
-        </p>
-        <input type="submit" value="Salvar">
-        <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
-        <a href="cardapio.php"><input type="button" value="Cancelar"></a>
-    </form>
+      <div class="container" id="additem">
+        <form action="php/crudItem.php?operacao=update&id=<?php echo $_GET['id'];?>" method="POST">
+          <p>Nome: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
+          <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
+          <p>Tipo de Item: 
+              <select name="nTipo" id="tipoItem">
+                  <option value="<?php echo idTipoItem($_GET['id']);?>"> <?php echo descricaoTipoItem($_GET['id']);?> </option>
+                  <?php echo carregaTipoItem(idTipoItem($_GET['id']));?>
+              </select>
+          </p>
+          <p>Categoria:   
+              <span id="categoriaTipo">
+                <?php echo carregaCategoria($_GET['id']);?>
+              </span>
+          </p>
+          <p>Disponível: 
+                <?php echo carregaDisponibilidade($_GET['id']);?>
+          </p>
+          <input type="submit" value="Salvar">
+          <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
+          <a href="cardapio.php"><input type="button" value="Cancelar"></a>
+        </form>
+      </div>
 
 
 <script src="dist/js/jquery-3.4.1.min.js"></script>
