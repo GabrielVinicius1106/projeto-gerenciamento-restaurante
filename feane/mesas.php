@@ -18,6 +18,7 @@
          <th>Nr Mesa</th>
          <th>Ocupado</th>
          <th>Ocupar</th>
+         <th>Editar</th>
       </tr>
       <?php 
          echo carregaMesa();
