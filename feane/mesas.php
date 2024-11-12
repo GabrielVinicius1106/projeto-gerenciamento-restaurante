@@ -5,6 +5,46 @@
     <title>Mesas</title>
 
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+
+    <style>
+        /* Estilos básicos para o modal */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            color: black;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -23,6 +63,39 @@
       <?php 
          echo carregaMesa();
       ?>
+      
    </table>
+   <a href="adicionarMesa.php"><input type="button" value="Adicionar Item"></a>
+
+
+   <div id="myModal" class="modal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <h2><?php echo "Bem-vindo ao Modal!"; ?></h2>
+         <p><?php echo "Este conteúdo pode ser dinâmico."; ?></p>
+      </div>
+   </div>
+
+   <!-- SCRIPT PARA MODAL -->
+   <script>
+    // JavaScript para controlar a abertura e fechamento do modal
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("openModalBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+   </script>
 </body>
 </html>

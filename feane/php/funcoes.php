@@ -36,7 +36,7 @@ function carregaMesa(){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
                         .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>'
-                        .'<td><a href ="editarmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Editar"></td>
+                        .'<td><input type="button" id="openModalBtn" value="Editar"></td>
                         '
                     .'</tr>';
         }
