@@ -7,6 +7,13 @@ $valorItem = (float)$_POST['nValor'];
 $idTipoItem = $_POST['nTipo'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
 
+// Confere se a disponibilidade foi marcada ou não
+if ($disponibilidadeItem == 'on'){
+    $disponibilidadeItem = 1;
+} else {
+    $disponibilidadeItem = 0;
+}
+
 // var_dump($operacao, $id, $nomeItem, $valorItem, $idTipoItem, $disponibilidadeItem);
 // die();
 
@@ -20,11 +27,6 @@ if ($operacao == 'insert'){
                 ".$idTipoItem.");";
 } else if ($operacao == 'update'){
     // Update
-    if ($disponibilidadeItem == 'on'){
-        $disponibilidadeItem = 1;
-    } else {
-        $disponibilidadeItem = 0;
-    }
 
     $sql = "UPDATE item
             SET valor_item = $valorItem, descricao_item = '$nomeItem', disponibilidade = $disponibilidadeItem, tipo_item_id_tipo_item = $idTipoItem
