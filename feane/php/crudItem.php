@@ -4,8 +4,11 @@ $operacao = $_GET['operacao'];
 $id = $_GET['id'];
 $nomeItem = $_POST['nItem'];
 $valorItem = (float)$_POST['nValor'];
-$categoriaItem = $_POST['nCategoria'];
+$idTipoItem = $_POST['nTipo'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
+
+// var_dump($operacao, $id, $nomeItem, $valorItem, $idTipoItem, $disponibilidadeItem);
+// die();
 
 if ($operacao == 'insert'){
     //Insert
@@ -14,11 +17,19 @@ if ($operacao == 'insert'){
                 ".$valorItem.",
                 '".$nomeItem."',
                 ".$disponibilidadeItem.",
-                ".$categoriaItem."
-            );";
+                ".$idTipoItem.");";
 } else if ($operacao == 'update'){
     // Update
-    
+    if ($disponibilidadeItem == 'on'){
+        $disponibilidadeItem = 1;
+    } else {
+        $disponibilidadeItem = 0;
+    }
+
+    $sql = "UPDATE item
+            SET valor_item = $valorItem, descricao_item = '$nomeItem', disponibilidade = $disponibilidadeItem, tipo_item_id_tipo_item = $idTipoItem
+            WHERE id_item = $id;";
+
 } else if ($operacao == 'delete'){
     // Delete
     $sql = "DELETE FROM item
