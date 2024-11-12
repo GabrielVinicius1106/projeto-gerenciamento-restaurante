@@ -1,5 +1,17 @@
 <?php 
 
+function novaMesa(){
+$id = $_GET["id"];    
+include("conection.php");
+$lista = '';
+
+    $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+    header("location: ../mesas.php"); 
+return $lista;    
+
+}
 
 function carregaCapacidade($id){
     $lista = '';

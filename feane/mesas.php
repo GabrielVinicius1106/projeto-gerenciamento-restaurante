@@ -48,7 +48,12 @@
 </head>
 <body>
     <?php
+     
+     include("php/conection.php");
      include("php/funcoes.php");
+     $id1 = $_GET['id'];
+     
+
     ?>
     
     <a href="telainicial.php">Voltar</a>
@@ -71,8 +76,12 @@
    <div id="myModal" class="modal">
       <div class="modal-content">
          <span class="close">&times;</span>
-         <h2><?php echo "Bem-vindo ao Modal!"; ?></h2>
-         <p><?php echo "Este conteúdo pode ser dinâmico."; ?></p>
+         <form action="php/salvarmesa.php?id=<?php echo $_GET["id"];?>" method="POST">
+            <a href="mesas.php">Voltar</a>
+            <h1>Mesa <?php echo $id1 ?></h1>
+            <p>Ocupação: <input type="number" name="nOcp" required></p>
+            <p><input type="submit" value="Salvar"></p>
+        </form>
       </div>
    </div>
 
