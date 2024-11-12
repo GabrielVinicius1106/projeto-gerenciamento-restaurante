@@ -81,7 +81,7 @@ function carregaCardapio(){
 
 function carregaTiposItem(){
 
-    $list = '<select name="nCategoria">
+    $list = '<select name="nTipo">
                 <option>Selecione</option>';
 
     include('conection.php');
