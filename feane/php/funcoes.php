@@ -35,7 +35,8 @@ function carregaMesa(){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
-                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>
+                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>'
+                        .'<td><a href ="editarmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Editar"></td>
                         '
                     .'</tr>';
         }
@@ -81,8 +82,7 @@ function carregaCardapio(){
 
 function carregaTiposItem(){
 
-    $list = '<select name="nCategoria">
-                <option>Selecione</option>';
+    $list = '<option value="">Selecione</option>';
 
     include('conection.php');
 
@@ -97,8 +97,6 @@ function carregaTiposItem(){
         foreach($result as $campo){
             $list .= "<option value='".$campo['id_tipo_item']."'>".$campo['descricao']."</option>";
         }
-
-        $list .= "</select>";
 
         return $list;
     }
@@ -193,12 +191,39 @@ function carregaCategoria($id_item){
     if (mysqli_num_rows($result) > 0){
         
         foreach ($result as $campo) {
-            $categoria = $campo['Descricao'];
+            $categoria = "&nbsp;&nbsp;".$campo['Descricao'];
         }
     }
 
     return $categoria;
 }
+
+function carregaDisponibilidade($id_item){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT *
+            FROM item
+            WHERE id_item = $id_item";
+    
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        foreach ($result as $campo){
+
+            if ($campo['disponibilidade'] == 1){
+                $list = '<input type="checkbox" name="nDisponibilidade" checked>';
+            } else if ($campo['disponibilidade'] == 0){
+                $list = '<input type="checkbox" name="nDisponibilidade">';
+            }
+        }
+        return $list;   
+    }
+
+}   
 
 function carregaTipoItem($id_tipo){
 
@@ -278,9 +303,6 @@ function idTipoItem($id_item){
 function carregarItem($id){
 
     $lista = '';
-
-    // var_dump($lista);
-    // die();
 
     include('conection.php');
 
