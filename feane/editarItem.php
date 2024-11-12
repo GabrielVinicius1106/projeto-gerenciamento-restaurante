@@ -19,7 +19,9 @@ include('php/funcoes.php');
     <a href="cardapio.php">Voltar</a>
     <h1>Editar Item</h1>
     <form action="#" method="POST">
-        <p>Nome: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
+
+      <div class="container" id="additem">
+       <p>Nome: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
         <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
         <p>Tipo de Item: 
             <select name="nTipo" id="tipoItem">
@@ -33,6 +35,10 @@ include('php/funcoes.php');
         <input type="submit" value="Salvar">
         <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
         <a href="cardapio.php"><input type="button" value="Cancelar"></a>
+      </div>
+
+
+
     </form>
 
 
