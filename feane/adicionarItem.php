@@ -18,52 +18,23 @@ include('php/funcoes.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Adicionar Item</h1>
-    <form action="php/crudItem.php?operacao=insert" method="POST">
-        <p>Nome: <input type="text" name="nItem"></p>
-        <p>Preço: <input type="text" name="nValor"></p>
+    <form action="php/crudItem.php?operacao=insert" method="POST" required>
+        <p>Nome: <input type="text" name="nItem" required></p>
+        <p>Preço: <input type="text" name="nValor" required></p>
         <p>Tipo de Item: 
-            <select name="nTipo" id="tipoItem">
-                <?php echo carregaTipoItem(idTipoItem();?>
+            <select name="nTipo" id="tipoItem" required>
+                <?php echo carregaTiposItem();?>
             </select>
         <p>Categoria: 
             <span id="categoriaTipo">
-
             </span>
         </p>
-        <p>Disponibilidade: <select name="nDisponibilidade">
-                                <option value=""></option>
-                                <option value="1">Disponível</option>
-                                <option value="0">Indisponível</option>
-                            </select>
+        <p>Disponível:     
+            <input type="checkbox" name="nDisponibilidade">
         </p>
         <input type="submit" value="Adicionar">
         <input type="reset" value="Limpar">
     </form>
-
-    <!-- --------------------------------------  -->
-
-    <form action="php/crudItem.php?operacao=insert" method="POST">
-        <p>Nome: <input type="text" name="nItem"></p>
-        <p>Preço: <input type="text" name="nValor"></p>
-        <p>Tipo de Item: 
-            <select name="nTipo" id="tipoItem">
-                <option value="<?php echo idTipoItem($_GET['id']);?>"> <?php echo descricaoTipoItem($_GET['id']);?> </option>
-                <?php echo carregaTipoItem(idTipoItem($_GET['id']));?>
-            </select>
-        </p>
-        <p>Categoria:   
-            <span id="categoriaTipo">
-              <?php echo carregaCategoria($_GET['id']);?>
-            </span>
-        </p>
-        <p>Disponível: 
-              <?php echo carregaDisponibilidade($_GET['id']);?>
-        </p>
-        <input type="submit" value="Salvar">
-        <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
-        <a href="cardapio.php"><input type="button" value="Cancelar"></a>
-    </form>
-
 
     <script src="dist/js/jquery-3.4.1.min.js"></script>
     
@@ -72,6 +43,7 @@ include('php/funcoes.php');
   $(document).ready(function() {
 
     //Lista dinâmica com Ajax
+
     $('#tipoItem').on('change',function(){
 			//Pega o valor selecionado na lista 1
       var tipoItem  = $('#tipoItem').val();
