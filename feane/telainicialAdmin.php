@@ -98,7 +98,7 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #ffcc00;
+            background-color: #4682B4;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
