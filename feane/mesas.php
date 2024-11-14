@@ -9,26 +9,28 @@
     <style>
         /* Estilos básicos para o modal */
         .modal {
-            display: none; /* Escondido por padrão */
+            display: none; 
             position: fixed;
-            z-index: 1;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-
+            align-items: center;
+            justify-content: center;
             color: black;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 10% auto;
             padding: 20px;
+            border-radius: 5px;
             border: 1px solid #888;
             width: 80%;
             max-width: 500px;
             text-align: center;
+            align-items: center;
         }
 
         .close {
@@ -50,8 +52,12 @@
     <?php
      
      include("php/conection.php");
+<<<<<<< HEAD
      include("php/funcoes.php");
      $id1 = $_GET['id'];
+=======
+     include("php/funcoes.php");     
+>>>>>>> e170a0157e4f3b4f5866cdcd4a1b3fa6fb846142
 
      
     ?>
@@ -76,9 +82,8 @@
    <div id="myModal" class="modal">
       <div class="modal-content">
          <span class="close">&times;</span>
-         <form action="php/salvarmesa.php?id=<?php echo $_GET["id"];?>" method="POST">
-            <a href="mesas.php">Voltar</a>
-            <h1>Mesa <?php echo $id1 ?></h1>
+         <form action="php/salvarmesa.php?id=" method="POST">
+            <h1>Mesa</h1>
             <p>Ocupação: <input type="number" name="nOcp" required></p>
             <p><input type="submit" value="Salvar"></p>
         </form>
