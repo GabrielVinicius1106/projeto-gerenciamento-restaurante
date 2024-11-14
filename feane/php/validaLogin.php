@@ -33,17 +33,18 @@ if (mysqli_num_rows($resultLogin) > 0) {
     foreach ($resultLogin as $coluna) {
                     
         //***Verificar os dados da consulta SQL
-        $_SESSION['idTipoUsuario'] = $coluna['tipo_usuario_id_tipo_usuario'];
-        $_SESSION['logado']        = 1;
-        $_SESSION['idLogin']       = $coluna['id_usuario'];
-        $_SESSION['NomeLogin']     = $coluna['login'];
-        $_SESSION['FotoLogin']     = $coluna['Foto'];
-        $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
+        // $_SESSION['idTipoUsuario'] = $coluna['tipo_usuario_id_tipo_usuario'];
+        // $_SESSION['logado']        = 1;
+        // $_SESSION['idLogin']       = $coluna['id_usuario'];
+        // $_SESSION['NomeLogin']     = $coluna['login'];
+        // $_SESSION['FotoLogin']     = $coluna['Foto'];
+        // $_SESSION['DadosPessoais'] = $coluna['dados_pessoais'];
 
         //Acessar a tela inicial
-        header('location: ../telaInicial.php');
+        header('location: ../telainicialAdmin.php');
     }        
-}else{
+
+} else{
     //Acessar a tela inicial
     header('location: ../login.php');
 } 
