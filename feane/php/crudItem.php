@@ -3,9 +3,18 @@
 $operacao = $_GET['operacao'];
 $id = $_GET['id'];
 $nomeItem = $_POST['nItem'];
-$valorItem = (float)$_POST['nValor'];
+$valorItem = (string)$_POST['nValor'];
 $idTipoItem = $_POST['nTipo'];
 $disponibilidadeItem = $_POST['nDisponibilidade'];
+
+// Validação se há vírgula no valor de item informado
+if (str_contains($valorItem, ',') && $operacao == 'insert'){
+    header('location: ../adicionarItem.php');
+} else if (str_contains($valorItem, ',') && $operacao == 'update'){
+    header('location: ../editarItem.php');
+} else if(!str_contains($valorItem, ',')){
+       
+}
 
 // Confere se a disponibilidade foi marcada ou não
 if ($disponibilidadeItem == 'on'){
