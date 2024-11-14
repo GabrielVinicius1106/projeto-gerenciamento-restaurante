@@ -13,7 +13,7 @@
     <?php
         include("php/funcoes.php");
     ?>
-    <a href="telainicial.php">Voltar</a>
+    <a href="telainicialAdmin.php">Voltar</a>
     <h1>Cardápio</h1>
     <table id="tableCardapio">
         <thead>
