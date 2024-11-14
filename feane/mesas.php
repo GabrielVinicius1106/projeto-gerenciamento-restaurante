@@ -50,9 +50,7 @@
     <?php
      
      include("php/conection.php");
-     include("php/funcoes.php");
-     $id1 = $_GET['id'];
-     
+     include("php/funcoes.php");     
 
     ?>
     
@@ -76,9 +74,9 @@
    <div id="myModal" class="modal">
       <div class="modal-content">
          <span class="close">&times;</span>
-         <form action="php/salvarmesa.php?id=<?php echo $_GET["id"];?>" method="POST">
+         <form action="php/salvarmesa.php?id=" method="POST">
             <a href="mesas.php">Voltar</a>
-            <h1>Mesa <?php echo $id1 ?></h1>
+            <h1>Mesa</h1>
             <p>Ocupação: <input type="number" name="nOcp" required></p>
             <p><input type="submit" value="Salvar"></p>
         </form>
