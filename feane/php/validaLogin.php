@@ -6,7 +6,7 @@ if(session_status() !== PHP_SESSION_ACTIVE){
 
 include("funcoes.php");
 
-$_SESSION['logado'] = 0;
+$_SESSION['logado'] = 1;
 
 $login = $_POST["nUsuario"];
 $senha = $_POST["nSenha"];
@@ -55,7 +55,6 @@ if (mysqli_num_rows($resultLogin) > 0) {
         //     header('location: ../telainicialCozinha.php');
         // } else if ()
         switch($_SESSION['idTipoUsuario']){
-
             case 1:
                 header('location: ../telainicialAdmin.php');
                 break;

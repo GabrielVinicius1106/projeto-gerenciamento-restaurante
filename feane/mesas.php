@@ -52,12 +52,7 @@
     <?php
      
      include("php/conection.php");
-<<<<<<< HEAD
-     include("php/funcoes.php");
-     $id1 = $_GET['id'];
-=======
      include("php/funcoes.php");     
->>>>>>> e170a0157e4f3b4f5866cdcd4a1b3fa6fb846142
 
      
     ?>
