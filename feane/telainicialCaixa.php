@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Admin</title>
+    <title>Tela Inicial Caixa</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -167,7 +167,7 @@
                     <button id="btn4" class="btn btn-large">Caixa</button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large">Usuários</button>
+                    <!-- <button id="btn5" class="btn btn-large">Usuários</button> -->
                 </div>
             </div>
         </div>

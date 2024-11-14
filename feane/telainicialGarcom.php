@@ -164,10 +164,10 @@
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <!-- <button id="btn4" class="btn btn-large">Caixa</button> -->
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large">Usuários</button>
+                    <!-- <button id="btn5" class="btn btn-large">Usuários</button> -->
                 </div>
             </div>
         </div>

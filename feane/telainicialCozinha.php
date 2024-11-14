@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Admin</title>
+    <title>Tela Inicial Cozinha</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -155,7 +155,7 @@
         <div class="container1">
             <div class="button-container">
                 <div class="btn-item">
-                    <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
+                    <!-- <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button> -->
                 </div>
                 <div class="btn-item">
                     <button id="btn2" class="btn btn-large">Pedidos</button>
@@ -164,10 +164,10 @@
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <!-- <button id="btn4" class="btn btn-large">Caixa</button> -->
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large">Usuários</button>
+                    <!-- <button id="btn5" class="btn btn-large">Usuários</button> -->
                 </div>
             </div>
         </div>
