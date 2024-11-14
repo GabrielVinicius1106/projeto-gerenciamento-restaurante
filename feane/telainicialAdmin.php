@@ -158,7 +158,7 @@
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large">Pedidos</button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidos.php">Pedidos</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
