@@ -21,7 +21,7 @@ include('php/funcoes.php');
       <div class="container" id="additem">
         <form action="php/crudItem.php?operacao=update&id=<?php echo $_GET['id'];?>" method="POST">
           <p>Nome: <input type="text" name="nItem" value="<?php echo carregaValores($_GET['id'], 'descricao_item');?>"></p>
-          <p>Preço: <input type="text" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
+          <p>Preço: <input type="number" min="0" step=".01" name="nValor" value="<?php echo carregaValores($_GET['id'], 'valor_item');?>"></p>
           <p>Tipo de Item: 
               <select name="nTipo" id="tipoItem">
                   <option value="<?php echo idTipoItem($_GET['id']);?>"> <?php echo descricaoTipoItem($_GET['id']);?> </option>

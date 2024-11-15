@@ -54,9 +54,10 @@
      include("php/conection.php");
      include("php/funcoes.php");     
 
+     
     ?>
     
-    <a href="telainicial.php">Voltar</a>
+    <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
     <table id="tableCardapio"> 
       <tr>

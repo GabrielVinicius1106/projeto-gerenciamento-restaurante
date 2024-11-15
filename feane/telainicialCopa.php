@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial</title>
+    <title>Tela Inicial Copa</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -11,11 +11,6 @@
             color: #f0f0f0;
             font-family: 'Dancing Script', cursive;
             font-size: 70px;
-        }
-
-        a{
-          color: black;
-          text-decoration: none;
         }
 
         .container1 {
@@ -64,12 +59,7 @@
         }
 
         .btn-large:hover {
-            background-color: black;
-            color:white;
-        }
-
-        a:hover{
-          color: white;
+            background-color: #f0f0f0;
         }
 
         .button-container {
@@ -108,7 +98,7 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgb(33, 49, 65);
+            background-color: #ffcc00;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
@@ -117,7 +107,7 @@
             width: 80%;
             max-width: 400px;
             font-size: 18px;
-            color: white;
+            color: #333;
             z-index: 1000;
             animation: fadeIn 1s ease-out;
         }
@@ -139,20 +129,19 @@
         }
 
         @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
     </style>
 </head>
 <body id="bodytelainicial">
-
-<?php include 'header.php'; ?>
-
 
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
@@ -166,7 +155,7 @@
         <div class="container1">
             <div class="button-container">
                 <div class="btn-item">
-                    <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
+                    <!-- <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button> -->
                 </div>
                 <div class="btn-item">
                     <button id="btn2" class="btn btn-large">Pedidos</button>
@@ -175,10 +164,10 @@
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <!-- <button id="btn4" class="btn btn-large">Caixa</button> -->
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large">Usuários</button>
+                    <!-- <button id="btn5" class="btn btn-large">Usuários</button> -->
                 </div>
             </div>
         </div>
@@ -197,8 +186,6 @@
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
-
-<?php include 'footer.php'; ?> 
 
 </body>
 </html>
