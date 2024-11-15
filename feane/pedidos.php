@@ -18,17 +18,21 @@
     <table id="tableCardapio">
         <thead>
         <tr>
-            <th>Descrição</th>
-            <th>Valor Unitário</th>
-            <th>Disponibilidade</th>
+            <th>ID Pedido</th>
+            <th>Status do Pedido</th>
+            <th>Nº de Pessoas</th>
+            <th>Data do Pedido</th>
+            <th>ID Mesa</th>
+            <th>Solicitar Itens</th>
             <th>Editar</th>
         </tr>
         </thead>
         <tbody>
-            <?php //echo carregaCardapio(); ?>
+            <?php echo carregaPedidos(); ?>
         </tbody>    
     </table>
-    <a href="adicionarItem.php"><input type="button" value="Adicionar Item"></a>
+    <!-- <a href="adicionarPedido.php"><input type="button" value="Adicionar Item"></a> -->
+    <a href=""><input type="button" value="Criar Pedido"></input></a>
 
 </body>
 </html>
