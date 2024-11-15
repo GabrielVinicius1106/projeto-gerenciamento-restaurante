@@ -14,6 +14,11 @@
             font-size: 70px;
         }
 
+        a{
+          color: black;
+          text-decoration: none;
+        }
+
         .container1 {
             display: flex;
             justify-content: center;
@@ -60,7 +65,12 @@
         }
 
         .btn-large:hover {
-            background-color: #f0f0f0;
+            background-color: black;
+            color:white;
+        }
+
+        a:hover{
+          color: white;
         }
 
         .button-container {
@@ -99,7 +109,7 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #ffcc00;
+            background-color: rgb(33, 49, 65);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
@@ -108,7 +118,7 @@
             width: 80%;
             max-width: 400px;
             font-size: 18px;
-            color: #333;
+            color: white;
             z-index: 1000;
             animation: fadeIn 1s ease-out;
         }
@@ -130,19 +140,20 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
     </style>
 </head>
 <body id="bodytelainicial">
+
+<?php include 'header.php'; ?>
+
 
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
@@ -187,6 +198,8 @@
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
+
+<?php include 'footer.php'; ?> 
 
 </body>
 </html>
