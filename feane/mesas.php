@@ -5,6 +5,7 @@
     <title>Mesas</title>
 
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 
     <style>
         /* Estilos básicos para o modal */
