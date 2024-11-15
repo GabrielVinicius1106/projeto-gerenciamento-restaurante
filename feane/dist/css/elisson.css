@@ -123,40 +123,4 @@ form{
 /*_______________________________________________*/
 
 
-/* Estilos do Footer */
-footer {
-  background-color: #0a0f1d; /* Azul escuro puxando para o preto */
-  color: #f1f1f1;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-content p {
-  margin: 0 0 10px;
-}
-
-.social-links,
-.footer-nav {
-  margin: 10px 0;
-}
-
-.social-links a,
-.footer-nav a {
-  color: #f1f1f1;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover,
-.footer-nav a:hover {
-  color: #1e90ff; /* Azul claro para o efeito hover */
-}
-
 /*_______________________________________________*/
