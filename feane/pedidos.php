@@ -33,7 +33,7 @@
         </tbody>    
     </table>
     <!-- <a href="adicionarPedido.php"><input type="button" value="Adicionar Item"></a> -->
-    <a href=""><input type="button" value="Criar Pedido"></input></a>
+    <a href="#"><input type="button" value="Criar Pedido"></input></a>
 
 </body>
 </html>
