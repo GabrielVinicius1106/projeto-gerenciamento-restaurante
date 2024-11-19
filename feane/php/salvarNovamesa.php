@@ -1,7 +1,6 @@
 <?php
 $ocpPadrao = 0;
-$cap = $_POST["nCap"];    
-$id = $_GET["id"];    
+$cap = $_POST["nCap"];       
 include("conection.php");
 
 
@@ -10,6 +9,7 @@ include("conection.php");
             $result = mysqli_query($conn,$sql);
             mysqli_close($conn);
 
+header('location: ../mesas.php');
     
 
 ?>
