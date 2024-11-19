@@ -13,9 +13,10 @@
 <body id="bodyCardapio" class="pagina-cardapio">
     <?php
         include("php/funcoes.php");
+        include("php/funcoesPedido.php");
     ?>
     <a href="telainicialAdmin.php">Voltar</a>
-    <h1>Pedidos</h1>
+    <h1>Pedidos em andamento</h1>
     <table id="tableCardapio">
         <thead>
         <tr>
@@ -29,11 +30,27 @@
         </tr>
         </thead>
         <tbody>
-            <?php echo carregaPedidos(); ?>
+            <?php echo carregaPedidosEmAndamento(); ?>
         </tbody>    
     </table>
-    <!-- <a href="adicionarPedido.php"><input type="button" value="Adicionar Item"></a> -->
-    <a href="#"><input type="button" value="Criar Pedido"></input></a>
+    <h1>Pedidos fechados</h1>
+    <table id="tableCardapio">
+        <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>Status do Pedido</th>
+            <th>Nº de Pessoas</th>
+            <th>Data do Pedido</th>
+            <th>ID Mesa</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+            <?php echo carregaPedidosFechados(); ?>
+        </tbody>
+    </table>
+
+    <a href="adicionarPedido.php"><input type="button" value="Criar Pedido"></a>
 
 </body>
 </html>
