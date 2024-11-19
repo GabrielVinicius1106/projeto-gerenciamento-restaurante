@@ -1,18 +1,5 @@
 <?php 
 
-function novaMesa(){
-$id = $_GET["id"];    
-include("conection.php");
-$lista = '';
-
-    $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
-    $result = mysqli_query($conn,$sql);
-    mysqli_close($conn);
-    header("location: ../mesas.php"); 
-return $lista;    
-
-}
-
 function carregaCapacidade($id){
     $lista = '';
 
@@ -42,20 +29,19 @@ function carregaMesa(){
     mysqli_close($conn);
 
     if(mysqli_num_rows($result) > 0){
-        //carrega as linhas
         foreach($result as $campo){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
-                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>'
-                        .'<td><input type="button" id="openModalBtn" value="Editar"></td>
-                        '
+                        .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
+                        .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
+                        .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
                     .'</tr>';
         }
     }
 
     return $lista;
 }
+
 
 function carregaCardapio(){
     
