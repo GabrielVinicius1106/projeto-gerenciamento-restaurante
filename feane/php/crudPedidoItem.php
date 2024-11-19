@@ -8,6 +8,11 @@ $idItem = $_POST['nIdItem'];
 $quantidadeItem = $_POST['nQuantidade'];
 $obs = $_POST['nObs'];
 
+if ($quantidadeItem <= 0){
+    header('location: ../pedidos.php');
+    die();
+}
+
 // var_dump("Id Pedido: ".$idPedido,"Id Item: ".$idItem, $quantidadeItem, $obs);
 // die();
 
@@ -32,10 +37,6 @@ switch($operacao){
         header('location: ../pedidos.php');
         break;
 }
-
-                // var_dump($sql);
-                // die();
-
 
 include('conection.php');
 

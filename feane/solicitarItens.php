@@ -26,7 +26,7 @@
         <p>Observações: <input type="text" name="nObs"></p>
 
         <input type="submit" value="Confirmar">
-        <input type="reset" value="Limpar">
+        <input type="reset" value="Limpar"> 
     </form>
 </body>
 </html>
