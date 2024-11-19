@@ -2,7 +2,11 @@
 
 function novaMesa(){
 $id = $_GET["id"];    
+
+// Importa os arquivos que contém funções de tabelas e de conexão com o banco
 include("conection.php");
+include("funcoesPedido.php");
+
 $lista = '';
 
     $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
@@ -376,9 +380,9 @@ function carregaPedidos(){
     }
 
     return $lista;
-
-
 }
+
+
 
 
 ?>
