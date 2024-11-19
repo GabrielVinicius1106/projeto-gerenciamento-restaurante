@@ -19,23 +19,26 @@ include('php/funcoes.php');
 <body>
     <a href="cardapio.php">Voltar</a>
     <h1>Adicionar Item</h1>
-    <form action="php/crudItem.php?operacao=insert" method="POST" required>
-        <p>Nome: <input type="text" name="nItem" required></p>
-        <p>Preço: <input type="number" min="0" step=".01" name="nValor" required></p>
-        <p>Tipo de Item: 
-            <select name="nTipo" id="tipoItem" required>
-                <?php echo carregaTiposItem();?>
-            </select>
-        <p>Categoria: 
-            <span id="categoriaTipo">
-            </span>
-        </p>
-        <p>Disponível:     
-            <input type="checkbox" name="nDisponibilidade">
-        </p>
-        <input type="submit" value="Adicionar">
-        <input type="reset" value="Limpar">
-    </form>
+
+    <div class="container" id="additem">
+      <form action="php/crudItem.php?operacao=insert" method="POST" required>
+          <p>Nome: <input type="text" name="nItem" required></p>
+          <p>Preço: <input type="number" min="0" step=".01" name="nValor" required></p>
+          <p>Tipo de Item: 
+              <select name="nTipo" id="tipoItem" required>
+                  <?php echo carregaTiposItem();?>
+              </select>
+          <p>Categoria: 
+              <span id="categoriaTipo">
+              </span>
+          </p>
+          <p>Disponível:     
+              <input type="checkbox" name="nDisponibilidade">
+          </p>
+          <input type="submit" value="Adicionar">
+          <input type="reset" value="Limpar">
+      </form>
+    </div>
 
     <script src="dist/js/jquery-3.4.1.min.js"></script>
     

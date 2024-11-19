@@ -23,6 +23,7 @@
 
         #bodytelainicial {
             margin: 0;
+            margin-bottom: 50px;
             height: 100vh;
             background-color: #79aeff;
             justify-content: center;
@@ -30,7 +31,7 @@
             display: grid;
             place-items: center;
             animation: animarGradiente 7s infinite alternate;
-            background: linear-gradient(90deg, rgb(33, 49, 65), rgb(52, 62, 80), rgb(49, 68, 107));
+            background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
             background-size: 300% 100%;
         }
 
@@ -60,7 +61,8 @@
         }
 
         .btn-large:hover {
-            background-color: #f0f0f0;
+            background-color: #333;
+            border-color: #333;
         }
 
         .button-container {
@@ -73,44 +75,58 @@
             flex: 1 1 calc(33.33% - 10px);
         }
 
-        #btn1 {
-            background-image: url('imagem1.jpg');
+        a {
+            color: black;
+            text-decoration: none;
         }
 
-        #btn2 {
-            background-image: url('imagem2.jpg');
-        }
-
-        #btn3 {
-            background-image: url('imagem3.jpg');
-        }
-
-        #btn4 {
-            background-image: url('f9.png');
-        }
-
-        #btn5 {
-            background-image: url('imagem3.jpg');
+        a:hover {
+            color: white;
         }
 
         /* Estilo do alerta */
         .alert-box {
             position: fixed;
-            top: 20%;
+            top:10%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #4682B4;
-            padding: 20px;
+            background-color: black;
+            padding: 80px;
+            padding-bottom: 90px;
             border-radius: 15px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
             font-family: 'Open Sans', sans-serif;
-            text-align: center;
+            text-align: left;            
             width: 80%;
-            max-width: 400px;
+            max-width: 800px;
             font-size: 18px;
-            color: #333;
+            color: white;
             z-index: 1000;
             animation: fadeIn 1s ease-out;
+        }
+
+        .alert-content {
+            display: flex; /* Flexbox para alinhamento horizontal */
+            align-items: center; /* Alinha a imagem e o texto verticalmente */
+            gap: 15px; /* Espaço entre a imagem e o texto */
+        }
+
+        .alert-img {
+            max-width: 30%; 
+            height: auto;
+            border-radius: 10px;
+        }
+        .alert-text {
+            display: flex;
+            text-align: center;
+            flex-direction: column; /* Alinha o texto em coluna */
+            gap: 10px; /* Espaço entre as linhas de texto */
+            flex: 1; /* Faz o texto ocupar o espaço restante */
+        }
+
+        .alert-content p {
+            flex: 1; /* Faz o texto ocupar o espaço restante */
+            margin: 0; /* Remove margens padrão do texto */
         }
 
         .alert-box button {
@@ -132,11 +148,9 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -146,9 +160,15 @@
 
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
-        <h2>Bem-vindo ao Delivery!</h2>
-        <p>Estamos muito felizes de te ver aqui! Aproveite as nossas Ofertas!</p>
-        <button id="close-alert">Fechar</button>
+        <div class="alert-content">
+            <img src="dist/images/about-img.png" class="alert-img">
+            <div class="alert-text">
+                <h2>Bem-vindo ao Delivery!</h2>
+                <p>Estamos muito felizes de te ver</p>
+                <p> aqui! Aproveite as nossas Ofertas!</p>
+                <button id="close-alert">Fechar</button>
+            </div>
+        </div>
     </div>
 
     <h1>Site</h1>
