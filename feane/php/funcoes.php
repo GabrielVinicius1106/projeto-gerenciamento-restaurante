@@ -1,5 +1,22 @@
 <?php 
 
+function novaMesa(){
+$id = $_GET["id"];    
+
+// Importa os arquivos que contém funções de tabelas e de conexão com o banco
+include("conection.php");
+include("funcoesPedido.php");
+
+$lista = '';
+
+    $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+    header("location: ../mesas.php"); 
+return $lista;    
+
+}
+
 function carregaCapacidade($id){
     $lista = '';
 
@@ -331,6 +348,40 @@ function carregarItem($id){
 
     return $lista;
 }
+
+function carregaPedidos(){
+
+    $lista = '';
+
+    include('conection.php');
+
+    $sql = "SELECT * 
+            FROM pedido;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        
+        //Carrega as linhas do cardápio
+        foreach($result as $campo){
+
+            $lista .= '<tr>'
+                        .'<td>'.$campo['id_pedido'].'</td>'   
+                        .'<td>'.$campo['status_pedido'].'</td>'
+                        .'<td>'.$campo['quantidade_pessoas'].'</td>'
+                        .'<td>'.$campo['data_pedido'].'</td>'
+                        .'<td>'.$campo['mesa_id_mesa'].'</td>'
+                        .'<td><a href="solicitarItens.php?id='.$campo['id_pedido'].'"><input type="button" value="Solicitar Itens"></a></td>'
+                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
+                    .'</tr>';
+        }
+    }
+
+    return $lista;
+}
+
+
 
 
 ?>
