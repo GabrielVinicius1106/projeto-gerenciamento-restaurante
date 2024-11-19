@@ -3,7 +3,7 @@
 
 body {
   animation: animarGradiente 7s infinite alternate;
-  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(52, 62, 80), rgb(49, 68, 107));
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
   background-size: 300% 100%;
   font-family: "Open Sans", sans-serif;
   color: #fff;
@@ -33,10 +33,6 @@ body {
   align-items: center;
   background-color: #fff;
   color: #000;
-  background-image: url('../images/fundo.jpg');
-  background-size: cover;  /* Faz a imagem cobrir toda a área do container */
-  background-position: center; /* Alinha a imagem ao centro */
-  background-repeat: no-repeat; /* Evita a repetição da imagem */
 }
 
 .container1 {
