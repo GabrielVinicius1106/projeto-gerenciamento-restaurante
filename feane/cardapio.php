@@ -29,7 +29,7 @@
             <?php echo carregaCardapio(); ?>
         </tbody>    
     </table>
+    
     <a href="adicionarItem.php"><input type="button" value="Adicionar Item"></a>
-
 </body>
 </html>

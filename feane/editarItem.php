@@ -34,9 +34,7 @@ include('php/funcoes.php');
                 <?php echo carregaCategoria($_GET['id']);?>
               </span>
           </p>
-          <p>Disponível: 
-                <?php echo carregaDisponibilidade($_GET['id']);?>
-          </p>
+          <p>Disponível: <?php echo carregaDisponibilidade($_GET['id']);?> </p>
           <input type="submit" value="Salvar">
           <a href="confirmarExclusaoItem.php?id=<?php echo $_GET['id'];?>"><input type="button" value="Excluir"></a>
           <a href="cardapio.php"><input type="button" value="Cancelar"></a>

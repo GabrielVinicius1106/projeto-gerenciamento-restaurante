@@ -7,6 +7,8 @@ body {
   background-size: 300% 100%;
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  margin-bottom: 50px;
+
 }
 
   @keyframes animarGradiente {
@@ -27,9 +29,11 @@ body {
   max-width: 500px;
   margin: auto;
   padding: 10px;
+  padding-bottom: 10px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 8px;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   background-color: #fff;
   color: #000;
@@ -104,14 +108,31 @@ th, td {
 
 
 p{
+  background-color: #ccc;
+  margin: 10px;
   text-align: center;
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  border-radius: 8px; /* Bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 form{
   text-align: center;
+}
+input{
+  margin: 5px;
+  width: 100%; /* Preenche toda a largura disponível */
+  padding: 10px 15px; /* Espaçamento interno */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  border: 2px solid #ccc; /* Borda padrão */
+  border-radius: 8px; /* Bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 
