@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 </head>
 <body>
-    
+    <a href="pedidos.php">Voltar</a>
     <h1>Solicitar Itens</h1>
 
     <form action="php/crudPedidoItem.php?operacao=insert&id=<?php echo $_GET['id'] ?>" method="POST">
@@ -22,11 +22,12 @@
                 <?php echo carregaItens();?>
             </select>
         </p>
-        <p>Quantidade: <input type="number" name="nQuantidade" required></p>
+        <p>Quantidade: <input type="number" name="nQuantidade" min="1" required></p>
         <p>Observações: <input type="text" name="nObs"></p>
 
         <input type="submit" value="Confirmar">
         <input type="reset" value="Limpar"> 
+        <a href="pedidos.php"><input type="button" value="Cancelar"></a>
     </form>
 </body>
 </html>
