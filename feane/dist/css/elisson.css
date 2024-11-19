@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
-
 body {
   animation: animarGradiente 7s infinite alternate;
   background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
@@ -8,8 +7,23 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   margin-bottom: 50px;
-
 }
+
+#bodytelainicial {
+  margin: 0;
+  margin-bottom: 50px;
+  height: 100vh;
+  background-color: #79aeff;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  animation: animarGradiente 7s infinite alternate;
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
+  background-size: 300% 100%;
+}
+
+
 
   @keyframes animarGradiente {
     0% {
