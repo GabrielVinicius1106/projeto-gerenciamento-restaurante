@@ -9,12 +9,10 @@ $quantidadeItem = $_POST['nQuantidade'];
 $obs = $_POST['nObs'];
 
 if ($quantidadeItem <= 0){
-    header('location: ../pedidos.php');
+    header('location: ../solicitarItens.php');
     die();
 }
 
-// var_dump("Id Pedido: ".$idPedido,"Id Item: ".$idItem, $quantidadeItem, $obs);
-// die();
 
 $list = '';
 

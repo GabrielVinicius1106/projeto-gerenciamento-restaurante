@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
-
+    
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
-
+    
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
     <?php
         include("php/funcoes.php");
-    ?>
+        ?>
     <a href="telainicialAdmin.php">Voltar</a>
+    <a href="adicionarItem.php"><input type="button" value="Adicionar Item"></a>
     <h1>Cardápio</h1>
     <table id="tableCardapio">
         <thead>
@@ -30,6 +31,5 @@
         </tbody>    
     </table>
     
-    <a href="adicionarItem.php"><input id="botaoEdicao" type="button" value="Adicionar Item"></a>
 </body>
 </html>
