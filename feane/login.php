@@ -31,8 +31,7 @@
                 </form>
             </div>
             <div class="video-container">
-                <video autoplay muted loop>
-                    <source src="seu-video.mp4" type="video/mp4">
+                <video autoplay muted loop src="dist/videos/videoPizzaria.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
