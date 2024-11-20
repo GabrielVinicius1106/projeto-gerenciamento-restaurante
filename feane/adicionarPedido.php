@@ -20,29 +20,29 @@ include("php/funcoesPedido.php");
 <body>
     <a href="pedidos.php">Voltar</a>
     <h1>Criar Pedido</h1>
-    <form action="php/crudPedido.php?operacao=insert" method="POST" required>
+    <form action="php/crudPedido.php?operacao=insert" method="POST">
       <p>Status do Pedido: 
-        <select name="nStatusPedido" id="">
+        <select name="nStatusPedido" id="" required>
           <option value="">Selecione</option>
           <option value="Em andamento">Em andamento</option>
           <option value="Fechado">Fechado</option>
         </select>
       </p>
-      <p>Quantidade de Pessoas: <input type="number" min="1" step="1" name="nQuantidadePessoas" required></p>
-      <p>Data do Pedido: <input name="nDataPedido" type="date"></p>
+      <p>Data do Pedido: <input name="nDataPedido" type="date" required></p>
       <p>ID da Mesa 
-        <select name="nIdMesa" id="">
+        <select name="nIdMesa" id="idMesa" required>
           <?php 
-            echo carregaMesas();
+             echo carregaMesas();
           ?>
         </select>
       </p>
+      <p>Quantidade de Pessoas: <input type="number" min="1" step="1" max="" name="nQuantidadePessoas" required></p>
       <input type="submit" value="Criar">
       <input type="reset" value="Limpar">
       <a href="pedidos.php"><input type="button" value="Cancelar"></a>
     </form>
 
-    <!-- <script src="dist/js/jquery-3.4.1.min.js"></script>
+    <script src="dist/js/jquery-3.4.1.min.js"></script>
     
 <script>
   //== Inicialização
@@ -50,18 +50,19 @@ include("php/funcoesPedido.php");
 
     //Lista dinâmica com Ajax
 
-    $('#tipoItem').on('change',function(){
-			//Pega o valor selecionado na lista 1
-      var tipoItem  = $('#tipoItem').val();
+    $('#idMesa').on('change',function(){
+			
+      //Pega o valor selecionado na lista de Mesas
+      var idMesa  = $('#idMesa').val();
       
-      //Prepara a lista 2 filtrada
-      var txtCategoria = '';
+      //Inicializa a variável para máximo de pessoas
+      var maxPessoas = 0;
 
-      //Valida se teve seleção na lista 1
-      if(tipoItem != "" && tipoItem != "0"){
+      //Valida se teve seleção na lista de Mesas
+      if(idMesa != "" && idMesa != "0"){
         
-        //Vai no PHP consultar dados para a lista 2
-        $.getJSON('php/carregaCategoriaItem.php?tipoItem='+tipoItem,
+        //Vai no PHP consultar capacidade da mesa
+        $.getJSON('php/carregaCapacidadeMesa.php?idMesa='+idMesa,
         function (dados) {  
           
           //Carrega a primeira option
@@ -88,7 +89,7 @@ include("php/funcoesPedido.php");
           }
         })                
       }else{
-        //Sem seleção na lista 1 não consulta
+        // Sem seleção na lista 1 não consulta
         txtCategoria = '';
         $('#categoriaTipo').html(txtCategoria).show();
       }		
@@ -96,7 +97,7 @@ include("php/funcoesPedido.php");
   
   });
 
-</script> -->
+</script>
 
 </body>
 </html>

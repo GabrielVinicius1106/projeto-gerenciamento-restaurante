@@ -14,8 +14,9 @@
     <?php
         include("php/funcoes.php");
         include("php/funcoesPedido.php");
-    ?>
+        ?>
     <a href="telainicialAdmin.php">Voltar</a>
+    <a href="adicionarPedido.php"><input type="button" value="Criar Pedido"></a>
     <h1>Pedidos em andamento</h1>
     <table id="tableCardapio">
         <thead>
@@ -50,7 +51,6 @@
         </tbody>
     </table>
 
-    <a href="adicionarPedido.php"><input type="button" value="Criar Pedido"></a>
 
 </body>
 </html>
