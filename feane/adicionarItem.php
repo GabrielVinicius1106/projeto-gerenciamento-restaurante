@@ -14,6 +14,7 @@ include('php/funcoes.php');
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="dist/css/elisson.css">
+    <link rel="stylesheet"  href="dist/css/cssBotao.css" />
 
 </head>
 <body>

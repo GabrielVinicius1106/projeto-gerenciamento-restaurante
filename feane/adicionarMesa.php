@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adiocionar Mesa | Mesa</title>
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    <link rel="stylesheet"  href="dist/css/cssBotao.css" />
     
     <?php
     include("php/conection.php");
@@ -20,7 +21,7 @@
     <a href="mesas.php">Voltar</a>
     <h1>Adiocionar Mesa <?php //echo $id1 ?></h1>
         <div class="container" id="additem">
-        <p style="color:white;">Capacidade da mesa:  <input type="number" name="nCap">
+        <p >Capacidade da mesa:  <input type="number" name="nCap">
             <p><input type="submit" value="Salvar" ></p>
                             
         </div>
