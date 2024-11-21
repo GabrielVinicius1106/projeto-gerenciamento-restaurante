@@ -52,6 +52,7 @@ function carregaMesa(){
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
                         .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
                         .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
+                        .'<td><a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a></td>'
                     .'</tr>';
         }
     }

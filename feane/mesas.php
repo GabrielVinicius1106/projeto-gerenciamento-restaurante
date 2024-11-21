@@ -26,16 +26,17 @@
          <th>Ocupado</th>
          <th>Reservar</th>
          <th>Editar</th>
+         <th>Pedidos</th>
       </tr>
       <?php 
          echo carregaMesa();
       ?>
       
    </table>
-   <a href="adicionarMesa.php"><input type="button" value="Adicionar Item"></a>
+   <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
 
 
-   <<div id="myModal" class="modal">
+   <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <form id="modalForm" action="" method="POST">
