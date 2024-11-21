@@ -107,14 +107,14 @@
             width: 80%;
             max-width: 400px;
             font-size: 18px;
-            color: #333;
+            color: white;
             z-index: 1000;
             animation: fadeIn 1s ease-out;
         }
 
         .alert-box button {
-            background-color: #333;
-            color: white;
+            background-color: white;
+            color: black;
             border: none;
             padding: 10px 20px;
             margin-top: 15px;
