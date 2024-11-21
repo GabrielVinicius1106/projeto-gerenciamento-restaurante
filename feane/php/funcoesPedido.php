@@ -110,4 +110,92 @@ function carregaMesas(){
     return $lista;
 }
 
+function carregaPedido($idMesa){
+    
+    include('conection.php');
+
+    $list = '';
+
+    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        
+        foreach ($result as $campo){
+            $list .= '<td>'.$campo['id_pedido'].'</td>'
+                    .'<td>'.$campo['status_pedido'].'</td>'
+                    .'<td>'.$campo['quantidade_pessoas'].'</td>'
+                    .'<td>'.$campo['data_pedido'].'</td>'
+                    .'<td>'.$campo['mesa_id_mesa'].'</td>';
+        }
+    } else { 
+        header('location: pedidoNaoEncontrado.php');
+    }
+
+    return $list;
+}
+
+function carregaItensPedido($idPedido){
+
+    $list = '';
+
+    include('conection.php');
+
+    $sql = "SELECT * FROM pedido_item WHERE pedido_id_pedido = $idPedido;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        
+        $list = '<h1>ITENS</h1>
+             <tr>
+                <th>ID do Pedido_Item</th>
+                <th>Quantidade de Itens</th>
+                <th>Observação</th>
+                <th>ID do Pedido</th>
+                <th>ID do Item</th>
+             </tr>';
+
+        foreach ($result as $campo){
+            
+            $list .= '<tr>'
+                    .'<td>ID do Pedido-Item:'.$campo['id_pedido_item'].'</td>'
+                    .'<td>Quantidade de Itens:'.$campo['quantidade_itens'].'</td>'
+                    .'<td>Observação:'.$campo['obs_item'].'</td>'
+                    .'<td>ID do Pedido:'.$campo['pedido_id_pedido'].'</td>'
+                    .'<td>ID do Item:'.$campo['item_id_item'].'</td>'
+                    .'</tr>';
+        }
+    }
+
+    return $list;
+
+
+}
+
+function getIdPedido($idMesa){
+
+    include('conection.php');
+
+    $idPedido = 0;
+
+    $sql = "SELECT id_pedido FROM pedido WHERE mesa_id_mesa = $idMesa";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+
+        foreach($result as $campo){
+            $idPedido = $campo['id_pedido'];
+        }
+    }
+
+    return $idPedido;
+
+}
+
 ?>
