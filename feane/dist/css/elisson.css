@@ -122,7 +122,7 @@ th, td {
 
 
 p{
-  background-color: #ccc;
+  background-color: rgb(255, 255, 255);
   margin: 10px;
   text-align: center;
   display: flex; 
@@ -142,10 +142,9 @@ input{
   padding: 10px 15px; /* Espaçamento interno */
   font-size: 16px;
   font-family: 'Arial', sans-serif;
-  border: 2px solid #ccc; /* Borda padrão */
+  border: none;
   border-radius: 8px; /* Bordas arredondadas */
   outline: none; /* Remove o contorno padrão ao focar */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 

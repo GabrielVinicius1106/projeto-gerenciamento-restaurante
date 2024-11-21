@@ -230,7 +230,7 @@ function carregaDisponibilidade($id_item){
         foreach ($result as $campo){
 
             if ($campo['disponibilidade'] == 1){
-                $list = '<input type="checkbox" name="nDisponibilidade" checked>';
+                $list = '<input id="CheckBoxdisponibilidade" type="checkbox" name="nDisponibilidade" checked>';
             } else if ($campo['disponibilidade'] == 0){
                 $list = '<input type="checkbox" name="nDisponibilidade">';
             }

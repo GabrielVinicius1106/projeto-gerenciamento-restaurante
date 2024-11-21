@@ -7,30 +7,36 @@
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/elisson.css" rel="stylesheet" />
+    <link href="dist/css/telaLogin.css" rel="stylesheet" />
 </head>
 <body id="bodyLogin">
 
 <h1>Site</h1>
 
     <div class="container1" id="containerLogin">
-        <div class="info-box">
-            <form id="form-login" action="php/validaLogin.php" method="POST" >
+        <div class="login-container">
+            <div class="info-box">
+                <form id="form-login" action="php/validaLogin.php" method="POST" >
 
-                <p>
-                    <h2>Login</h2>
-                    <input type="text" placeholder="Usuário" name="nUsuario" required />
-                </p>
-                <p>
-                    <input type="password" placeholder="Senha" name="nSenha" required />
-                </p>
-                <p> 
-                    <input type="submit" value="Entrar">
-                </p>
-            </form>
+                    <p>
+                        <h2>Login</h2>
+                        <input type="text" placeholder="Usuário" name="nUsuario" required />
+                    </p>
+                    <p>
+                        <input type="password" placeholder="Senha" name="nSenha" required />
+                    </p>
+                    <p> 
+                        <input type="submit" value="Entrar">
+                    </p>
+                </form>
+            </div>
+            <div class="video-container">
+                <video autoplay muted loop src="dist/videos/videoPizzaria.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-    </div>
-    
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
