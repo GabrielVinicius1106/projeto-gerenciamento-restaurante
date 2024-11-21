@@ -1,0 +1,26 @@
+/* Adicionar no seu arquivo CSS */
+.container input[type="text"], 
+.container input[type="number"], 
+.container select {
+    border: 2px solid #007BFF; /* Borda azul */
+    border-radius: 5px;       /* Bordas arredondadas */
+    padding: 8px;             /* Espaço interno */
+    font-size: 1rem;          /* Tamanho da fonte */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 10px;      /* Espaço entre elementos */
+    transition: border-color 0.3s ease; /* Transição suave */
+}
+
+/* Mudança de cor ao focar */
+.container input[type="text"]:focus, 
+.container input[type="number"]:focus, 
+.container select:focus {
+    border-color: #0056b3; /* Cor da borda ao focar */
+    outline: none;         /* Remove o contorno padrão */
+}
+
+/* Apenas para o input de preço */
+.container input[type="number"] {
+    text-align: right; /* Alinha o texto à direita */
+    background-color: #f9f9f9; /* Fundo levemente cinza */
+}
