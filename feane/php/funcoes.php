@@ -2,7 +2,11 @@
 
 function novaMesa(){
 $id = $_GET["id"];    
+
+// Importa os arquivos que contém funções de tabelas e de conexão com o banco
 include("conection.php");
+include("funcoesPedido.php");
+
 $lista = '';
 
     $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
@@ -42,20 +46,19 @@ function carregaMesa(){
     mysqli_close($conn);
 
     if(mysqli_num_rows($result) > 0){
-        //carrega as linhas
         foreach($result as $campo){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td>'.$campo['ocupacao']. '|' .$campo['capacidade'].'</td>'
-                        .'<td><a href ="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></td>'
-                        .'<td><input type="button" id="openModalBtn" value="Editar"></td>
-                        '
+                        .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
+                        .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
+                        .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
                     .'</tr>';
         }
     }
 
     return $lista;
 }
+
 
 function carregaCardapio(){
     
@@ -227,7 +230,7 @@ function carregaDisponibilidade($id_item){
         foreach ($result as $campo){
 
             if ($campo['disponibilidade'] == 1){
-                $list = '<input type="checkbox" name="nDisponibilidade" checked>';
+                $list = '<input id="CheckBoxdisponibilidade" type="checkbox" name="nDisponibilidade" checked>';
             } else if ($campo['disponibilidade'] == 0){
                 $list = '<input type="checkbox" name="nDisponibilidade">';
             }
@@ -345,6 +348,7 @@ function carregarItem($id){
 
     return $lista;
 }
+
 
 
 ?>

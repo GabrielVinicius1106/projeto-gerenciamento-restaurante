@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
-
 body {
   animation: animarGradiente 7s infinite alternate;
-  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(52, 62, 80), rgb(49, 68, 107));
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
   background-size: 300% 100%;
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  margin-bottom: 50px;
 }
+
+#bodytelainicial {
+  margin: 0;
+  margin-bottom: 50px;
+  height: 100vh;
+  background-color: #79aeff;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  animation: animarGradiente 7s infinite alternate;
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
+  background-size: 300% 100%;
+}
+
+
 
   @keyframes animarGradiente {
     0% {
@@ -27,16 +43,21 @@ body {
   max-width: 500px;
   margin: auto;
   padding: 10px;
+  padding-bottom: 10px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 8px;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   background-color: #fff;
   color: #000;
+<<<<<<< HEAD
   background-image: url('../images/azul.jpg');
   background-size: cover;  /* Faz a imagem cobrir toda a área do container */
   background-position: center; /* Alinha a imagem ao centro */
   background-repeat: no-repeat; /* Evita a repetição da imagem */
+=======
+>>>>>>> fea4c8ebc5aea3cd4829b6a3f2ad0f371ef651d4
 }
 
 .container1 {
@@ -108,55 +129,35 @@ th, td {
 
 
 p{
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
   text-align: center;
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  border-radius: 8px; /* Bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 form{
   text-align: center;
+}
+input{
+  margin: 5px;
+  width: 100%; /* Preenche toda a largura disponível */
+  padding: 10px 15px; /* Espaçamento interno */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 8px; /* Bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 
 
 /*_______________________________________________*/
 
-
-/* Estilos do Footer */
-footer {
-  background-color: #0a0f1d; /* Azul escuro puxando para o preto */
-  color: #f1f1f1;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-content p {
-  margin: 0 0 10px;
-}
-
-.social-links,
-.footer-nav {
-  margin: 10px 0;
-}
-
-.social-links a,
-.footer-nav a {
-  color: #f1f1f1;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover,
-.footer-nav a:hover {
-  color: #1e90ff; /* Azul claro para o efeito hover */
-}
 
 /*_______________________________________________*/
