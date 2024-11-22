@@ -13,8 +13,8 @@
 
 <h1>Site</h1>
 
-    <div class="container1" id="containerLogin">
-        <div class="login-container">
+    <div class="container1" id="containerLogin">   
+        <!-- <div class="login-container" > -->
             <div class="info-box">
                 <form id="form-login" action="php/validaLogin.php" method="POST" >
 
@@ -34,7 +34,7 @@
                 <video autoplay muted loop src="dist/videos/videoPizzaria.mp4" type="video/mp4">
                 </video>
             </div>
-        </div>
+        <!-- </div>     -->
 </div>
 
     <script src="script.js"></script>

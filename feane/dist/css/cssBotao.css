@@ -25,7 +25,7 @@ input[type="submit"]:active, input[type="button"]:active {
 .container input[type="text"], 
 .container input[type="number"], 
 .container select {
-    border: 2px solid #007BFF; 
+    border: 2px solid #ff1100; 
     border-radius: 15px 50px 30px;       
     padding: 8px;             
     font-size: 1rem;          
@@ -38,7 +38,7 @@ input[type="submit"]:active, input[type="button"]:active {
 .container input[type="text"]:focus, 
 .container input[type="number"]:focus, 
 .container select:focus {
-    border-color: #0056b3; 
+    border-color: #000000; 
     outline: none;         
 }
 
