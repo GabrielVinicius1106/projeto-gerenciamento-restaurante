@@ -23,7 +23,7 @@
     <h1>Mesa <?php echo $id1 ?></h1>
         <div class="container" id="additem">
         <p >Quantidade de pessoas :  <input type="number" name="nInput">
-            <p><input type="submit" value="Salvar" ></p>                
+            <p><input type="submit" value="Salvar"></p>                
         </div>
 </form>
 
