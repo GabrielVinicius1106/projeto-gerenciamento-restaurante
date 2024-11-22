@@ -51,6 +51,13 @@ body {
   align-items: center;
   background-color: #fff;
   color: #000;
+<<<<<<< HEAD
+  background-image: url('../images/azul.jpg');
+  background-size: cover;  /* Faz a imagem cobrir toda a área do container */
+  background-position: center; /* Alinha a imagem ao centro */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+=======
+>>>>>>> fea4c8ebc5aea3cd4829b6a3f2ad0f371ef651d4
 }
 
 .container1 {
