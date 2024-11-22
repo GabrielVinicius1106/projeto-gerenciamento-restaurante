@@ -124,14 +124,14 @@ function carregaPedido($idMesa){
     if (mysqli_num_rows($result) > 0) {
         
         foreach ($result as $campo){
-            $list .= '<td>'.$campo['id_pedido'].'</td>'
+            $list .= '<tr>'
+                    .'<td>'.$campo['id_pedido'].'</td>'
                     .'<td>'.$campo['status_pedido'].'</td>'
                     .'<td>'.$campo['quantidade_pessoas'].'</td>'
                     .'<td>'.$campo['data_pedido'].'</td>'
-                    .'<td>'.$campo['mesa_id_mesa'].'</td>';
+                    .'<td>'.$campo['mesa_id_mesa'].'</td>'
+                    .'</tr>';
         }
-    } else { 
-        header('location: pedidoNaoEncontrado.php');
     }
 
     return $list;
@@ -196,6 +196,41 @@ function getIdPedido($idMesa){
 
     return $idPedido;
 
+}
+
+function criarPedido($idMesa, $ocp){
+
+    include('conection.php');
+
+    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) == 0){
+
+        include('conection.php');
+
+        $sql = "INSERT INTO pedido 
+            (`status_pedido`, `quantidade_pessoas`, `data_pedido`, `mesa_id_mesa`) 
+            VALUES ( 
+                'Em andamento', 
+                '".$ocp."', 
+                '".date('Y-m-d')."', 
+                '".$idMesa."');";
+
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+    }
+
+    if ($ocp == 0){
+        include('conection.php');
+
+        $sql = "DELETE FROM pedido WHERE mesa_id_mesa = $idMesa;";
+
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+    }
 }
 
 ?>
