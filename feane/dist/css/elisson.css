@@ -7,6 +7,7 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   margin-bottom: 50px;
+  width: 98%;
 }
 
 #bodytelainicial {
@@ -51,13 +52,6 @@ body {
   align-items: center;
   background-color: #fff;
   color: #000;
-<<<<<<< HEAD
-  background-image: url('../images/azul.jpg');
-  background-size: cover;  /* Faz a imagem cobrir toda a área do container */
-  background-position: center; /* Alinha a imagem ao centro */
-  background-repeat: no-repeat; /* Evita a repetição da imagem */
-=======
->>>>>>> fea4c8ebc5aea3cd4829b6a3f2ad0f371ef651d4
 }
 
 .container1 {
@@ -154,6 +148,12 @@ input{
   outline: none; /* Remove o contorno padrão ao focar */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
+
+.ajustebotao {
+  width: 50%;
+}
+
+
 
 
 
