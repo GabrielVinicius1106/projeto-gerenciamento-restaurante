@@ -1,20 +1,21 @@
 <?php
-$id = $_GET["id"];
+include('funcoesPedido.php');
+
+$idMesa = $_GET["id"];
 $ocp = $_POST["nInput"];
+
+// var_dump($ocp);
+// die();
+
+if ($ocp >= 0){
+    // Criar/excluir pedido automaticamente ao ocupar/desocupar a mesa
+    criarPedido($idMesa, $ocp);
+}
 
 include("conection.php");
 include("funcoes.php");
 
-$capacidade = carregaCapacidade($id);
-if ($ocp > $capacidade) {
-    // Exibindo a mensagem de alerta e redirecionando para a página correta
-    echo "<script>
-        alert('Ocupação maior que capacidade da mesa!');
-        window.location.href = '../opcoesmesa.php?id=$id';
-    </script>";
-    exit; // Interrompe o script após enviar a resposta
-}
-$sql = "UPDATE mesa SET ocupacao = $ocp WHERE id_mesa = $id;";
+$sql = "UPDATE mesa SET ocupacao = $ocp WHERE id_mesa = $idMesa;";
 $result = mysqli_query($conn,$sql);
 mysqli_close($conn);
 header("location: ../mesas.php");   

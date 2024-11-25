@@ -1,11 +1,11 @@
-!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adiocionar Mesa | Mesa</title>
+    <title>Adicionar Mesa | Mesa</title>
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    <link rel="stylesheet"  href="dist/css/cssBotao.css" />
     
     <?php
     include("php/conection.php");
@@ -18,10 +18,10 @@
 
 <form action="php/salvarNovamesa.php<?php //echo $_GET["id"];?>" method="POST">
     <a href="mesas.php">Voltar</a>
-    <h1>Adiocionar Mesa <?php //echo $id1 ?></h1>
+    <h1>Adicionar Mesa <?php //echo $id1 ?></h1>
         <div class="container" id="additem">
-        <p style="color:white;">Capacidade da mesa:  <input type="number" name="nCap">
-            <p><input type="submit" value="Salvar" ></p>
+        <p >Capacidade da mesa:  <input type="number" name="nCap">
+            <p><input type="submit" value="Salvar"></p>
                             
         </div>
 </form>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive; /* Fonte bonita */
+    font-size: 70px;
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+  
+  } 
+h2{
+  text-align: center;
+  padding-right: 40px;
+  color: #fff;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+::placeholder{
+  color: black;
+}
+form{
+  padding-left: 50px;
+}
+
+body {
+  animation: animarGradiente 7s infinite alternate;
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(241, 131, 111));
+  background-size: 300% 100%;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  margin-bottom: 50px; 
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+@keyframes animarGradiente {
+    0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 5px;
+  }  
+
+  .container1 {
+    display: flex;
+    flex-wrap: wrap; /* Permite ajuste em telas menores */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    gap: 20px; /* Espaço entre o formulário e o vídeo */
+    padding: 10px;
+    border-radius: 10px;
+    width: 65%;
+    margin-top: 50px;
+    background-color: rgba(53, 93, 146, 0.2); /* Branco com 80% de opacidade */
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5),
+                0 6px 20px rgba(0, 0, 0, 0.10);
+
+  }
+  input{
+    margin: 5px;
+    width: 80%; /* Preenche toda a largura disponível */
+    padding: 10px 15px; /* Espaçamento interno */
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão ao focar */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+
+
+.video-container {
+    flex: 2; /* Vídeo ocupa mais espaço */
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Ajusta o vídeo sem distorções */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container1 {
+      flex-direction: column; /* Empilha os elementos */
+      align-items: center;
+  }
+
+  .login-container {
+      max-width: 100%; /* Ocupa toda a largura disponível */
+  }
+
+  .video-container {
+      max-width: 100%;
+  }
+}

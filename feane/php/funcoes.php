@@ -91,6 +91,13 @@ function carregaMesa(){
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
                         .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Reservar"></a></td>'
                         .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
+                        .'<td>';
+
+            if ($campo['ocupacao'] > 0){
+                $lista .= '<a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a>';
+            }
+            
+            $lista .= '</td>'
                     .'</tr>';
         }
     }
@@ -269,7 +276,7 @@ function carregaDisponibilidade($id_item){
         foreach ($result as $campo){
 
             if ($campo['disponibilidade'] == 1){
-                $list = '<input type="checkbox" name="nDisponibilidade" checked>';
+                $list = '<input id="CheckBoxdisponibilidade" type="checkbox" name="nDisponibilidade" checked>';
             } else if ($campo['disponibilidade'] == 0){
                 $list = '<input type="checkbox" name="nDisponibilidade">';
             }
@@ -387,39 +394,6 @@ function carregarItem($id){
 
     return $lista;
 }
-
-function carregaPedidos(){
-
-    $lista = '';
-
-    include('conection.php');
-
-    $sql = "SELECT * 
-            FROM pedido;";
-
-    $result = mysqli_query($conn, $sql);
-    mysqli_close($conn);
-
-    if (mysqli_num_rows($result) > 0){
-        
-        //Carrega as linhas do cardápio
-        foreach($result as $campo){
-
-            $lista .= '<tr>'
-                        .'<td>'.$campo['id_pedido'].'</td>'   
-                        .'<td>'.$campo['status_pedido'].'</td>'
-                        .'<td>'.$campo['quantidade_pessoas'].'</td>'
-                        .'<td>'.$campo['data_pedido'].'</td>'
-                        .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="solicitarItens.php?id='.$campo['id_pedido'].'"><input type="button" value="Solicitar Itens"></a></td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
-                    .'</tr>';
-        }
-    }
-
-    return $lista;
-}
-
 
 
 

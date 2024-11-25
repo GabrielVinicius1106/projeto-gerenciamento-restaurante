@@ -7,6 +7,7 @@
     <title>Opções | Mesa</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    <link rel="stylesheet"  href="dist/css/cssBotao.css" />
     
     <?php
     include("php/conection.php");
@@ -21,8 +22,8 @@
     <a href="mesas.php">Voltar</a>
     <h1>Mesa <?php echo $id1 ?></h1>
         <div class="container" id="additem">
-        <p>Quantidade de pessoas :  <input type="number" name="nInput">
-            <p><input type="submit" value="Salvar" ></p>                
+        <p >Quantidade de pessoas :  <input type="number" name="nInput">
+            <p><input type="submit" value="Salvar"></p>                
         </div>
 </form>
 

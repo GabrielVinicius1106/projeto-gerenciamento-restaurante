@@ -1,6 +1,7 @@
 <?php 
 
 include('php/funcoes.php');
+include("php/funcoesPedido.php");
 
 ?>
 
@@ -10,31 +11,36 @@ include('php/funcoes.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cárdapio | Adicionar Item</title>
+    <title>Pedidos | Criar Pedido</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="dist/css/elisson.css">
+    <link rel="stylesheet"  href="dist/css/cssBotao.css" />
 
 </head>
 <body>
-    <a href="cardapio.php">Voltar</a>
-    <h1>Adicionar Item</h1>
-    <form action="php/crudItem.php?operacao=insert" method="POST" required>
-        <p>Nome: <input type="text" name="nItem" required></p>
-        <p>Preço: <input type="number" min="0" step=".01" name="nValor" required></p>
-        <p>Tipo de Item: 
-            <select name="nTipo" id="tipoItem" required>
-                <?php echo carregaTiposItem();?>
-            </select>
-        <p>Categoria: 
-            <span id="categoriaTipo">
-            </span>
-        </p>
-        <p>Disponível:     
-            <input type="checkbox" name="nDisponibilidade">
-        </p>
-        <input type="submit" value="Adicionar">
-        <input type="reset" value="Limpar">
+    <a href="pedidos.php">Voltar</a>
+    <h1>Criar Pedido</h1>
+    <form action="php/crudPedido.php?operacao=insert" method="POST">
+      <p>Status do Pedido: 
+        <select name="nStatusPedido" id="" required>
+          <option value="">Selecione</option>
+          <option value="Em andamento">Em andamento</option>
+          <option value="Fechado">Fechado</option>
+        </select>
+      </p>
+      <p>Data do Pedido: <input name="nDataPedido" type="date" required></p>
+      <p>ID da Mesa 
+        <select name="nIdMesa" id="idMesa" required>
+          <?php 
+             echo carregaMesas();
+          ?>
+        </select>
+      </p>
+      <p>Quantidade de Pessoas: <input type="number" min="1" step="1" max="" name="nQuantidadePessoas" required></p>
+      <input type="submit" value="Criar">
+      <input type="reset" value="Limpar">
+      <a href="pedidos.php"><input type="button" value="Cancelar"></a>
     </form>
 
     <script src="dist/js/jquery-3.4.1.min.js"></script>
@@ -45,18 +51,19 @@ include('php/funcoes.php');
 
     //Lista dinâmica com Ajax
 
-    $('#tipoItem').on('change',function(){
-			//Pega o valor selecionado na lista 1
-      var tipoItem  = $('#tipoItem').val();
+    $('#idMesa').on('change',function(){
+			
+      //Pega o valor selecionado na lista de Mesas
+      var idMesa  = $('#idMesa').val();
       
-      //Prepara a lista 2 filtrada
-      var txtCategoria = '';
+      //Inicializa a variável para máximo de pessoas
+      var maxPessoas = 0;
 
-      //Valida se teve seleção na lista 1
-      if(tipoItem != "" && tipoItem != "0"){
+      //Valida se teve seleção na lista de Mesas
+      if(idMesa != "" && idMesa != "0"){
         
-        //Vai no PHP consultar dados para a lista 2
-        $.getJSON('php/carregaCategoriaItem.php?tipoItem='+tipoItem,
+        //Vai no PHP consultar capacidade da mesa
+        $.getJSON('php/carregaCapacidadeMesa.php?idMesa='+idMesa,
         function (dados) {  
           
           //Carrega a primeira option
@@ -83,7 +90,7 @@ include('php/funcoes.php');
           }
         })                
       }else{
-        //Sem seleção na lista 1 não consulta
+        // Sem seleção na lista 1 não consulta
         txtCategoria = '';
         $('#categoriaTipo').html(txtCategoria).show();
       }		

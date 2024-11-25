@@ -1,0 +1,50 @@
+input[type="submit"], input[type="button"] {
+  background: linear-gradient(45deg, rgb(33, 49, 65), rgb(122, 138, 165));
+  color: white;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px 30px 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(252, 252, 252, 0.1);
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+  background: linear-gradient(45deg, rgb(122, 138, 165), rgb(33, 49, 65));
+  box-shadow: 0px 6px 16px rgba(255, 252, 252, 0.993);
+  transform: translateY(-3px);
+}
+
+input[type="submit"]:active, input[type="button"]:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 6px rgb(255, 245, 245);
+}
+
+.container input[type="text"], 
+.container input[type="number"], 
+.container select {
+    border-radius: 15px 50px 30px;       
+    padding: 8px;             
+    font-size: 1rem;          
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 10px;     
+    transition: border-color 0.3s ease; 
+    text-align: center;
+}
+
+
+.container input[type="text"]:focus, 
+.container input[type="number"]:focus, 
+.container select:focus {
+    border-color: #000000; 
+    outline: none;         
+}
+
+.container input[type="number"] {
+    text-align: right; 
+    background-color: #f9f9f9; 
+}
+
+
