@@ -1,19 +1,58 @@
 <?php 
 
-function novaMesa(){
-$id = $_GET["id"];    
+function carregaUsuario() {
+    $lista = '';
 
-// Importa os arquivos que contém funções de tabelas e de conexão com o banco
-include("conection.php");
-include("funcoesPedido.php");
+    include("conection.php");
 
-$lista = '';
-
-    $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
-    $result = mysqli_query($conn,$sql);
+    $sql = "SELECT * FROM usuario;";
+    $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    header("location: ../mesas.php"); 
-return $lista;    
+
+    if (mysqli_num_rows($result) > 0) {
+        foreach ($result as $campo) {
+            // Verifica o tipo de usuário e define o texto correspondente
+            $tipoUsuario = '';
+            switch ($campo['tipo_usuario_id_tipo_usuario']) {
+                case 1:
+                    $tipoUsuario = 'Admin';
+                    break;
+                case 2:
+                    $tipoUsuario = 'Garçom';
+                    break;
+                default:
+                    $tipoUsuario = 'Desconhecido';
+            }
+
+            $lista .= '<tr>'
+                        . '<td>' . htmlspecialchars($campo['id_usuario']) . '</td>'
+                        . '<td>' . htmlspecialchars($campo['dados_pessoais']) . '</td>'
+                        . '<td>' . htmlspecialchars($tipoUsuario) . '</td>'
+                        . '<td>' . htmlspecialchars($campo['login']) . '</td>'
+                    . '</tr>';
+        }
+    }
+
+    return $lista;
+}
+
+
+
+
+function novaMesa(){
+    $id = $_GET["id"];    
+
+    // Importa os arquivos que contém funções de tabelas e de conexão com o banco
+    include("conection.php");
+    include("funcoesPedido.php");
+
+    $lista = '';
+
+        $sql = "UPDATE mesa SET id_mesa = id_mesa + 1 WHERE id_mesa = $id;";
+        $result = mysqli_query($conn,$sql);
+        mysqli_close($conn);
+        header("location: ../mesas.php"); 
+    return $lista;    
 
 }
 
@@ -50,7 +89,7 @@ function carregaMesa(){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
-                        .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
+                        .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Reservar"></a></td>'
                         .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
                     .'</tr>';
         }

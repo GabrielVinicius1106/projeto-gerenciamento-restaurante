@@ -188,7 +188,7 @@
                     <button id="btn4" class="btn btn-large">Caixa</button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large">Usuários</button>
+                    <button id="btn5" class="btn btn-large"><a href="usuarios.php">Usuários</button>
                 </div>
             </div>
         </div>

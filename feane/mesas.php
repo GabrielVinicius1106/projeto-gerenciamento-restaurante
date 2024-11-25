@@ -58,6 +58,7 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
+    <a href="adicionarMesa.php"><input type="button" value="Adicionar Nova Mesa"></a>
     <table id="tableCardapio"> 
       <tr>
          <th>Nr Mesa</th>
@@ -70,10 +71,11 @@
       ?>
       
    </table>
-   <a href="adicionarMesa.php"><input type="button" value="Adicionar Item"></a>
+   
 
 
-   <<div id="myModal" class="modal">
+   
+<div id="myModal" class="modal">  <!-- SCRIPT PARA MODAL EDITAR -->
     <div class="modal-content">
         <span class="close">&times;</span>
         <form id="modalForm" action="" method="POST">
@@ -82,6 +84,19 @@
             <p>Capacidade: <input type="number" name="nOcp" required></p>
             <p><input type="submit" value="Salvar"></p>
             <button type="button" id="deleteBtn">Excluir</button>
+        </form> 
+    </div>
+</div>
+
+<div id="myModalreserva" class="modal">  <!-- SCRIPT PARA MODAL RESERVAR -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="modalForm" action="" method="POST">
+            <a href="mesas.php">Voltar</a>
+            <h1>Mesa <span id="mesaId"></span></h1>
+            <p>Capacidade: <input type="number" name="nOcp" required></p>
+            <p><input type="submit" value="Salvar"></p>
+            
         </form>
     </div>
 </div>
@@ -125,5 +140,8 @@ deleteBtn.onclick = function () {
 };
 
    </script>
+
+
+    
 </body>
 </html>
