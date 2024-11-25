@@ -15,21 +15,21 @@
         include("php/funcoes.php");
         ?>
     <a href="telainicialAdmin.php">Voltar</a>
-    <a href="adicionarItem.php"><input type="button" value="Adicionar Item"></a>
     <h1>Cardápio</h1>
     <table id="tableCardapio">
         <thead>
-        <tr>
-            <th>Descrição</th>
-            <th>Valor Unitário</th>
-            <th>Disponibilidade</th>
-            <th>Editar</th>
-        </tr>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor Unitário</th>
+                <th>Disponibilidade</th>
+                <th>Editar</th>
+            </tr>
         </thead>
         <tbody>
             <?php echo carregaCardapio(); ?>
         </tbody>    
     </table>
     
+    <a href="adicionarItem.php"><input class="ajustebotao" type="button" value="Adicionar Item"></a>
 </body>
 </html>
