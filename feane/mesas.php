@@ -34,8 +34,6 @@
       ?>
       
    </table>
-   <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
-
 
    <div id="myModal" class="modal">
     <div class="modal-content">
