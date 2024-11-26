@@ -3,6 +3,7 @@
     include('php/funcoesPedido.php');
 
     $idMesa = $_GET['idMesa'];
+    $idPedido = $_GET['idPedido'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +18,7 @@
     <a href="pedidoMesa.php?id=<?php echo $idMesa; ?>">Voltar</a>
     <h1>Solicitar Itens</h1>
 
-    <form action="php/crudPedidoItem.php?operacao=insert&id=<?php echo $_GET['idPedido'] ?>" method="POST">
+    <form action="php/crudPedidoItem.php?operacao=insert&idPedido=<?php echo $idPedido ?>&idMesa=<?php echo $idMesa ?>" method="POST">
 
         <p>Item: 
             <select name="nIdItem" required>
