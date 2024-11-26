@@ -25,8 +25,6 @@
             <th>Nº de Pessoas</th>
             <th>Data do Pedido</th>
             <th>ID Mesa</th>
-            <th>Solicitar Itens</th>
-            <th>Editar</th>
         </tr>
         </thead>
         <tbody>
@@ -42,7 +40,6 @@
             <th>Nº de Pessoas</th>
             <th>Data do Pedido</th>
             <th>ID Mesa</th>
-            <th>Editar</th>
         </tr>
         </thead>
         <tbody>

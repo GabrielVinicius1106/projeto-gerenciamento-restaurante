@@ -45,8 +45,6 @@ function carregaPedidosEmAndamento(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="solicitarItens.php?id='.$campo['id_pedido'].'"><input type="button" value="Solicitar Itens"></a></td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -78,7 +76,6 @@ function carregaPedidosFechados(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
