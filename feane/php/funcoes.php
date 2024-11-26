@@ -49,9 +49,15 @@ function carregaMesa(){
         foreach($result as $campo){
             $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
-                        .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>'
-                        .'<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
-                        .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar"></td>'
+                        .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>';
+
+                        if ($campo['ocupacao'] == 0){
+                            $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>';
+                        } else {
+                            $lista .= '<td><p></p></td>';
+                        }
+
+                        $lista .= '<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar Mesa"></td>'
                         .'<td>';
 
             if ($campo['ocupacao'] > 0){

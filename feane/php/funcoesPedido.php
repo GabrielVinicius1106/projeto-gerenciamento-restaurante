@@ -116,7 +116,8 @@ function carregaPedido($idMesa){
 
     $list = '';
 
-    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa;";
+    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa
+            AND status_pedido = 'Em andamento';";
 
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
@@ -207,7 +208,7 @@ function criarPedido($idMesa, $ocp){
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    if (mysqli_num_rows($result) == 0){
+    if (mysqli_num_rows($result) >= 0){
 
         include('conection.php');
 
@@ -218,15 +219,6 @@ function criarPedido($idMesa, $ocp){
                 '".$ocp."', 
                 '".date('Y-m-d')."', 
                 '".$idMesa."');";
-
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-    }
-
-    if ($ocp == 0){
-        include('conection.php');
-
-        $sql = "DELETE FROM pedido WHERE mesa_id_mesa = $idMesa;";
 
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);

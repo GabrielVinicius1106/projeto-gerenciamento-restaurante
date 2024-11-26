@@ -4,7 +4,6 @@ include('php/conection.php');
 include('php/funcoesPedido.php');
 
 $idMesa = $_GET['id'];
-
 $idPedido = getIdPedido($idMesa);
 
 ?>
@@ -35,5 +34,12 @@ $idPedido = getIdPedido($idMesa);
     <table>
 		<?php echo carregaItensPedido($idPedido); ?>
     </table>
+    <br>
+    <form action="php/crudPedido.php?operacao=fecharpedido&idMesa=<?php echo $idMesa;?>" method="POST">
+        <input type="submit" value="Fechar Pedido">
+    </form>
+    <form action="solicitarItens.php?idMesa=<?php echo $idMesa;?>" method="POST">
+        <input type="submit" value="Adicionar Itens">
+    </form>
 </body>
 </html>

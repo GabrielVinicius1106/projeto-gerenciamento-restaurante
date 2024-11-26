@@ -42,9 +42,9 @@
         <form id="modalForm" action="" method="POST">
             <a href="mesas.php">Voltar</a>
             <h1>Mesa <span id="mesaId"></span></h1>
-            <p>Capacidade: <input id="inputModal" type="number" name="nOcp" required></p>
+            <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
             <p><input id="inputModal" type="submit" value="Salvar"></p>
-            <button type="button" id="deleteBtn">Excluir</button>
+            <button id="inputModal" type="button" id="deleteBtn">Excluir</button>
         </form>
     </div>
 </div>
