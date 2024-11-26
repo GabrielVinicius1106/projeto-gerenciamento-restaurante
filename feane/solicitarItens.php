@@ -1,6 +1,8 @@
 <?php 
     include('php/funcoes.php');
-    include('php/funcoesPedido.php')
+    include('php/funcoesPedido.php');
+
+    $idMesa = $_GET['idMesa'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,14 +10,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos | Solicitar Itens</title>
+    <title>Pedido | Solicitar Itens</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <a href="pedidos.php">Voltar</a>
+    <a href="pedidoMesa.php?id=<?php echo $idMesa; ?>">Voltar</a>
     <h1>Solicitar Itens</h1>
 
-    <form action="php/crudPedidoItem.php?operacao=insert&id=<?php echo $_GET['id'] ?>" method="POST">
+    <form action="php/crudPedidoItem.php?operacao=insert&id=<?php echo $_GET['idPedido'] ?>" method="POST">
 
         <p>Item: 
             <select name="nIdItem" required>
