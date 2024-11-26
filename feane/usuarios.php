@@ -25,6 +25,7 @@
       <?php 
          echo carregaUsuario();
       ?>
+<a href="adicionarUsuario.php"><input type="button" value="Adicionar Mesa"></a>
 
 </body>
 </html>
