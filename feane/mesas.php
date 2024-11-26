@@ -14,8 +14,6 @@
      include("php/conection.php");
      include("php/funcoes.php");
     
-     
-
     ?>
     
     <a href="telainicialAdmin.php">Voltar</a>
