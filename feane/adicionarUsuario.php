@@ -21,6 +21,8 @@
         <div class="container" id="additem">
         <p >Dados pessoais:  <input  name="nDados" type="text">
         <p >Tipo de cargo:  <input type="number" name="nCargo">
+        <p >Login:  <input  name="nLogin" type="text">
+        <p >Senha:  <input type="number" name="nSenha">
             <p><input type="submit" value="Salvar"></p>
                             
         </div>
