@@ -4,7 +4,7 @@ include('funcoesPedido.php');
 $idMesa = $_GET["id"];
 $ocp = $_POST["nInput"];
 
-if ($ocp >= 0){
+if ($ocp > 0){
     // Criar/excluir pedido automaticamente ao ocupar/desocupar a mesa
     criarPedido($idMesa, $ocp);
 }

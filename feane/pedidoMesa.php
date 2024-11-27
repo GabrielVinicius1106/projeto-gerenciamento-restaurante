@@ -38,7 +38,7 @@ $idPedido = getIdPedido($idMesa);
     <form action="php/crudPedido.php?operacao=fecharpedido&idMesa=<?php echo $idMesa;?>" method="POST">
         <input type="submit" value="Fechar Pedido">
     </form>
-    <form action="solicitarItens.php?idMesa=<?php echo $idMesa;?>" method="POST">
+    <form action="solicitarItens.php?idMesa=<?php echo $idMesa;?>&idPedido=<?php echo $idPedido?>" method="POST">
         <input type="submit" value="Adicionar Itens">
     </form>
 </body>

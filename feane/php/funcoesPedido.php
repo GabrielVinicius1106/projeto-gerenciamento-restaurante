@@ -45,8 +45,6 @@ function carregaPedidosEmAndamento(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="solicitarItens.php?id='.$campo['id_pedido'].'"><input type="button" value="Solicitar Itens"></a></td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -78,7 +76,6 @@ function carregaPedidosFechados(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -153,20 +150,16 @@ function carregaItensPedido($idPedido){
         
         $list = '<h1>ITENS</h1>
              <tr>
-                <th>ID do Pedido_Item</th>
                 <th>Quantidade de Itens</th>
                 <th>Observação</th>
-                <th>ID do Pedido</th>
                 <th>ID do Item</th>
              </tr>';
 
         foreach ($result as $campo){
             
             $list .= '<tr>'
-                    .'<td>ID do Pedido-Item:'.$campo['id_pedido_item'].'</td>'
                     .'<td>Quantidade de Itens:'.$campo['quantidade_itens'].'</td>'
                     .'<td>Observação:'.$campo['obs_item'].'</td>'
-                    .'<td>ID do Pedido:'.$campo['pedido_id_pedido'].'</td>'
                     .'<td>ID do Item:'.$campo['item_id_item'].'</td>'
                     .'</tr>';
         }

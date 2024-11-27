@@ -64,38 +64,38 @@
    <script>
     // JavaScript para controlar a abertura e fechamento do modal
     // JavaScript para controlar a abertura e fechamento do modal
-var modal = document.getElementById("myModal");
-var btns = document.getElementsByClassName("openModalBtn");
-var span = document.getElementsByClassName("close")[0];
-var mesaIdSpan = document.getElementById("mesaId");
-var modalForm = document.getElementById("modalForm");
-var deleteBtn = document.getElementById("deleteBtn");
+    var modal = document.getElementById("myModal");
+    var btns = document.getElementsByClassName("openModalBtn");
+    var span = document.getElementsByClassName("close")[0];
+    var mesaIdSpan = document.getElementById("mesaId");
+    var modalForm = document.getElementById("modalForm");
+    var deleteBtn = document.getElementById("deleteBtn");
 
-for (var i = 0; i < btns.length; i++) {
-    btns[i].onclick = function () {
-        var mesaId = this.getAttribute("data-id");
-        mesaIdSpan.textContent = mesaId; // Exibe o ID no título
-        modalForm.action = "php/salvarmesa.php?id=" + mesaId; // Configura a URL do formulário
-        modal.style.display = "block"; // Abre a modal
-    };
-}
-
-span.onclick = function () {
-    modal.style.display = "none"; // Fecha a modal
-};
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none"; // Fecha a modal ao clicar fora
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].onclick = function () {
+            var mesaId = this.getAttribute("data-id");
+            mesaIdSpan.textContent = mesaId; // Exibe o ID no título
+            modalForm.action = "php/salvarmesa.php?id=" + mesaId; // Configura a URL do formulário
+            modal.style.display = "block"; // Abre a modal
+        };
     }
-};
 
-// Ação do botão "Excluir"
-deleteBtn.onclick = function () {
-    // alert(mesaId.textContent);
-    let currentMesaId = mesaId.textContent;
-    window.location = "php/excluirMesa.php?id=" + currentMesaId;
-};
+    span.onclick = function () {
+        modal.style.display = "none"; // Fecha a modal
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none"; // Fecha a modal ao clicar fora
+        }
+    };
+
+    // Ação do botão "Excluir"
+    deleteBtn.onclick = function () {
+        // alert(mesaId.textContent);
+        let currentMesaId = mesaId.textContent;
+        window.location = "php/excluirMesa.php?id=" + currentMesaId;
+    };
 
    </script>
 
