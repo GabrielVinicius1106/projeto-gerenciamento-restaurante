@@ -30,7 +30,7 @@
 
         <input type="submit" value="Confirmar">
         <input type="reset" value="Limpar"> 
-        <a href="pedidos.php"><input type="button" value="Cancelar"></a>
+        <a href="pedidoMesa.php?id=<?php echo $idMesa; ?>"><input type="button" value="Cancelar"></a>
     </form>
 </body>
 </html>
