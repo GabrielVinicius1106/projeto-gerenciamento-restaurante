@@ -30,34 +30,33 @@
       <?php 
          echo carregaMesa();
       ?>
-      
    </table>
 
-   <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="modalForm" action="" method="POST">
-            <a href="mesas.php">Voltar</a>
-            <h1>Mesa <span id="mesaId"></span></h1>
-            <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
-            <p><input id="inputModal" type="submit" value="Salvar"></p>
-            <button type="button" id="deleteBtn">Excluir</button>
-        </form> 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="modalForm" action="" method="POST">
+                <a href="mesas.php">Voltar</a>
+                <h1>Mesa <span id="mesaId"></span></h1>
+                <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
+                <p><input id="inputModal" type="submit" value="Salvar"></p>
+                <button type="button" id="deleteBtn">Excluir</button>
+            </form> 
+        </div>
     </div>
-</div>
 
-<div id="myModalreserva" class="modal">  <!-- SCRIPT PARA MODAL RESERVAR -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="modalForm" action="" method="POST">
-            <a href="mesas.php">Voltar</a>
-            <h1>Mesa <span id="mesaId"></span></h1>
-            <p>Capacidade: <input type="number" name="nOcp" required></p>
-            <p><input type="submit" value="Salvar"></p>
-            
-        </form>
-    </div>
-</div>
+    <!-- <div id="myModalreserva" class="modal">  SCRIPT PARA MODAL RESERVAR
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="modalForm" action="" method="POST">
+                <a href="mesas.php">Voltar</a>
+                <h1>Mesa <span id="mesaId"></span></h1>
+                <p>Capacidade: <input type="number" name="nOcp" required></p>
+                <p><input type="submit" value="Salvar"></p>
+                
+            </form>
+        </div>
+    </div> -->
 
 
    <!-- SCRIPT PARA MODAL -->
@@ -96,7 +95,6 @@
         let currentMesaId = mesaId.textContent;
         window.location = "php/excluirMesa.php?id=" + currentMesaId;
     };
-
    </script>
 
 
