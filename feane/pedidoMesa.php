@@ -15,6 +15,14 @@ $idPedido = getIdPedido($idMesa);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesas | Pedido</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+    <link rel="stylesheet"  href="dist/css/cssModal.css" />
+
+    <style>
+        table th, table td {
+            color: black;  /* Definindo a cor preta */
+        }
+    </style>
 </head>
 <body>
     <a href="mesas.php">Voltar</a>

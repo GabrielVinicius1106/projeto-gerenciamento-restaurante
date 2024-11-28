@@ -25,10 +25,11 @@ function carregaUsuario() {
             }
 
             $lista .= '<tr>'
-                        . '<td>' . htmlspecialchars($campo['id_usuario']) . '</td>'
-                        . '<td>' . htmlspecialchars($campo['dados_pessoais']) . '</td>'
-                        . '<td>' . htmlspecialchars($tipoUsuario) . '</td>'
-                        . '<td>' . htmlspecialchars($campo['login']) . '</td>'
+                        . '<td>' .$campo['id_usuario'] . '</td>'
+                        . '<td>' .$campo['dados_pessoais'] . '</td>'
+                        . '<td>' .$tipoUsuario. '</td>'
+                        . '<td>' .$campo['user'] . '</td>'
+                        . '<td>' .$campo['senha'] . '</td>'
                     . '</tr>';
         }
     }

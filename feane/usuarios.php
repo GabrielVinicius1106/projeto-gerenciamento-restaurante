@@ -25,11 +25,12 @@
          <th>Dados</th>
          <th>Cargo</th>
          <th>Login</th>
+         <th>Senha</th>
       </tr>
       <?php 
          echo carregaUsuario();
       ?>
-<a href="adicionarUsuario.php"><input type="button" value="Adicionar Mesa"></a>
+<a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
 
 </body>
 </html>
