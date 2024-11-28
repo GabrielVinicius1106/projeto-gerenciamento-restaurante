@@ -22,6 +22,7 @@
          <th>Cargo</th>
          <th>Login</th>
          <th>Senha</th>
+         <th>Editar</th>
       </tr>
       <?php 
          echo carregaUsuario();
