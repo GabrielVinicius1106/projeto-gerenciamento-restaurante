@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
+
+<link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+
 </head>
 <body>
     
@@ -22,6 +26,7 @@
          <th>Cargo</th>
          <th>Login</th>
          <th>Senha</th>
+         <th>Editar</th>
       </tr>
       <?php 
          echo carregaUsuario();

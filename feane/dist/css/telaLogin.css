@@ -7,10 +7,12 @@
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Dancing Script', cursive; /* Fonte bonita */
-    font-size: 70px;
-    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive; /* Fonte bonita */
+  font-size: 70px;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
   
   } 
 h2{
@@ -69,7 +71,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     width: 65%;
-    margin-top: 50px;
+    margin-top: 0;
+    margin-bottom: 100px;
     background-color: rgba(53, 93, 146, 0.2); /* Branco com 80% de opacidade */
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5),
