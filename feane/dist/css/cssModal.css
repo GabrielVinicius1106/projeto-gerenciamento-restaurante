@@ -3,7 +3,7 @@
         .modal {
             align-items: center;
             margin-top: 10px;
-            display: none; /* Escondido por padrão */
+            display: none;  /* Escondido por padrão */
             position: fixed;
             width: 100%;
             height: 100%;

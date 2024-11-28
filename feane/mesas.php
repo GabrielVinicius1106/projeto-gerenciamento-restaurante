@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   
     <title>Mesas</title>
 
-    <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
-    <link rel="stylesheet"  type="text/css" href="dist/css/cssModal.css" />
+    <link rel="stylesheet" href="dist/css/elisson.css" />
+    <link rel="stylesheet"  href="dist/css/cssModal.css" />
+
 
 </head>
 <body>
@@ -32,6 +33,7 @@
       ?>
    </table>
 
+   <!-- SCRIPT PARA MODAL DE MESAS -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -45,7 +47,8 @@
         </div>
     </div>
 
-    <div id="myModalreserva" class="modal">  SCRIPT PARA MODAL RESERVAR
+    <!-- SCRIPT PARA MODAL RESERVAR -->
+    <div id="myModalreserva" class="modal">  
         <div class="modal-content">
             <span class="close">&times;</span>
             <form id="modalForm" action="" method="POST">
@@ -63,6 +66,7 @@
    <script>
     // JavaScript para controlar a abertura e fechamento do modal
     // JavaScript para controlar a abertura e fechamento do modal
+    
     var modal = document.getElementById("myModal");
     var btns = document.getElementsByClassName("openModalBtn");
     var span = document.getElementsByClassName("close")[0];
@@ -70,7 +74,7 @@
     var modalForm = document.getElementById("modalForm");
     var deleteBtn = document.getElementById("deleteBtn");
 
-    for (var i = 0; i < btns.length; i++) {
+    for (let i = 0; i < btns.length; i++) {
         btns[i].onclick = function () {
             var mesaId = this.getAttribute("data-id");
             mesaIdSpan.textContent = mesaId; // Exibe o ID no título
@@ -96,8 +100,5 @@
         window.location = "php/excluirMesa.php?id=" + currentMesaId;
     };
    </script>
-
-
-    
 </body>
 </html>
