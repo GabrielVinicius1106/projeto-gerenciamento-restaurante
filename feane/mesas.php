@@ -5,7 +5,7 @@
     <title>Mesas</title>
 
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
-    <link rel="stylesheet"  href="dist/css/cssModal.css" />
+    <link rel="stylesheet"  type="text/css" href="dist/css/cssModal.css" />
 
 </head>
 <body>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <!-- <div id="myModalreserva" class="modal">  SCRIPT PARA MODAL RESERVAR
+    <div id="myModalreserva" class="modal">  SCRIPT PARA MODAL RESERVAR
         <div class="modal-content">
             <span class="close">&times;</span>
             <form id="modalForm" action="" method="POST">
@@ -56,7 +56,7 @@
                 
             </form>
         </div>
-    </div> -->
+    </div>
 
 
    <!-- SCRIPT PARA MODAL -->
