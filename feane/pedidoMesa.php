@@ -19,8 +19,22 @@ $idPedido = getIdPedido($idMesa);
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
 
     <style>
+        /* Definindo a cor do texto das células e cabeçalhos da tabela */
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 0 auto;  /* Centraliza a tabela horizontalmente */
+        }
+
         table th, table td {
             color: black;  /* Definindo a cor preta */
+            padding: 8px;
+            border: 1px solid #ddd; /* Adicionando uma borda */
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f2f2f2; /* Cor de fundo para os cabeçalhos */
         }
     </style>
 </head>
