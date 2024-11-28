@@ -11,6 +11,10 @@
 </head>
 <body id="bodyLogin">
 
+<?php
+include 'header.php';
+?>
+
 <h1>Site</h1>
 
     <div class="container1" id="containerLogin">   
@@ -35,8 +39,12 @@
                 </video>
             </div>
         <!-- </div>     -->
-</div>
+    </div>
+
 
     <script src="script.js"></script>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>
