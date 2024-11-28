@@ -45,8 +45,6 @@ function carregaPedidosEmAndamento(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="solicitarItens.php?id='.$campo['id_pedido'].'"><input type="button" value="Solicitar Itens"></a></td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -78,7 +76,6 @@ function carregaPedidosFechados(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>'
-                        .'<td><a href="editarPedido.php?id='.$campo['id_pedido'].'"><input type="button" value="Editar"></a></td>'
                     .'</tr>';
         }
     }
@@ -116,7 +113,8 @@ function carregaPedido($idMesa){
 
     $list = '';
 
-    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa;";
+    $sql = "SELECT * FROM pedido WHERE mesa_id_mesa = $idMesa
+            AND status_pedido = 'Em andamento';";
 
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
@@ -152,20 +150,16 @@ function carregaItensPedido($idPedido){
         
         $list = '<h1>ITENS</h1>
              <tr>
-                <th>ID do Pedido_Item</th>
                 <th>Quantidade de Itens</th>
                 <th>Observação</th>
-                <th>ID do Pedido</th>
                 <th>ID do Item</th>
              </tr>';
 
         foreach ($result as $campo){
             
             $list .= '<tr>'
-                    .'<td>ID do Pedido-Item:'.$campo['id_pedido_item'].'</td>'
                     .'<td>Quantidade de Itens:'.$campo['quantidade_itens'].'</td>'
                     .'<td>Observação:'.$campo['obs_item'].'</td>'
-                    .'<td>ID do Pedido:'.$campo['pedido_id_pedido'].'</td>'
                     .'<td>ID do Item:'.$campo['item_id_item'].'</td>'
                     .'</tr>';
         }
@@ -207,7 +201,7 @@ function criarPedido($idMesa, $ocp){
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    if (mysqli_num_rows($result) == 0){
+    if (mysqli_num_rows($result) >= 0){
 
         include('conection.php');
 
@@ -218,15 +212,6 @@ function criarPedido($idMesa, $ocp){
                 '".$ocp."', 
                 '".date('Y-m-d')."', 
                 '".$idMesa."');";
-
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-    }
-
-    if ($ocp == 0){
-        include('conection.php');
-
-        $sql = "DELETE FROM pedido WHERE mesa_id_mesa = $idMesa;";
 
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
