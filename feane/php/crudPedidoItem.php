@@ -15,9 +15,9 @@ include('conection.php');
 
 if ($operacao == 'insert'){
 
-    $sql = "INSERT INTO pedido_item (quantidade_itens, obs_item, pedido_id_pedido, item_id_item)
+    $sql = "INSERT INTO pedido_item (quantidade_itens, obs_item, pedido_id_pedido, item_id_item, status_pedido_item)
             VALUES 
-                ($quantidadeItem, '".$obs."', $idPedido, $idItem);";
+                ($quantidadeItem, '".$obs."', $idPedido, $idItem, 'Preparando...');";
 }
 
 $result = mysqli_query($conn, $sql);

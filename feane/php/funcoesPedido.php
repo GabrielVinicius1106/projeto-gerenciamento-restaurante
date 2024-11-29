@@ -153,14 +153,16 @@ function carregaItensPedido($idPedido){
                 <th>Quantidade de Itens</th>
                 <th>Observação</th>
                 <th>ID do Item</th>
+                <th>Status do Item</th>
              </tr>';
 
         foreach ($result as $campo){
             
             $list .= '<tr>'
-                    .'<td>Quantidade de Itens:'.$campo['quantidade_itens'].'</td>'
-                    .'<td>Observação:'.$campo['obs_item'].'</td>'
-                    .'<td>ID do Item:'.$campo['item_id_item'].'</td>'
+                    .'<td>'.$campo['quantidade_itens'].'</td>'
+                    .'<td>'.$campo['obs_item'].'</td>'
+                    .'<td>'.$campo['item_id_item'].'</td>'
+                    .'<td>'.$campo['status_pedido_item'].'</td>'
                     .'</tr>';
         }
     }

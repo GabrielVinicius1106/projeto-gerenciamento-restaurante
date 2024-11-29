@@ -60,6 +60,7 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
+    <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
     <table id="tableCardapio"> 
         <tr>
             <th>Nr Mesa</th>

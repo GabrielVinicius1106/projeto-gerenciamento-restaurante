@@ -20,7 +20,7 @@
     <a href="mesas.php">Voltar</a>
     <h1>Adicionar Mesa <?php //echo $id1 ?></h1>
         <div class="container" id="additem">
-        <p >Capacidade da mesa:  <input type="number" name="nCap">
+        <p >Capacidade da mesa:  <input type="number" name="nCap" required min="1">
             <p><input type="submit" value="Salvar"></p>
                             
         </div>
