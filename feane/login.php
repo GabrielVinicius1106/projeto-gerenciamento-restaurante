@@ -15,7 +15,7 @@
 include 'header.php';
 ?>
 
-<h1>Site</h1>
+<h1>Cantina Pizzaria</h1>
 
     <div class="container1" id="containerLogin">   
         <!-- <div class="login-container" > -->
@@ -35,7 +35,7 @@ include 'header.php';
                 </form>
             </div>
             <div class="video-container">
-                <video autoplay muted loop src="dist/videos/videoPizzaria.mp4" type="video/mp4">
+                <video autoplay muted loop src="dist/videos/videoPizzariaNovo.mp4" type="video/mp4">
                 </video>
             </div>
         <!-- </div>     -->
