@@ -60,18 +60,17 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <a href="adicionarMesa.php"><input type="button" value="Adicionar Nova Mesa"></a>
     <table id="tableCardapio"> 
-      <tr>
-         <th>Nr Mesa</th>
-         <th>Ocupado</th>
-         <th>Reservar</th>
-         <th>Editar</th>
-         <th>Pedidos</th>
-      </tr>
-      <?php 
+        <tr>
+            <th>Nr Mesa</th>
+            <th>Ocupado</th>
+            <th>Reservar</th>
+            <th>Editar</th>
+            <th>Pedidos</th>
+        </tr>
+        <?php 
          echo carregaMesa();
-      ?>
+         ?>
    </table>
 
    <!-- SCRIPT PARA MODAL DE MESAS -->

@@ -3,7 +3,7 @@
 <style>
     header {
     background-color: #333333; /* Cor de fundo */
-    padding: 40px;
+    padding: 10px;
     width: 100%; /* Largura total da tela */
     box-sizing: border-box; /* Ajusta o padding sem ultrapassar a largura */
 }

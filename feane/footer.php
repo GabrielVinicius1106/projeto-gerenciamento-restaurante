@@ -5,7 +5,7 @@
 footer {
   background-color: #333333; /* Cor de fundo escura */
   color: #ffffff; /* Cor do texto branca */
-  padding: 20px;
+  padding: 0px;
   text-align: center;
   width: 100%; /* Largura total da tela */
   box-sizing: border-box; /* Inclui o padding no cálculo da largura */

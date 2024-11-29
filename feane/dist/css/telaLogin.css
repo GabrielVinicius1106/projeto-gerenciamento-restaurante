@@ -18,8 +18,8 @@ h1 {
 h2{
   text-align: center;
   padding-right: 40px;
-  color: #fff;
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+  color: rgb(0, 0, 0);
+
 }
 ::placeholder{
   color: black;
@@ -54,6 +54,12 @@ body {
 }
 
 .info-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding-right: 0;
+  padding: 115px 0;
+
+
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -70,9 +76,9 @@ body {
     gap: 20px; /* Espaço entre o formulário e o vídeo */
     padding: 10px;
     border-radius: 10px;
-    width: 65%;
+    width: 60%;
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     background-color: rgba(53, 93, 146, 0.2); /* Branco com 80% de opacidade */
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5),
