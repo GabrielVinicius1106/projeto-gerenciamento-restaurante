@@ -98,11 +98,13 @@
     var mesaIdSpan = document.getElementById("mesaId");
     var modalForm = document.getElementById("modalForm");
     var deleteBtn = document.getElementById("deleteBtn");
+    let IDMesa;
 
     for (let i = 0; i < btns.length; i++) {
         btns[i].onclick = function () {
             mesaId = this.getAttribute("data-id");
             mesaIdSpan.textContent = mesaId; // Exibe o ID no título
+            IDMesa = mesaId;
             modalForm.action = "php/salvarmesa.php?id=" + mesaId; // Configura a URL do formulário
             modal.style.display = "block"; // Abre a modal
         };
@@ -121,7 +123,7 @@
     // Ação do botão "Excluir"
     deleteBtn.onclick = function () {
         // alert(mesaId.textContent);
-        window.location = "php/excluirMesa.php?id=" + mesaIdSpan.content;
+        window.location = "php/excluirMesa.php?id=" + IDMesa;
     };
    </script>
 </body>
