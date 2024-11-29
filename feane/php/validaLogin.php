@@ -17,9 +17,9 @@ $senha = $_POST["nSenha"];
 
 include("conection.php");
 
-$sql = "SELECT * FROM usuario "
-        ." WHERE login = '$login'"
-        ." AND senha = $senha;";
+$sql = "SELECT * FROM usuario 
+    WHERE user = '$login' 
+    AND senha = '$senha';";
 
 $resultLogin = mysqli_query($conn,$sql);
 mysqli_close($conn);

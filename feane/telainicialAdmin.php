@@ -19,15 +19,15 @@ include 'header.php';
         <div class="alert-content">
             <img src="dist/images/about-img.png" class="alert-img">
             <div class="alert-text">
-                <h2>Bem-vindo ao Delivery!</h2>
+                <h2>Bem-vindo!</h2>
                 <p>Estamos muito felizes de te ver</p>
-                <p> aqui! Aproveite as nossas Ofertas!</p>
+                <p> Cantina Pizzaria agradeçe a visita</p>
                 <button id="close-alert">Fechar</button>
             </div>
         </div>
     </div>
 
-    <h1>Site</h1>
+    <h1>Cantina Pizzaria</h1>
     <section class="slider_section">
         <div class="container1">
             <div class="button-container">

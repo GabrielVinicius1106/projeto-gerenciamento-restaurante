@@ -6,7 +6,7 @@
     <title>Tela Inicial Caixa</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/telaLogin.css" rel="stylesheet" />
-    
+
 </head>
 <body id="bodytelainicial">
 
@@ -22,7 +22,7 @@
         <button id="close-alert">Fechar</button>
     </div>
 
-    <h1>Site</h1>
+    <h1>Cantina Pizzaria</h1>
     <section class="slider_section">
         <div class="container1">
             <div class="button-container">
