@@ -101,7 +101,7 @@
 
     for (let i = 0; i < btns.length; i++) {
         btns[i].onclick = function () {
-            var mesaId = this.getAttribute("data-id");
+            mesaId = this.getAttribute("data-id");
             mesaIdSpan.textContent = mesaId; // Exibe o ID no título
             modalForm.action = "php/salvarmesa.php?id=" + mesaId; // Configura a URL do formulário
             modal.style.display = "block"; // Abre a modal
@@ -121,8 +121,7 @@
     // Ação do botão "Excluir"
     deleteBtn.onclick = function () {
         // alert(mesaId.textContent);
-        let currentMesaId = mesaId.textContent;
-        window.location = "php/excluirMesa.php?id=" + currentMesaId;
+        window.location = "php/excluirMesa.php?id=" + mesaIdSpan.content;
     };
    </script>
 </body>
