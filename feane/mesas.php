@@ -18,29 +18,28 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <a href="adicionarMesa.php"><input type="button" value="Adicionar Nova Mesa"></a>
     <table id="tableCardapio"> 
-      <tr>
-         <th>Nr Mesa</th>
-         <th>Ocupado</th>
-         <th>Reservar</th>
-         <th>Editar</th>
-         <th>Pedidos</th>
-      </tr>
-      <?php 
+        <tr>
+            <th>Nr Mesa</th>
+            <th>Ocupado</th>
+            <th>Reservar</th>
+            <th>Editar</th>
+            <th>Pedidos</th>
+        </tr>
+        <?php 
          echo carregaMesa();
-      ?>
+         ?>
    </table>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="modalForm" action="" method="POST">
-                <a href="mesas.php">Voltar</a>
-                <h1>Mesa <span id="mesaId"></span></h1>
-                <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
-                <p><input id="inputModal" type="submit" value="Salvar"></p>
-                <button type="button" id="deleteBtn">Excluir</button>
+   
+   <div id="myModal" class="modal">
+       <div class="modal-content">
+           <span class="close">&times;</span>
+           <form id="modalForm" action="" method="POST">
+               <a href="mesas.php">Voltar</a>
+               <h1>Mesa <span id="mesaId"></span></h1>
+               <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
+               <p><input id="inputModal" type="submit" value="Salvar"></p>
+               <button type="button" id="deleteBtn">Excluir</button>
             </form> 
         </div>
     </div>
@@ -57,10 +56,10 @@
             </form>
         </div>
     </div>
-
-
-   <!-- SCRIPT PARA MODAL -->
-   <script>
+    
+    
+    <!-- SCRIPT PARA MODAL -->
+    <script>
     // JavaScript para controlar a abertura e fechamento do modal
     // JavaScript para controlar a abertura e fechamento do modal
     var modal = document.getElementById("myModal");
@@ -98,6 +97,7 @@
    </script>
 
 
-    
+<a href="adicionarMesa.php"><input type="button" value="Adicionar Nova Mesa"></a>
+
 </body>
 </html>
