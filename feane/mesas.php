@@ -5,8 +5,8 @@
     <title>Mesas</title>
 
     <link rel="stylesheet" href="dist/css/elisson.css" />
-    <!-- <link rel="stylesheet"  href="dist/css/cssModal.css" /> -->
-    <style>
+    <link rel="stylesheet"  href="dist/css/cssModal.css" />
+    <!-- <style>
         /* Estilos básicos para o modal */
         .modal {
             display: none; /* Escondido por padrão */
@@ -46,7 +46,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-    </style>
+    </style> -->
 
 
 </head>
@@ -85,25 +85,10 @@
                 <button type="button" id="deleteBtn">Excluir</button>
             </form> 
         </div>
-    </div>
+    </div>  
 
-    <!-- SCRIPT PARA MODAL RESERVAR -->
-    <div id="myModalreserva" class="modal">  
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="modalForm" action="" method="POST">
-                <a href="mesas.php">Voltar</a>
-                <h1>Mesa <span id="mesaId"></span></h1>
-                <p>Capacidade: <input type="number" name="nOcp" required></p>
-                <p><input type="submit" value="Salvar"></p>
-                
-            </form>
-        </div>
-    </div>
-    
-    
-    <!-- SCRIPT PARA MODAL -->
-    <script>
+   <!-- SCRIPT PARA MODAL -->
+   <script>
     // JavaScript para controlar a abertura e fechamento do modal
     // JavaScript para controlar a abertura e fechamento do modal
     
