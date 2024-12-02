@@ -26,5 +26,19 @@
         </div>
 </form>
 
+<h1>Mesas Existentes Inativas</h1>
+    <table id="tableMesasInativas"> 
+        <tr>
+            <th>ID Mesa</th>
+            <th>Capacidade</th>
+            <th>Ocupacao</th>
+            <th>Ativo</th>
+            <th>Ativar</th>
+        </tr>
+        <?php 
+         echo carregaMesasInativas();
+         ?>
+   </table>
+
 </body>
 </html>
