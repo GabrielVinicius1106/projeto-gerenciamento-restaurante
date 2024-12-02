@@ -1,6 +1,6 @@
 <?php 
 
-function carregaItens(){
+function carregaItensCardapio(){
 
     $list = '<option value="">Selecione</option>';
 
@@ -18,7 +18,6 @@ function carregaItens(){
         }    
     }
     return $list;
-
 }
 
 function carregaPedidosEmAndamento(){
@@ -81,6 +80,13 @@ function carregaPedidosFechados(){
     }
 
     return $lista;
+}
+
+function carregaPedidosItemCozinha(){
+    $list = '';
+
+    include('conection.php');
+
 }
 
 function carregaMesas(){
