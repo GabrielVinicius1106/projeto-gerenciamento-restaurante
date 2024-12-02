@@ -1,7 +1,6 @@
-<?php 
-
-include('php/funcoesPedido.php');
-
+<?php
+        include("php/funcoes.php");
+        include("php/funcoesPedido.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +16,9 @@ include('php/funcoesPedido.php');
 
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
-    <?php
-        include("php/funcoes.php");
-        include("php/funcoesPedido.php");
-        ?>
     <a href="telainicialAdmin.php">Voltar</a>
     <h1>Pedidos da Cozinha</h1>
-    <!-- <table id="tableCardapio">
+    <table id="tableCardapio">
         <thead>
         <tr>
             <th>ID Pedido</th>
@@ -34,9 +29,8 @@ include('php/funcoesPedido.php');
         </tr>
         </thead>
         <tbody>
-            <?php //echo carregaPedidosEmAndamento(); ?>
         </tbody>    
-    </table> -->
+    </table>
     <h1>Pedidos da Copa</h1>
     <table>
         <thead>
@@ -51,10 +45,9 @@ include('php/funcoesPedido.php');
             </tr>
         </thead>
         <tbody>
-            <?php echo carregaPedidosItemCozinha(); ?>
         </tbody>
     </table>
-    <!-- <table id="tableCardapio">
+    <table id="tableCardapio">
         <thead>
         <tr>
             <th>ID Pedido</th>
@@ -65,10 +58,7 @@ include('php/funcoesPedido.php');
         </tr>
         </thead>
         <tbody>
-            <?php //echo carregaPedidosFechados(); ?>
         </tbody>
-    </table> -->
-
-
+    </table>
 </body>
 </html>
