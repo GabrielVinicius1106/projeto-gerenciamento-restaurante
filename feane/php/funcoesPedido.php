@@ -6,7 +6,7 @@ function carregaItensCardapio(){
 
     include('conection.php');
 
-    $sql = "SELECT * FROM item;";
+    $sql = "SELECT * FROM item WHERE disponibilidade = 1;";
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -85,8 +85,40 @@ function carregaPedidosFechados(){
 function carregaPedidosItemCozinha(){
     $list = '';
 
+    $sql =  "SELECT *
+            FROM pedido_item pi
+            INNER JOIN item it
+            ON it.id_item = pi.item_id_item
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            WHERE ti.categoria_id_categoria = 1
+            AND pi.status_pedido_item = 'Preparando...';";
+            
     include('conection.php');
 
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    // var_dump($result);
+    // die();
+
+    if (mysqli_num_rows($result) > 0){
+        foreach($result as $campo){
+            $list .= '<tr>'
+                        .'<td>'.$campo['id_pedido_item'].'</td>';
+
+            $list .= getDescricaoItem($campo['item_id_item']);
+
+            $list .=     '<td>'.$campo['obs_item'].'</td>'
+                        .'<td>'.$campo['pedido_id_pedido'].'</td>'
+                        .'<td>'.$campo['item_id_item'].'</td>'
+                        .'<td>'.$campo['status_pedido_item'].'</td>'
+                        .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+                    .'</tr>';
+        }
+    }
+
+    return $list;
 }
 
 function carregaMesas(){
@@ -154,8 +186,7 @@ function getDescricaoItem($idItem){
 
     if (mysqli_num_rows($result)){
         foreach($result as $campo){
-            $add = '<tr>'
-               .'<td>'.$campo['descricao_item'].'</td>'; 
+            $add = '<td>'.$campo['descricao_item'].'</td>'; 
         }
     }
 
@@ -185,6 +216,8 @@ function carregaItensPedido($idPedido){
                 <th>Status do Item</th>
              </tr>';
         foreach ($result as $campo){
+
+            $list .= '<tr>';
             
             $list .= getDescricaoItem($campo['item_id_item']);
             

@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script src="https://kit.fontawesome.com/b33acbe2df.js" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,20 +22,6 @@
     <h1>Pedidos da Cozinha</h1>
     <table id="tableCardapio">
         <thead>
-        <tr>
-            <th>ID Pedido</th>
-            <th>Status do Pedido</th>
-            <th>Nº de Pessoas</th>
-            <th>Data do Pedido</th>
-            <th>ID Mesa</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>    
-    </table>
-    <h1>Pedidos da Copa</h1>
-    <table>
-        <thead>
             <tr>
                 <th>ID do Pedido de Item</th>
                 <th>Descrição do Item</th>
@@ -45,17 +33,21 @@
             </tr>
         </thead>
         <tbody>
-        </tbody>
+            <?php  echo carregaPedidosItemCozinha(); ?>
+        </tbody>    
     </table>
-    <table id="tableCardapio">
+    <h1>Pedidos da Copa</h1>
+    <table id="tableCardapio">  
         <thead>
-        <tr>
-            <th>ID Pedido</th>
-            <th>Status do Pedido</th>
-            <th>Nº de Pessoas</th>
-            <th>Data do Pedido</th>
-            <th>ID Mesa</th>
-        </tr>
+            <tr>
+                <th>ID do Pedido de Item</th>
+                <th>Descrição do Item</th>
+                <th>Observação</th>
+                <th>ID do Pedido</th>
+                <th>ID do Item</th>
+                <th>Status do Pedido de Item</th>
+                <th>Marcar como Concluído</th>
+            </tr>
         </thead>
         <tbody>
         </tbody>

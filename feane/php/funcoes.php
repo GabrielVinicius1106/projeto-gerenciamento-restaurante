@@ -38,9 +38,6 @@ function carregaUsuario() {
     return $lista;
 }
 
-
-
-
 function novaMesa(){
     $id = $_GET["id"];    
 
