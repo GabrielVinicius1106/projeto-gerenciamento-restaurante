@@ -87,12 +87,16 @@ function carregaPedidosItemCozinha(){
 
     $sql =  "SELECT *
             FROM pedido_item pi
+            INNER JOIN pedido pd
+            ON pd.id_pedido = pi.pedido_id_pedido
             INNER JOIN item it
             ON it.id_item = pi.item_id_item
             INNER JOIN tipo_item ti
             ON ti.id_tipo_item = it.tipo_item_id_tipo_item
             WHERE ti.categoria_id_categoria = 1
-            AND pi.status_pedido_item = 'Preparando...';";
+            AND pi.status_pedido_item = 'Preparando...'
+            AND pd.status_pedido = 'Em andamento'
+            ORDER BY pi.hora_pedido_item ASC;";
             
     include('conection.php');
 

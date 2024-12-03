@@ -83,7 +83,7 @@
                 <h1>Mesa <span id="mesaId"></span></h1>
                 <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
                 <p><input id="inputModal" type="submit" value="Salvar"></p>
-                <button type="button" id="deleteBtn">Excluir</button>
+                <button type="button" id="deleteBtn">Desativar Mesa</button>
             </form> 
         </div>
     </div>  
