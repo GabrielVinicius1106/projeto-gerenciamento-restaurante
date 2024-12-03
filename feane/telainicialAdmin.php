@@ -21,7 +21,7 @@ include 'header.php';
             <div class="alert-text">
                 <h2>Bem-vindo!</h2>
                 <p>Estamos muito felizes de te ver</p>
-                <p> Cantina Pizzaria agradeçe a visita</p>
+                <p>Cantina Pizzaria agradeçe a visita</p>
                 <button id="close-alert">Fechar</button>
             </div>
         </div>
@@ -35,7 +35,7 @@ include 'header.php';
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidos.php">Pedidos</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItem.php">Pedidos de Item</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
@@ -44,7 +44,7 @@ include 'header.php';
                     <button id="btn4" class="btn btn-large">Caixa</button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large"><a href="usuarios.php">Usuários</button>
+                    <button id="btn5" class="btn btn-large"><a href="usuarios.php" img src="dist/icones/usuario.png" class="alert-img">Usuários</button>
                 </div>
             </div>
         </div>

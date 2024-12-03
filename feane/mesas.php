@@ -60,6 +60,7 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
+    <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
     <table id="tableCardapio"> 
         <tr>
             <th>Nr Mesa</th>
@@ -82,7 +83,7 @@
                 <h1>Mesa <span id="mesaId"></span></h1>
                 <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
                 <p><input id="inputModal" type="submit" value="Salvar"></p>
-                <button type="button" id="deleteBtn">Excluir</button>
+                <button type="button" id="deleteBtn">Desativar Mesa</button>
             </form> 
         </div>
     </div>  

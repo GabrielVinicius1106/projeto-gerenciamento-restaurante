@@ -1,12 +1,12 @@
 <?php 
 
-function carregaItens(){
+function carregaItensCardapio(){
 
     $list = '<option value="">Selecione</option>';
 
     include('conection.php');
 
-    $sql = "SELECT * FROM item;";
+    $sql = "SELECT * FROM item WHERE disponibilidade = 1;";
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -18,7 +18,6 @@ function carregaItens(){
         }    
     }
     return $list;
-
 }
 
 function carregaPedidosEmAndamento(){
@@ -83,6 +82,49 @@ function carregaPedidosFechados(){
     return $lista;
 }
 
+function carregaPedidosItemCozinha(){
+    $list = '';
+
+    $sql =  "SELECT *
+            FROM pedido_item pi
+            INNER JOIN pedido pd
+            ON pd.id_pedido = pi.pedido_id_pedido
+            INNER JOIN item it
+            ON it.id_item = pi.item_id_item
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            WHERE ti.categoria_id_categoria = 1
+            AND pi.status_pedido_item = 'Preparando...'
+            AND pd.status_pedido = 'Em andamento'
+            ORDER BY pi.hora_pedido_item ASC;";
+            
+    include('conection.php');
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    // var_dump($result);
+    // die();
+
+    if (mysqli_num_rows($result) > 0){
+        foreach($result as $campo){
+            $list .= '<tr>'
+                        .'<td>'.$campo['id_pedido_item'].'</td>';
+
+            $list .= getDescricaoItem($campo['item_id_item']);
+
+            $list .=     '<td>'.$campo['obs_item'].'</td>'
+                        .'<td>'.$campo['pedido_id_pedido'].'</td>'
+                        .'<td>'.$campo['item_id_item'].'</td>'
+                        .'<td>'.$campo['status_pedido_item'].'</td>'
+                        .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+                    .'</tr>';
+        }
+    }
+
+    return $list;
+}
+
 function carregaMesas(){
 
     $lista = '<option value="">Selecione</option>';
@@ -135,6 +177,27 @@ function carregaPedido($idMesa){
     return $list;
 }
 
+function getDescricaoItem($idItem){
+
+    $add = '';
+
+    include('conection.php');
+
+    $sql = "SELECT descricao_item FROM item WHERE id_item = $idItem;";
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result)){
+        foreach($result as $campo){
+            $add = '<td>'.$campo['descricao_item'].'</td>'; 
+        }
+    }
+
+    return $add;
+
+}
+
 function carregaItensPedido($idPedido){
 
     $list = '';
@@ -150,17 +213,22 @@ function carregaItensPedido($idPedido){
         
         $list = '<h1>ITENS</h1>
              <tr>
+                <th>Item</th>
                 <th>Quantidade de Itens</th>
                 <th>Observação</th>
                 <th>ID do Item</th>
+                <th>Status do Item</th>
              </tr>';
-
         foreach ($result as $campo){
+
+            $list .= '<tr>';
             
-            $list .= '<tr>'
-                    .'<td>Quantidade de Itens:'.$campo['quantidade_itens'].'</td>'
-                    .'<td>Observação:'.$campo['obs_item'].'</td>'
-                    .'<td>ID do Item:'.$campo['item_id_item'].'</td>'
+            $list .= getDescricaoItem($campo['item_id_item']);
+            
+            $list .= '<td>'.$campo['quantidade_itens'].'</td>'
+                    .'<td>'.$campo['obs_item'].'</td>'
+                    .'<td>'.$campo['item_id_item'].'</td>'
+                    .'<td>'.$campo['status_pedido_item'].'</td>'
                     .'</tr>';
         }
     }
