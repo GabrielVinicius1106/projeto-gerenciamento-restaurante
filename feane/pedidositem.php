@@ -26,6 +26,7 @@
                 <th>ID do Pedido de Item</th>
                 <th>Descrição do Item</th>
                 <th>Observação</th>
+                <th>ID da Mesa</th>
                 <th>ID do Pedido</th>
                 <th>ID do Item</th>
                 <th>Status do Pedido de Item</th>
@@ -43,6 +44,7 @@
                 <th>ID do Pedido de Item</th>
                 <th>Descrição do Item</th>
                 <th>Observação</th>
+                <th>ID da Mesa</th>
                 <th>ID do Pedido</th>
                 <th>ID do Item</th>
                 <th>Status do Pedido de Item</th>
@@ -50,6 +52,7 @@
             </tr>
         </thead>
         <tbody>
+        <?php  echo carregaPedidosItemCopa(); ?>
         </tbody>
     </table>
 </body>

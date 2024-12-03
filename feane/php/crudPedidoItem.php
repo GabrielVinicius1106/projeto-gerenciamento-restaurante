@@ -10,11 +10,6 @@ $idItem = $_POST['nIdItem'];
 $quantidadeItem = $_POST['nQuantidade'];
 $obs = $_POST['nObs'];
 
-// var_dump($hora);
-// die();
-
-// var_dump($operacao, $idPedido, $idMesa, $idItem, $quantidadeItem, $obs);
-
 include('conection.php');
 
 if ($operacao == 'insert'){
