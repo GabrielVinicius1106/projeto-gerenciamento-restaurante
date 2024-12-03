@@ -20,11 +20,25 @@
     <a href="mesas.php">Voltar</a>
     <h1>Adicionar Mesa <?php //echo $id1 ?></h1>
         <div class="container" id="additem">
-        <p >Capacidade da mesa:  <input type="number" name="nCap">
+        <p >Capacidade da mesa:  <input type="number" name="nCap" required min="1">
             <p><input type="submit" value="Salvar"></p>
                             
         </div>
 </form>
+
+<h1>Mesas Existentes Inativas</h1>
+    <table id="tableMesasInativas"> 
+        <tr>
+            <th>ID Mesa</th>
+            <th>Capacidade</th>
+            <th>Ocupacao</th>
+            <th>Ativo</th>
+            <th>Ativar</th>
+        </tr>
+        <?php 
+         echo carregaMesasInativas();
+         ?>
+   </table>
 
 </body>
 </html>

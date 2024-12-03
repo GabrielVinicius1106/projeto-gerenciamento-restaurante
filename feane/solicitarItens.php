@@ -22,7 +22,7 @@
 
         <p>Item: 
             <select name="nIdItem" required>
-                <?php echo carregaItens();?>
+                <?php echo carregaItensCardapio();?>
             </select>
         </p>
         <p>Quantidade: <input type="number" name="nQuantidade" min="1" required></p>

@@ -62,7 +62,7 @@
         <form action="php/salvarmesa.php?id=<?php echo $_GET["id"];?>" method="POST">
             <a href="mesas.php">Voltar</a>
             <h1>Mesa <?php echo $id1 ?></h1>
-            <p>Ocupação: <input type="number" name="nOcp" required></p>
+            <p>Ocupação: <input type="number" name="nOcp" min="1" required></p>
             <p><input type="submit" value="Salvar"></p>
         </form>
     </div>

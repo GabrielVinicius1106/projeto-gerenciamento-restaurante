@@ -71,7 +71,7 @@ if (mysqli_num_rows($resultLogin) > 0) {
                 header('location: ../telainicialCaixa.php');
                 break;
             default:
-                header('location: ../login.php');
+                header('location: ../index.php');
                 break;
         }
         
@@ -79,7 +79,7 @@ if (mysqli_num_rows($resultLogin) > 0) {
 
 } else{
     //Acessar a tela inicial
-    header('location: ../login.php');
+    header('location: ../index.php');
 } 
 
 

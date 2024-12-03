@@ -60,6 +60,7 @@
     
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
+    <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
     <table id="tableCardapio"> 
         <tr>
             <th>Nr Mesa</th>
@@ -98,11 +99,13 @@
     var mesaIdSpan = document.getElementById("mesaId");
     var modalForm = document.getElementById("modalForm");
     var deleteBtn = document.getElementById("deleteBtn");
+    let IDMesa;
 
     for (let i = 0; i < btns.length; i++) {
         btns[i].onclick = function () {
-            var mesaId = this.getAttribute("data-id");
+            mesaId = this.getAttribute("data-id");
             mesaIdSpan.textContent = mesaId; // Exibe o ID no título
+            IDMesa = mesaId;
             modalForm.action = "php/salvarmesa.php?id=" + mesaId; // Configura a URL do formulário
             modal.style.display = "block"; // Abre a modal
         };
@@ -121,8 +124,7 @@
     // Ação do botão "Excluir"
     deleteBtn.onclick = function () {
         // alert(mesaId.textContent);
-        let currentMesaId = mesaId.textContent;
-        window.location = "php/excluirMesa.php?id=" + currentMesaId;
+        window.location = "php/excluirMesa.php?id=" + IDMesa;
     };
    </script>
 </body>

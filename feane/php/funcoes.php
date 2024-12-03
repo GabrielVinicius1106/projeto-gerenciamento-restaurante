@@ -38,9 +38,6 @@ function carregaUsuario() {
     return $lista;
 }
 
-
-
-
 function novaMesa(){
     $id = $_GET["id"];    
 
@@ -88,31 +85,56 @@ function carregaMesa(){
 
     if(mysqli_num_rows($result) > 0){
         foreach($result as $campo){
-            $lista .= '<tr>'
+            if ($campo['ativo'] > 0){
+                $lista .= '<tr>'
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>';
 
                         if ($campo['ocupacao'] == 0){
-                            $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>';
+                            $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
+                                      .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar Mesa"></td>'
+                                      .'<td><p></p></td>';
                         } else {
-                            $lista .= '<td><p></p></td>';
-                        }
+                            $lista .= '<td><p></p></td>'
+                                      .'<td><p></p></td>'
+                                      .'<td><a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a></td>';
 
-                        $lista .= '<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar Mesa"></td>'
-                        .'<td>';
-
-            if ($campo['ocupacao'] > 0){
-                $lista .= '<a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a>';
+                        }                        
+                        $lista .= '</tr>';
             }
-            
-            $lista .= '</td>'
-                    .'</tr>';
         }
     }
 
     return $lista;
 }
 
+function carregaMesasInativas() {
+    $lista = '';
+
+    include("conection.php");
+
+    $sql = "SELECT * FROM mesa WHERE ativo = 0;";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result) > 0){
+        foreach($result as $campo){
+                $lista .= '<tr>'
+                        .'<td>'.$campo['id_mesa'].'</td>'
+                        .'<td>'.$campo['capacidade'].'</td>'
+                        .'<td>'.$campo['ocupacao'].'</td>';
+
+                        if ($campo['ativo'] == 0){
+                            $lista .= '<td>Inativa</td>';
+                        }
+                        
+                        $lista .= '<td><a href="php/ativarMesa.php?idMesa='.$campo['id_mesa'].'"><input type="button" value="Ativar Mesa"></a></td>'
+                                    .'</tr>';
+            }
+    }
+
+    return $lista;
+}
 
 function carregaCardapio(){
     
