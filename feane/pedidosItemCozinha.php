@@ -1,6 +1,7 @@
 <?php
-        include("php/funcoes.php");
-        include("php/funcoesPedido.php");
+
+include('php/global.php');
+
 ?>
 
 <!DOCTYPE html>

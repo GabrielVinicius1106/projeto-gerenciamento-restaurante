@@ -1,9 +1,9 @@
 <?php 
-    include('php/funcoes.php');
-    include('php/funcoesPedido.php');
 
-    $idMesa = $_GET['idMesa'];
-    $idPedido = $_GET['idPedido'];
+include('php/global.php');
+$idMesa = $_GET['idMesa'];
+$idPedido = $_GET['idPedido'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

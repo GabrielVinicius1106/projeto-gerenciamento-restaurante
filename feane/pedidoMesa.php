@@ -1,8 +1,6 @@
 <?php 
-include('php/funcoes.php');
-include('php/conection.php');
-include('php/funcoesPedido.php');
 
+include('php/global.php');
 $idMesa = $_GET['id'];
 $idPedido = getIdPedido($idMesa);
 

@@ -357,4 +357,38 @@ function criarPedido($idMesa, $ocp){
     }
 }
 
+function carregaPedidos(){
+
+    $list = '';
+
+    $sql = "SELECT * FROM pedido;";
+
+    include('conection.php');
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        foreach($result as $campo){
+            $list .= '<tr>'
+                        .'<td>'.$campo['status_pedido'].'</td>'
+                        .'<td>'.$campo['id_pedido'].'</td>'
+                        .'<td>'.$campo['quantidade_pessoas'].'</td>'
+                        .'<td>'.$campo['data_pedido'].'</td>'
+                        .'<td>'.$campo['mesa_id_mesa'].'</td>';
+
+            if($campo['status_pedido']=='Em andamento'){
+                $list .= '<td></td>';
+            } else {
+                $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button type="button">Acessar Pedido</button></a></td>';
+            }
+
+                $list .= '</tr>';
+        }
+    }
+
+    return $list;
+
+}
+
 ?>

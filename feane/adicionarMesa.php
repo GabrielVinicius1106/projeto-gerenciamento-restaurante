@@ -1,3 +1,9 @@
+<?php
+
+include('php/global.php');
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +13,6 @@
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssBotao.css" />
     
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    ?>
-
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 </form>
 
 <h1>Mesas Existentes Inativas</h1>
-    <table id="tableMesasInativas"> 
+    <table id="tableCardapio"> 
         <tr>
             <th>ID Mesa</th>
             <th>Capacidade</th>

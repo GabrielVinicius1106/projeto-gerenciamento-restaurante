@@ -1,3 +1,9 @@
+<?php
+    
+include('php/global.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,9 +18,6 @@
     
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
-    <?php
-        include("php/funcoes.php");
-        ?>
     <a href="telainicialAdmin.php">Voltar</a>
     <h1>Cardápio</h1>
     <table id="tableCardapio">

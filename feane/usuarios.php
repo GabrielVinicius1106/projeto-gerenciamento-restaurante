@@ -1,3 +1,10 @@
+<?php
+
+include('php/global.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +19,6 @@
 
 </head>
 <body>
-    
-<?php
-      include("php/conection.php");
-      include("php/funcoes.php");
-?>
-
 <a href="telaInicialAdmin.php">Voltar</a>
 <h1 style="text-align: center;">Usuários</h1>
 <a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
