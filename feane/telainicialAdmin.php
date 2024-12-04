@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Admin</title>
+    <title>Tela Inicial | Administração</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
     
@@ -31,7 +31,10 @@
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItem.php">Pedidos de Item</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
+                </div>
+                <div class="btn-item">
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>

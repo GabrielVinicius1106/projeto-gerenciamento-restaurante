@@ -30,8 +30,8 @@ function carregaUsuario() {
                         . '<td>' .$tipoUsuario. '</td>'
                         . '<td>' .$campo['user'] . '</td>'
                         . '<td>' .$campo['senha'] . '</td>'
-                        .'<td><a href="php/excluirUsuario.php?id='.$campo['id_usuario'].'"><input type="button" value="Excluir"></a><td>';
-                     '</tr>';
+                        . '<td><a href="php/excluirUsuario.php?id='.$campo['id_usuario'].'"><input type="button" value="Excluir"></a></td>'
+                     .'</tr>';
         }
     }
 
