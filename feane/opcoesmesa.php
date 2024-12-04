@@ -1,3 +1,10 @@
+<?php
+
+include('php/global.php');
+$idMesa = $_GET['id'];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,21 +15,14 @@
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssBotao.css" />
-    
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    $idMesa = $_GET['id'];
-    ?>
-
 </head>
 <body>
 
-<form action="php/salvarocupacao.php?id=<?php echo $idMesa;?>" method="POST">
+<form action="php/salvarocupacao.php?id=<?php echo $idMesa; ?>" method="POST">
     <a href="mesas.php">Voltar</a>
     <h1>Mesa <?php echo $idMesa ?></h1>
         <div class="container" id="additem">
-        <p >Quantidade de pessoas :  <input type="number" name="nInput" min="1" max="<?php echo carregaCapacidade($idMesa);?>">
+        <p >Quantidade de pessoas :  <input type="number" name="nInput" min="1" max="<?php echo carregaCapacidade($idMesa);?>" required>
             <p><input type="submit" value="Salvar"></p>                
         </div>
 </form>

@@ -1,3 +1,9 @@
+<?php
+    
+include('php/global.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,14 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/elisson.css" />
     
                 
     
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
-    <?php
-        include("php/funcoes.php");
-        ?>
     <a href="telainicialAdmin.php">Voltar</a>
     <h1>Cardápio</h1>
     <table id="tableCardapio">

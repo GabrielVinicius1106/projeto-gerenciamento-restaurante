@@ -1,4 +1,10 @@
-<html lang="en">
+<?php
+
+include('php/global.php');
+
+?>
+
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,12 +12,6 @@
     <title>Adicionar Usuario | Usuarios</title>
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssBotao.css" />
-    
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    ?>
-
 </head>
 <body>
 
