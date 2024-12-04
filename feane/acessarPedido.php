@@ -11,7 +11,7 @@ $idPedido = $_GET['idPedido'];
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caixa | Efetuar Pagamento</title>
+  <title>Caixa | Pedidos | Efetuar Pagamento</title>
 </head>
 <body>
   <h1>Pedido <?php echo $idPedido;?> </h1>

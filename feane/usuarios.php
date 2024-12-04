@@ -11,7 +11,7 @@ include('php/global.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
+    <title>Usuários</title>
 
 <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="dist/css/elisson.css" />
