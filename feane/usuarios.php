@@ -21,7 +21,7 @@
 <h1 style="text-align: center;">Usuários</h1>
 <a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
 
-<table> 
+<table id="tableCardapio"> 
       <tr>
          <th>Nr Usuario</th>
          <th>Dados</th>
