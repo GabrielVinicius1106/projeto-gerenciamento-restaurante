@@ -138,7 +138,7 @@ function carregaPedidosItemCozinha(){
             $list .= '<td>'.$campo['pedido_id_pedido'].'</td>'
                     .'<td>'.$campo['item_id_item'].'</td>'
                     .'<td>'.$campo['status_pedido_item'].'</td>'
-                    .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+                    .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
                 .'</tr>';
         }
     } else {
@@ -179,11 +179,14 @@ function carregaPedidosItemCopa(){
 
             $list .= getDescricaoItem($campo['item_id_item']);
 
-            $list .=     '<td>'.$campo['obs_item'].'</td>'
-                        .'<td>'.$campo['pedido_id_pedido'].'</td>'
-                        .'<td>'.$campo['item_id_item'].'</td>'
-                        .'<td>'.$campo['status_pedido_item'].'</td>'
-                        .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+            $list .=  '<td>'.$campo['obs_item'].'</td>';
+
+            $list .= getIdMesa($campo['pedido_id_pedido']);
+
+            $list .=   '<td>'.$campo['pedido_id_pedido'].'</td>'
+                      .'<td>'.$campo['item_id_item'].'</td>'
+                      .'<td>'.$campo['status_pedido_item'].'</td>'
+                      .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
                     .'</tr>';
         }
     } else {
