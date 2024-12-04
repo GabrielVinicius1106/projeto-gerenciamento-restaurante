@@ -17,7 +17,7 @@
       include("php/funcoes.php");
 ?>
 
-<a href="usuarios.php">Voltar</a>
+<a href="telainicialAdmin.php">Voltar</a>
 
 <table> 
       <tr>
