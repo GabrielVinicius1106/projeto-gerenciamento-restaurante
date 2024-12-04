@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Caixa</title>
+    <title>Tela Inicial | Caixa</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
-    <link href="dist/css/telaLogin.css" rel="stylesheet" />
-
+    <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
+    
 </head>
 <body id="bodytelainicial">
 
 <?php
- include 'header.php'; 
- ?>
-
+include 'header.php';
+?>
 
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
-        <h2>Bem-vindo ao Delivery!</h2>
-        <p>Estamos muito felizes de te ver aqui! Aproveite as nossas Ofertas!</p>
-        <button id="close-alert">Fechar</button>
+        <div class="alert-content">
+            <img src="dist/images/about-img.png" class="alert-img">
+            <div class="alert-text">
+                <h2>Bem-vindo!</h2>
+                <p>Estamos muito felizes de te ver</p>
+                <p>Cantina Pizzaria agradeçe a visita</p>
+                <button id="close-alert">Fechar</button>
+            </div>
+        </div>
     </div>
 
     <h1>Cantina Pizzaria</h1>
@@ -30,16 +35,13 @@
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large">Pedidos</button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn4" class="btn btn-large">Caixa</button>
-                </div>
-                <div class="btn-item">
-                    <!-- <button id="btn5" class="btn btn-large">Usuários</button> -->
                 </div>
             </div>
         </div>
@@ -58,8 +60,6 @@
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
-
-<?php include 'footer.php'; ?> 
 
 </body>
 </html>

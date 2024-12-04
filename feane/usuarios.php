@@ -18,6 +18,8 @@
 ?>
 
 <a href="usuarios.php">Voltar</a>
+<h1 style="text-align: center;">Usuários</h1>
+<a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
 
 <table> 
       <tr>
@@ -31,7 +33,6 @@
       <?php 
          echo carregaUsuario();
       ?>
-<a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
 
 </body>
 </html>

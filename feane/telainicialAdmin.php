@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Admin</title>
+    <title>Tela Inicial | Administração</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
     

@@ -11,6 +11,9 @@
 <body>
     <?php
      
+    //  var_dump($_SESSION['idTipoUsuario']);
+    //  die();
+
      include("php/conection.php");
      include("php/funcoes.php");
     
