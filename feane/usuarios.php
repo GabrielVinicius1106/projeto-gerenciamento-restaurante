@@ -7,7 +7,8 @@
     <title>Usuarios</title>
 
 <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
+<link rel="stylesheet" href="dist/css/elisson.css" />
+
 
 </head>
 <body>
@@ -17,7 +18,7 @@
       include("php/funcoes.php");
 ?>
 
-<a href="usuarios.php">Voltar</a>
+<a href="telainicialAdmin.php">Voltar</a>
 
 <table> 
       <tr>
