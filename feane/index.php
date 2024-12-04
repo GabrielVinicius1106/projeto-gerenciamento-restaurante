@@ -35,7 +35,7 @@ include 'header.php';
                 </form>
             </div>
             <div class="video-container">
-                <video autoplay muted loop src="dist/videos/videoPizzariaNovo.mp4" type="video/mp4">
+                <video autoplay muted loop src="dist/videos/videoPizza.mp4" type="video/mp4">
                 </video>
             </div>
         <!-- </div>     -->

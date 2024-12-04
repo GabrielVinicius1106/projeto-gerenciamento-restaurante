@@ -10,10 +10,6 @@
 </head>
 <body id="bodytelainicial">
 
-<?php
-include 'header.php';
-?>
-
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
         <div class="alert-content">
@@ -66,6 +62,8 @@ include 'header.php';
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
+
+
 
 </body>
 </html>

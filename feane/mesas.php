@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
-
 </head>
 <body>
     <?php
