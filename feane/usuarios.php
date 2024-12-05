@@ -16,17 +16,14 @@ include('php/global.php');
 <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="dist/css/elisson.css" />
 
-
 </head>
 <body>
 <a href="telaInicialAdmin.php">Voltar</a>
 <h1 style="text-align: center;">Usuários</h1>
-<a href="adicionarUsuario.php"><input type="button" value="Adicionar Usuario"></a>
 
 <table id="tableCardapio"> 
       <tr>
-         <th>Nr Usuario</th>
-         <th>Dados</th>
+         <th>Usuarios</th>
          <th>Cargo</th>
          <th>Login</th>
          <th>Senha</th>
@@ -34,7 +31,9 @@ include('php/global.php');
       </tr>
       <?php 
          echo carregaUsuario();
-      ?>
+         ?>
 
+
+<a href="adicionarUsuario.php"><input type="button" class="ajustebotao" value="Adicionar Usuario"></a>
 </body>
 </html>
