@@ -169,9 +169,6 @@ function carregaPedidosItemCopa(){
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    // var_dump($result);
-    // die();
-
     if (mysqli_num_rows($result) > 0){
         foreach($result as $campo){
             $list .= '<tr>'

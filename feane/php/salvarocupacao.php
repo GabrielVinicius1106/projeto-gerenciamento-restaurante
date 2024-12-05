@@ -1,6 +1,6 @@
 <?php
-include('funcoes.php');
-include('funcoesPedido.php');
+
+include('global.php');
 
 $idMesa = $_GET["id"];
 $ocp = $_POST["nInput"];

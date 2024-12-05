@@ -45,8 +45,8 @@ footer ul li a:hover {
 <footer>
     <p>&copy; <?php echo date("Y"); ?> Cantina Pizzaria. Todos os direitos reservados.</p>
     <ul>
-        <li><a href="politica-privacidade.php">Política de Privacidade</a></li>
-        <li><a href="termos-de-uso.php">Termos de Uso</a></li>
-        <li><a href="contato.php">Contato</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Contato</a></li>
     </ul>
 </footer>
