@@ -20,8 +20,7 @@ include('php/global.php');
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
     <a href="telainicialAdmin.php">Voltar</a>
-    <h1>CAIXA</h1>
-    <h1>Pedidos</h1>
+    <h1>Pedidos Caixa</h1>
     <table id="tableCardapio">
         <thead>
             <tr>
