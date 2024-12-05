@@ -1,9 +1,9 @@
 <?php 
-    include('php/funcoes.php');
-    include('php/funcoesPedido.php');
 
-    $idMesa = $_GET['idMesa'];
-    $idPedido = $_GET['idPedido'];
+include('php/global.php');
+$idMesa = $_GET['idMesa'];
+$idPedido = $_GET['idPedido'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido | Solicitar Itens</title>
+    <title>Mesas | Pedido | Solicitar Itens</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
 </head>
 <body>

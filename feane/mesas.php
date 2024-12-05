@@ -1,63 +1,19 @@
+<?php
+     
+include('php/global.php');
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   
     <title>Mesas</title>
-
+    <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
-    <!-- <style>
-        /* Estilos básicos para o modal */
-        .modal {
-            display: none; /* Escondido por padrão */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-
-            color: black;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            position: relative;
-            bottom: 100px;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style> -->
-
-
 </head>
 <body>
-    <?php
-     
-     include("php/conection.php");
-     include("php/funcoes.php");
-    
-    ?>
-    
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
     <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>

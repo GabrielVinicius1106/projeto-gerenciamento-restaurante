@@ -1,5 +1,6 @@
 <?php
-include('funcoesPedido.php');
+
+include('global.php');
 
 $idMesa = $_GET["id"];
 $ocp = $_POST["nInput"];
@@ -9,13 +10,13 @@ if ($ocp > 0){
     criarPedido($idMesa, $ocp);
 }
 
-include("conection.php");
-include("funcoes.php");
+include('conection.php');
 
 $sql = "UPDATE mesa SET ocupacao = $ocp WHERE id_mesa = $idMesa;";
 $result = mysqli_query($conn,$sql);
+
 mysqli_close($conn);
-header("location: ../mesas.php");   
+header('location: ../mesas.php');   
 
 
 ?>

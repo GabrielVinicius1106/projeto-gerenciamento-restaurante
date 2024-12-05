@@ -1,5 +1,6 @@
 <?php 
 
+$origem = $_GET['origem'];
 $idPedidoItem = $_GET['idPedidoItem'];
 
 $sql = "UPDATE pedido_item
@@ -11,6 +12,12 @@ include('conection.php');
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 
-header('location: ../pedidosItem.php');
+if ($origem == 'cozinha'){
+        header('location: ../pedidosItemCozinha.php');
+} else if ($origem == 'copa'){
+        header('location: ../pedidosItemCopa.php');
+}
+
+
 
 ?>

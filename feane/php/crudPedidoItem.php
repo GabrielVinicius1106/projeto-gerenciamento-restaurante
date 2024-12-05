@@ -1,7 +1,7 @@
 <?php 
 
 date_default_timezone_set('America/Sao_Paulo');
-include('funcoes.php');
+include('global.php');
 
 $operacao = $_GET['operacao'];
 $idPedido = $_GET['idPedido'];
@@ -9,11 +9,6 @@ $idMesa = $_GET['idMesa'];
 $idItem = $_POST['nIdItem'];
 $quantidadeItem = $_POST['nQuantidade'];
 $obs = $_POST['nObs'];
-
-// var_dump($hora);
-// die();
-
-// var_dump($operacao, $idPedido, $idMesa, $idItem, $quantidadeItem, $obs);
 
 include('conection.php');
 

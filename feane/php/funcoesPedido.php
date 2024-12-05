@@ -82,6 +82,24 @@ function carregaPedidosFechados(){
     return $lista;
 }
 
+function getIdMesa($idPedido){
+    
+    $add = '';
+
+    $sql = "SELECT mesa_id_mesa FROM pedido WHERE id_pedido = $idPedido;";
+
+    include('conection.php');
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        foreach($result as $campo){
+            $add = '<td>'.$campo['mesa_id_mesa'].'</td>';
+        }
+    }
+    return $add;
+}
+
 function carregaPedidosItemCozinha(){
     $list = '';
 
@@ -113,13 +131,63 @@ function carregaPedidosItemCozinha(){
 
             $list .= getDescricaoItem($campo['item_id_item']);
 
-            $list .=     '<td>'.$campo['obs_item'].'</td>'
-                        .'<td>'.$campo['pedido_id_pedido'].'</td>'
-                        .'<td>'.$campo['item_id_item'].'</td>'
-                        .'<td>'.$campo['status_pedido_item'].'</td>'
-                        .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+            $list .=  '<td>'.$campo['obs_item'].'</td>';
+
+            $list .= getIdMesa($campo['pedido_id_pedido']);
+
+            $list .= '<td>'.$campo['pedido_id_pedido'].'</td>'
+                    .'<td>'.$campo['item_id_item'].'</td>'
+                    .'<td>'.$campo['status_pedido_item'].'</td>'
+                    .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
+                .'</tr>';
+        }
+    } else {
+        $list = '<script>alert("Não há pedidos de itens da Cozinha!")</script>';
+    }
+
+    return $list;
+}
+
+function carregaPedidosItemCopa(){
+    $list = '';
+
+    $sql =  "SELECT *
+            FROM pedido_item pi
+            INNER JOIN pedido pd
+            ON pd.id_pedido = pi.pedido_id_pedido
+            INNER JOIN item it
+            ON it.id_item = pi.item_id_item
+            INNER JOIN tipo_item ti
+            ON ti.id_tipo_item = it.tipo_item_id_tipo_item
+            WHERE ti.categoria_id_categoria = 2
+            AND pi.status_pedido_item = 'Preparando...'
+            AND pd.status_pedido = 'Em andamento'
+            ORDER BY pi.hora_pedido_item ASC;";
+            
+    include('conection.php');
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0){
+        foreach($result as $campo){
+            $list .= '<tr>'
+                        .'<td>'.$campo['id_pedido_item'].'</td>';
+
+            $list .= getDescricaoItem($campo['item_id_item']);
+
+            $list .=  '<td>'.$campo['obs_item'].'</td>';
+
+            $list .= getIdMesa($campo['pedido_id_pedido']);
+
+            $list .=   '<td>'.$campo['pedido_id_pedido'].'</td>'
+                      .'<td>'.$campo['item_id_item'].'</td>'
+                      .'<td>'.$campo['status_pedido_item'].'</td>'
+                      .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
                     .'</tr>';
         }
+    } else {
+        $list = '<script>alert("Não há pedidos de itens da Copa!")</script>';
     }
 
     return $list;
@@ -284,6 +352,40 @@ function criarPedido($idMesa, $ocp){
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
     }
+}
+
+function carregaPedidos(){
+
+    $list = '';
+
+    $sql = "SELECT * FROM pedido;";
+
+    include('conection.php');
+
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        foreach($result as $campo){
+            $list .= '<tr>'
+                        .'<td>'.$campo['status_pedido'].'</td>'
+                        .'<td>'.$campo['id_pedido'].'</td>'
+                        .'<td>'.$campo['quantidade_pessoas'].'</td>'
+                        .'<td>'.$campo['data_pedido'].'</td>'
+                        .'<td>'.$campo['mesa_id_mesa'].'</td>';
+
+            if($campo['status_pedido']=='Em andamento'){
+                $list .= '<td></td>';
+            } else {
+                $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button type="button">Acessar Pedido</button></a></td>';
+            }
+
+                $list .= '</tr>';
+        }
+    }
+
+    return $list;
+
 }
 
 ?>

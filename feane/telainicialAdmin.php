@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial Admin</title>
+    <title>Tela Inicial | Administração</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
     
 </head>
 <body id="bodytelainicial">
-
-<?php
-include 'header.php';
-?>
 
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
@@ -35,13 +31,16 @@ include 'header.php';
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItem.php">Pedidos de Item</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Cozinha</a></button>
+                </div>
+                <div class="btn-item">
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Copa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <button id="btn4" class="btn btn-large"><a href="caixa.php">Caixa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn5" class="btn btn-large"><a href="usuarios.php" img src="dist/icones/usuario.png" class="alert-img">Usuários</button>
@@ -63,6 +62,8 @@ include 'header.php';
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
+
+
 
 </body>
 </html>
