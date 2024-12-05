@@ -1,8 +1,6 @@
 <?php 
-include('php/funcoes.php');
-include('php/conection.php');
-include('php/funcoesPedido.php');
 
+include('php/global.php');
 $idMesa = $_GET['id'];
 $idPedido = getIdPedido($idMesa);
 
@@ -15,6 +13,7 @@ $idPedido = getIdPedido($idMesa);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesas | Pedido</title>
+    <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
 

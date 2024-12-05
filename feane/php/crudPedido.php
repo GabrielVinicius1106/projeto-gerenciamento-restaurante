@@ -1,6 +1,6 @@
 <?php 
 
-include('funcoes.php');
+include('global.php');
 
 $idMesa = $_GET['idMesa'];
 $operacao = $_GET['operacao'];

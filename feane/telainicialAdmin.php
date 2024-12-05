@@ -30,16 +30,16 @@
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Cozinha</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Copa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <button id="btn4" class="btn btn-large"><a href="caixa.php">Caixa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn5" class="btn btn-large"><a href="usuarios.php">Usuários</a></button>
@@ -69,3 +69,4 @@
     </script>
 </body>
 </html>
+        

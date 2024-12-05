@@ -4,7 +4,7 @@
     }   
 
     //Funções e conexão por PDO
-    include('funcoes.php');
+    include('global.php');
     require_once('conectionPDO.php');
 
     //Pega o id enviado por GET na URL

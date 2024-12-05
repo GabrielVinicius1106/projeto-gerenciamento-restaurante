@@ -1,3 +1,10 @@
+<?php
+
+include('php/global.php');
+$idMesa = $_GET['id'];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +15,6 @@
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssBotao.css" />
-    
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    $idMesa = $_GET['id'];
-    ?>
-
 </head>
 <body>
 

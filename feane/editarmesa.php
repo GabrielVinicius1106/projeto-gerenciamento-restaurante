@@ -1,3 +1,10 @@
+<?php
+
+include('php/global.php');
+$id1 = $_GET['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,11 +14,6 @@
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet"  href="dist/css/cssBotao.css" />
 
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    $id1 = $_GET['id'];
-    ?>
     <style>
         /* Estilos básicos para o modal */
         .modal {

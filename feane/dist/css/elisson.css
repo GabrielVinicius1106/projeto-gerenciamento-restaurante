@@ -2,7 +2,7 @@
 
 body {
   animation: animarGradiente 7s infinite alternate;
-  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
+  background: linear-gradient(90deg,  rgb(167, 96, 84), rgb(65, 76, 95), rgb(167, 96, 84));
   background-size: 300% 100%;
   font-family: "Open Sans", sans-serif;
   color: #fff;
@@ -20,7 +20,7 @@ body {
   display: grid;
   place-items: center;
   animation: animarGradiente 7s infinite alternate;
-  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(86, 107, 148));
+  background: linear-gradient(90deg, rgb(33, 49, 65), rgb(65, 76, 95), rgb(241, 131, 111));
   background-size: 300% 100%;
 }
 
@@ -96,6 +96,8 @@ h1 {
 a {
   color: #fff;
   text-decoration: none;
+  display: grid;
+  place-items: center;
 }
 
 a:hover {

@@ -1,26 +1,21 @@
+<?php
+     
+include('php/global.php');
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   
     <title>Mesas</title>
-
+    <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
 </head>
 <body>
-    <?php
-     
-    //  var_dump($_SESSION['idTipoUsuario']);
-    //  die();
-
-     include("php/conection.php");
-     include("php/funcoes.php");
-    
-    ?>
-    
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
-    <a href="adicionarMesa.php"><input type="button" value="Adicionar Mesa"></a>
     <table id="tableCardapio"> 
         <tr>
             <th>Nr Mesa</th>
@@ -33,23 +28,23 @@
          echo carregaMesa();
          ?>
    </table>
-
+   
    <!-- SCRIPT PARA MODAL DE MESAS -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
+   <div id="myModal" class="modal">
+       <div class="modal-content">
             <span class="close">&times;</span>
             <form id="modalForm" action="" method="POST">
                 <a href="mesas.php">Voltar</a>
-                <h1>Mesa <span id="mesaId"></span></h1>
+                <h1 id="h1_modal">Mesa <span id="mesaId"></span></h1>
                 <p>Capacidade Total: <input id="inputModal" type="number" name="nOcp" required></p>
                 <p><input id="inputModal" type="submit" value="Salvar"></p>
                 <button type="button" id="deleteBtn">Desativar Mesa</button>
             </form> 
         </div>
     </div>  
-
-   <!-- SCRIPT PARA MODAL -->
-   <script>
+    
+    <!-- SCRIPT PARA MODAL -->
+    <script>
     // JavaScript para controlar a abertura e fechamento do modal
     // JavaScript para controlar a abertura e fechamento do modal
     
@@ -87,5 +82,8 @@
         window.location = "php/excluirMesa.php?id=" + IDMesa;
     };
    </script>
+
+<a href="adicionarMesa.php"><input type="button" class="ajustebotao" value="Adicionar Mesa"></a>
+
 </body>
 </html>
