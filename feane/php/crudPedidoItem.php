@@ -1,7 +1,7 @@
 <?php 
 
 date_default_timezone_set('America/Sao_Paulo');
-include('funcoes.php');
+include('global.php');
 
 $operacao = $_GET['operacao'];
 $idPedido = $_GET['idPedido'];

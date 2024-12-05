@@ -1,23 +1,19 @@
+<?php
+     
+include('php/global.php');
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   
     <title>Mesas</title>
-
+    <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/css/elisson.css" />
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
 </head>
 <body>
-    <?php
-     
-    //  var_dump($_SESSION['idTipoUsuario']);
-    //  die();
-
-     include("php/conection.php");
-     include("php/funcoes.php");
-    
-    ?>
-    
     <a href="telainicialAdmin.php">Voltar</a>
     <h1 style="text-align: center;">Mesas</h1>
     <table id="tableCardapio"> 

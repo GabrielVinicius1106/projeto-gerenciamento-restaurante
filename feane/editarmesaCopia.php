@@ -1,3 +1,10 @@
+<?php
+
+include('php/global.php');
+$id1 = $_GET['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar | Mesas</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
-    <?php
-    include("php/conection.php");
-    include("php/funcoes.php");
-    $id1 = $_GET['id'];
-    ?>
     <style>
         /* Estilos básicos para o modal */
         .modal {
