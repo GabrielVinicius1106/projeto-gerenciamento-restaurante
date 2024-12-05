@@ -6,18 +6,17 @@
     <title>Tela Inicial | Administração</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
-    
 </head>
 <body id="bodytelainicial">
 
     <!-- Alerta criativo -->
-    <div id="alert-box" class="alert-box">
+    <div id="alert-box" class="alert-box" style="display: none;"> <!-- Alerta inicialmente escondido -->
         <div class="alert-content">
             <img src="dist/images/about-img.png" class="alert-img">
             <div class="alert-text">
                 <h2>Bem-vindo!</h2>
                 <p>Estamos muito felizes de te ver</p>
-                <p>Cantina Pizzaria agradeçe a visita</p>
+                <p>Cantina Pizzaria agradece a visita</p>
                 <button id="close-alert">Fechar</button>
             </div>
         </div>
@@ -43,18 +42,24 @@
                     <button id="btn4" class="btn btn-large">Caixa</button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn5" class="btn btn-large"><a href="usuarios.php" img src="dist/icones/usuario.png" class="alert-img">Usuários</button>
+                    <button id="btn5" class="btn btn-large"><a href="usuarios.php">Usuários</a></button>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Exibe o alerta na tela
+        // Função para verificar se o alerta já foi exibido
         window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('alert-box').style.display = 'block';
-            }, 500);  // Espera meio segundo antes de mostrar o alerta
+            // Verifica no localStorage se o alerta já foi mostrado
+            if (!localStorage.getItem('alertShown')) {
+                setTimeout(function() {
+                    document.getElementById('alert-box').style.display = 'block';
+                }, 500);  // Exibe o alerta após meio segundo
+
+                // Marca o alerta como exibido
+                localStorage.setItem('alertShown', 'true');
+            }
         };
 
         // Fecha o alerta quando o botão é clicado
@@ -62,8 +67,5 @@
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
-
-
-
 </body>
 </html>
