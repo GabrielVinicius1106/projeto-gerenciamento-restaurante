@@ -25,8 +25,7 @@ include('php/global.php');
 
 <table id="tableCardapio"> 
       <tr>
-         <th>Nr Usuario</th>
-         <th>Dados</th>
+         <th>Usuarios</th>
          <th>Cargo</th>
          <th>Login</th>
          <th>Senha</th>

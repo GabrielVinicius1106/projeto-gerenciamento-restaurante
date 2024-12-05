@@ -25,7 +25,6 @@ function carregaUsuario() {
             }
 
             $lista .= '<tr>'
-                        . '<td>' .$campo['id_usuario'] . '</td>'
                         . '<td>' .$campo['dados_pessoais'] . '</td>'
                         . '<td>' .$tipoUsuario. '</td>'
                         . '<td>' .$campo['user'] . '</td>'
