@@ -1,3 +1,37 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* Adiciona a imagem de fundo */
+    background-image: url('desculpa'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+
+    /* Configurações para a imagem */
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-attachment: fixed; /* Faz com que a imagem fique fixa ao rolar a página */
+    color: #fff; /* Ajusta a cor do texto para melhor contraste */
+}
+
+</style>
+<body>
+
+</body>
+</html>
+
 <?php
     $dados = $_POST["nDados"];
     $Cargo = $_POST["nCargo"];  

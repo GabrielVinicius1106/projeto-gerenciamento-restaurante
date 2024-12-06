@@ -377,7 +377,7 @@ function carregaPedidos(){
             if($campo['status_pedido']=='Em andamento'){
                 $list .= '<td></td>';
             } else {
-                $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button type="button">Acessar Pedido</button></a></td>';
+                $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button id="botoesphp" type="button">Acessar Pedido</button></a></td>';
             }
 
                 $list .= '</tr>';
