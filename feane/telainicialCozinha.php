@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start(); 
+$idTipoUsuario = $_SESSION['idTipoUsuario'];
 
 include('php/global.php');
 
