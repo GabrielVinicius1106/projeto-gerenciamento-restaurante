@@ -44,7 +44,7 @@ include('php/global.php');
         } 
         ?>
     <!-- <a href="telainicialAdmin.php">Voltar</a> -->
-    <h1>Pedidos Caixa</h1>
+    <h1>Caixa - Pedidos</h1>
     <table id="tableCardapio">
         <thead>
             <tr>
@@ -53,7 +53,7 @@ include('php/global.php');
                 <th>Quantidade de Pessoas</th>
                 <th>Data do Pedido</th>
                 <th>ID da Mesa</th>
-                <!-- <th>Opções</th> -->
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
