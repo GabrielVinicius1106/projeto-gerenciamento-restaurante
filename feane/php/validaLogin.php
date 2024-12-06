@@ -36,23 +36,23 @@ if (mysqli_num_rows($resultLogin) > 0) {
         switch($_SESSION['idTipoUsuario']){
             case 1:
                 // Adiminstrador
-                header('location: ../telainicialAdmin.php?idTipoUsuario='.$_SESSION['idTipoUsuario']);
+                header('location: ../telainicialAdmin.php');
                 break;
             case 2:
                 // Garçom
-                header('location: ../telainicialGarcom.php?idTipoUsuario='.$_SESSION['idTipoUsuario']);
+                header('location: ../telainicialGarcom.php');
                 break;
             case 3:
                 // Cozinha
-                header('location: ../telainicialCozinha.php?idTipoUsuario='.$_SESSION['idTipoUsuario']);
+                header('location: ../telainicialCozinha.php');
                 break;
             case 4:
                 // Copa
-                header('location: ../telainicialCopa.php?idTipoUsuario='.$_SESSION['idTipoUsuario']);
+                header('location: ../telainicialCopa.php');
                 break;
             case 5:
                 // Caixa
-                header('location: ../telainicialCaixa.php?idTipoUsuario='.$_SESSION['idTipoUsuario']);
+                header('location: ../telainicialCaixa.php');
                 break;
             default:
                 // ??? 
