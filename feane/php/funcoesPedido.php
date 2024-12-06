@@ -355,7 +355,19 @@ function criarPedido($idMesa, $ocp){
 }
 
 function getPedidoItens($idPedido){
+    $list = 0;
 
+    $sql = "SELECT * FROM pedido_item WHERE pedido_id_pedido = $idPedido;";
+
+    include('conection.php');
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 function carregaPedidos(){
@@ -372,7 +384,7 @@ function carregaPedidos(){
     if(mysqli_num_rows($result)){
 
         // Retorna 1 se HAVER PEDIDO DE ITENS e 0 se NÃO HOUVER
-        $pedidoItens = getPedidoItens($idPedido);
+        // $existePedidoItens = getPedidoItens($idPedido);
 
         foreach($result as $campo){
             $list .= '<tr>'
@@ -381,9 +393,15 @@ function carregaPedidos(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>';
+            
+            $existePedidoItens = getPedidoItens($campo['id_pedido']);
+            // var_dump($existePedidoItens);
+            // die();
 
-            if($campo['status_pedido'] == 'Fechado'){
+            if($campo['status_pedido'] == 'Fechado' && $existePedidoItens == 1){
                 $list .= '<td><a href="efetuarPagamento.php?idPedido='.$campo['id_pedido'].'"><button type="button">Efetuar Pagamento</button></a></td>';
+            } else if($campo['status_pedido'] == 'Fechado' && $existePedidoItens == 0){
+                $list .= '<td>Não há Itens</td>';
             } else {
                 $list .= '<td>Pedido em Andamento</td>';
             }
