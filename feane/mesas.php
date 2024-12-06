@@ -1,7 +1,9 @@
 <?php
+session_start();
+$idTipoUsuario = $_SESSION['idTipoUsuario'];
      
 include('php/global.php');
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +85,7 @@ include('php/global.php');
     };
    </script>
 
-<a href="adicionarMesa.php"><input type="button" class="ajustebotao" value="Adicionar Mesa"></a>
+<a href="adicionarMesa.php"><input type="button" class="ajustebotao" value="Adicionar Mesa"></a>    
 
 </body>
 </html>

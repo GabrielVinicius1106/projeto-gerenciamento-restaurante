@@ -1,4 +1,6 @@
 <?php
+session_start();
+$idTipoUsuario = $_SESSION['idTipoUsuario'];
 
 include('php/global.php');
 
@@ -29,7 +31,7 @@ include('php/global.php');
                 <th>Quantidade de Pessoas</th>
                 <th>Data do Pedido</th>
                 <th>ID da Mesa</th>
-                <th>Opções</th>
+                <!-- <th>Opções</th> -->
             </tr>
         </thead>
         <tbody>
