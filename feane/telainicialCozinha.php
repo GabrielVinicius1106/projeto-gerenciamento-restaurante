@@ -2,6 +2,10 @@
 session_start();
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
 
+if($idTipoUsuario != 3){
+    header('location: index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +36,7 @@ include 'header.php';
             </div>
         </div>
     </div>
-
+    <a href="php/validaLogoff.php">Sair</a>
     <h1>Cantina Pizzaria</h1>
     <section class="slider_section">
         <div class="container1">

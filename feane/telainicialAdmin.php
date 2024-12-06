@@ -2,12 +2,9 @@
 session_start();
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
 
-if($_GET['idTipoUsuario']){
-    $idTipoUsuario = $_GET['idTipoUsuario'];
-}   
-
-// var_dump($_SESSION['idTipoUsuario']);
-// die();
+if($idTipoUsuario != 1){
+    header('location: index.php');
+}
 
 ?>
 
@@ -34,7 +31,7 @@ if($_GET['idTipoUsuario']){
             </div>
         </div>
     </div>
-
+    <a href="php/validaLogoff.php">Sair</a>
     <h1>Cantina Pizzaria</h1>
     <section class="slider_section">
         <div class="container1">
