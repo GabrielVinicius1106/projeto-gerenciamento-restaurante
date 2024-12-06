@@ -39,7 +39,7 @@ include('php/global.php');
             echo "<a href='telainicialCaixa.php'>Voltar</a>";
             break;
         default:
-            echo "ERRO!";
+            echo "<a href='php/validaLogoff.php'>Voltar para Login</a>";
             break;
         } 
         ?>
