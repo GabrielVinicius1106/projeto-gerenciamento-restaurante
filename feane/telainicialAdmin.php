@@ -10,7 +10,7 @@
 <body id="bodytelainicial">
 
     <!-- Alerta criativo -->
-    <div id="alert-box" class="alert-box" style="display: none;"> <!-- Alerta inicialmente escondido -->
+    <div id="alert-box" class="alert-box" style="display: none;">
         <div class="alert-content">
             <img src="dist/images/about-img.png" class="alert-img">
             <div class="alert-text">
@@ -30,16 +30,16 @@
                     <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Cozinha</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Copa</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
                 </div>
                 <div class="btn-item">
                     <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large"><a href="caixa.php">Caixa</a></button>
+                    <button id="btn4" class="btn btn-large">Caixa</button>
                 </div>
                 <div class="btn-item">
                     <button id="btn5" class="btn btn-large"><a href="usuarios.php">Usuários</a></button>
@@ -51,14 +51,14 @@
     <script>
         // Função para verificar se o alerta já foi exibido
         window.onload = function() {
-            // Verifica no localStorage se o alerta já foi mostrado
-            if (!localStorage.getItem('alertShown')) {
+            // Verifica no sessionStorage se o alerta já foi mostrado
+            if (!sessionStorage.getItem('alertShown')) {
                 setTimeout(function() {
                     document.getElementById('alert-box').style.display = 'block';
                 }, 500);  // Exibe o alerta após meio segundo
 
-                // Marca o alerta como exibido
-                localStorage.setItem('alertShown', 'true');
+                // Marca o alerta como exibido na sessão
+                sessionStorage.setItem('alertShown', 'true');
             }
         };
 
@@ -69,4 +69,3 @@
     </script>
 </body>
 </html>
-        
