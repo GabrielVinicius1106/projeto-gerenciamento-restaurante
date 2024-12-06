@@ -36,7 +36,7 @@ include('php/global.php');
             echo "<a href='telainicialCopa.php'>Voltar</a>";
             break;
         case 5:
-            echo "<a href='telainicialAdmin.php'>Voltar</a>";
+            echo "<a href='telainicialCaixa.php'>Voltar</a>";
             break;
         default:
             echo "ERRO!";

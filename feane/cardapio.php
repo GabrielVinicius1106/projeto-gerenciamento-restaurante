@@ -35,7 +35,7 @@ include('php/global.php');
             echo "<a href='telainicialCopa.php'>Voltar</a>";
             break;
         case 5:
-            echo "<a href='telainicialAdmin.php'>Voltar</a>";
+            echo "<a href='telainicialCaixa.php'>Voltar</a>";
             break;
         default:
             echo "ERRO!";
@@ -58,6 +58,13 @@ include('php/global.php');
         </tbody>    
     </table>
     
-    <a href="adicionarItem.php"><input class="ajustebotao" type="button" value="Adicionar Item"></a>
+    <?php 
+    
+    if($idTipoUsuario == 1){
+        echo '<a href="adicionarItem.php"><input class="ajustebotao" type="button" value="Adicionar Item"></a>';
+    }
+    
+    ?>
+    
 </body>
 </html>

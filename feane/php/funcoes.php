@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 function carregaUsuario() {
     $lista = '';
@@ -89,7 +90,7 @@ function carregaMesa($idTipoUsuario){
                         .'<td>'.$campo['id_mesa'].'</td>'
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>';
 
-                        if ($campo['ocupacao'] == 0){
+                        if (($campo['ocupacao'] == 0 && $idTipoUsuario == 2) || ($campo['ocupacao'] == 0 && $idTipoUsuario == 1)){
                             $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>';
                         } else {
                             $lista .= '<td><p></p></td>';
@@ -144,7 +145,8 @@ function carregaMesasInativas() {
 }
 
 function carregaCardapio(){
-    
+    $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
     $lista = '';
 
     include('conection.php');
@@ -169,9 +171,15 @@ function carregaCardapio(){
             $lista .= '<tr>'
                         .'<td>'.$campo['descricao_item'].'</td>'   
                         .'<td>'.$campo['valor_item'].'</td>'
-                        .'<td>'.$disponibilidade.'</td>'
-                        .'<td><a href="editarItem.php?id='.$campo['id_item'].'"><input type="button" value="Editar"></a></td>'
-                    .'</tr>';
+                        .'<td>'.$disponibilidade.'</td>';
+            
+            if($idTipoUsuario == 1){
+                $lista .= '<td><a href="editarItem.php?id='.$campo['id_item'].'"><input type="button" value="Editar"></a></td>';
+            } else {
+                $lista .= '<td></td>';
+            }
+                
+            $lista .= '</tr>';
         }
     }
 
