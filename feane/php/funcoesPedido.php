@@ -374,11 +374,12 @@ function carregaPedidos(){
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>';
 
-            if($campo['status_pedido']=='Em andamento'){
-                $list .= '<td></td>';
-            } else {
-                $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button type="button">Acessar Pedido</button></a></td>';
-            }
+            // if($campo['status_pedido']=='Em andamento'){
+            //     $list .= '<td></td>';
+            // } else {
+            //     $list .= '<td></td>';
+            //     // $list .= '<td><a href="acessarPedido.php?idPedido='.$campo['id_pedido'].'"><button type="button">Acessar Pedido</button></a></td>';
+            // }
 
                 $list .= '</tr>';
         }
