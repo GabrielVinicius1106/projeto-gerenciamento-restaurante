@@ -41,7 +41,7 @@ $idPedido = getIdPedido($idMesa);
 </head>
 <body>
     <a href="mesas.php">Voltar</a>
-    <h1>PEDIDO MESA <?php echo $idMesa; ?> </h1>
+    <h1>Pedido da mesa <?php echo $idMesa; ?> </h1>
     <table>
         <tr>
             <th>ID do Pedido</th>
@@ -59,10 +59,10 @@ $idPedido = getIdPedido($idMesa);
     </table>
     <br>
     <form action="php/crudPedido.php?operacao=fecharpedido&idMesa=<?php echo $idMesa;?>" method="POST">
-        <input type="submit" value="Fechar Pedido">
+        <input type="submit" value="Fechar Pedido" class="ajustebotao">
     </form>
     <form action="solicitarItens.php?idMesa=<?php echo $idMesa;?>&idPedido=<?php echo $idPedido?>" method="POST">
-        <input type="submit" value="Adicionar Itens">
+        <input type="submit" value="Adicionar Itens" class="ajustebotao">
     </form>
 </body>
 </html>
