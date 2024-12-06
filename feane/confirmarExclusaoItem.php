@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start(); 
 
 include('php/global.php');
 

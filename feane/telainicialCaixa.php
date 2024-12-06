@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,7 +42,7 @@
                     <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn4" class="btn btn-large">Caixa</button>
+                    <button id="btn4" class="btn btn-large"><a href="caixa.php">Caixa</a></button>
                 </div>
             </div>
         </div>

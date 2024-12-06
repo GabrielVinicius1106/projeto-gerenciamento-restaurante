@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include('php/global.php');
 $idMesa = $_GET['id'];

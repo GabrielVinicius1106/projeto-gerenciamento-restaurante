@@ -1,3 +1,15 @@
+<?php 
+session_start();
+
+if($_GET['idTipoUsuario']){
+    $idTipoUsuario = $_GET['idTipoUsuario'];
+}   
+
+// var_dump($_SESSION['idTipoUsuario']);
+// die();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
