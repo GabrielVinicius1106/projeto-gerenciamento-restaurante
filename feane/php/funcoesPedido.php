@@ -1,4 +1,7 @@
 <?php 
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 
 function carregaItensCardapio(){
 
@@ -134,9 +137,15 @@ function carregaPedidosItemCozinha(){
 
             $list .= '<td>'.$campo['pedido_id_pedido'].'</td>'
                     .'<td>'.$campo['item_id_item'].'</td>'
-                    .'<td>'.$campo['status_pedido_item'].'</td>'
-                    .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
-                .'</tr>';
+                    .'<td>'.$campo['status_pedido_item'].'</td>';
+
+            if($_SESSION['idTipoUsuario'] == 3){
+                $list .= '<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>';
+            } else {
+                $list .= '<td></td>';
+            }
+
+            $list .= '</tr>';
         }
     } else {
         $list = '<script>alert("Não há pedidos de itens da Cozinha!")</script>';
@@ -179,9 +188,15 @@ function carregaPedidosItemCopa(){
 
             $list .=   '<td>'.$campo['pedido_id_pedido'].'</td>'
                       .'<td>'.$campo['item_id_item'].'</td>'
-                      .'<td>'.$campo['status_pedido_item'].'</td>'
-                      .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
-                    .'</tr>';
+                      .'<td>'.$campo['status_pedido_item'].'</td>';
+
+            if($_SESSION['idTipoUsuario'] == 4){
+                $list .= '<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>';
+            } else {
+                $list .= '<td></td>';
+            }
+ 
+            $list .= '</tr>';
         }
     } else {
         $list = '<script>alert("Não há pedidos de itens da Copa!")</script>';
