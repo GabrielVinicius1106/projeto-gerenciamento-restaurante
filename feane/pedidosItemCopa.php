@@ -5,7 +5,7 @@ if(session_status() !== PHP_SESSION_ACTIVE){
 
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
 
-if($idTipoUsuario != 1 && $idTipoUsuario != 4 && $idTipoUsuario != 2){
+if($idTipoUsuario != 1 && $idTipoUsuario != 4 && $idTipoUsuario != 5){
     header('location: index.php');
 }
 

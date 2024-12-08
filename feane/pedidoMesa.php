@@ -65,11 +65,19 @@ $idPedido = getIdPedido($idMesa);
 		<?php echo carregaItensPedido($idPedido); ?>
     </table>
     <br>
-    <form action="php/crudPedido.php?operacao=fecharpedido&idMesa=<?php echo $idMesa;?>" method="POST">
-        <input type="submit" value="Fechar Pedido" class="ajustebotao">
-    </form>
-    <form action="solicitarItens.php?idMesa=<?php echo $idMesa;?>&idPedido=<?php echo $idPedido?>" method="POST">
-        <input type="submit" value="Adicionar Itens" class="ajustebotao">
-    </form>
+
+    <?php 
+    
+        if($idTipoUsuario == 1 || $idTipoUsuario == 2){
+            echo '<form action="php/crudPedido.php?operacao=fecharpedido&idMesa='.$idMesa.'" method="POST">
+                    <input type="submit" value="Fechar Pedido" class="ajustebotao">
+                  </form>
+                  <form action="solicitarItens.php?idMesa='.$idMesa.'&idPedido='.$idPedido.'" method="POST">
+                    <input type="submit" value="Adicionar Itens" class="ajustebotao">
+                  </form>';
+        }
+    
+    ?>
+    
 </body>
 </html>
