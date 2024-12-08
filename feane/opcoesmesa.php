@@ -2,7 +2,13 @@
 if(session_status() !== PHP_SESSION_ACTIVE){
     session_start();
 }
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+if($idTipoUsuario != 1 && $idTipoUsuario != 2){
+    header('location: index.php');
+}
+
 
 include('php/global.php');
 $idMesa = $_GET['id'];
