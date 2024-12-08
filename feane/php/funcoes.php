@@ -23,6 +23,15 @@ function carregaUsuario() {
                 case 2:
                     $tipoUsuario = 'Garçom';
                     break;
+                case 3:
+                    $tipoUsuario = 'Cozinheiro';
+                    break;
+                case 4:
+                    $tipoUsuario = 'Copeiro';
+                    break;
+                case 5:
+                    $tipoUsuario = 'Caixa';
+                    break;
                 default:
                     $tipoUsuario = 'Desconhecido';
             }

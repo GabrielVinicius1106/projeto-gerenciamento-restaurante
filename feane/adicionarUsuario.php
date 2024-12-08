@@ -35,6 +35,9 @@ include('php/global.php');
        <option value=""></option>
         <option value="1">Administrador</option>
         <option value="2">Garçom</option>
+        <option value="3">Cozinheiro</option>
+        <option value="4">Copeiro</option>
+        <option value="5">Caixa</option>
         </select></p>
         <p>Login: <input name="nLogin" type="text" required></p>
         <p>Senha: <input type="number" name="nSenha" required></p>
