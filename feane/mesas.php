@@ -2,7 +2,13 @@
 if(session_status() !== PHP_SESSION_ACTIVE){
     session_start();
 }
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+if($idTipoUsuario != 1 && $idTipoUsuario != 2 && $idTipoUsuario != 3 && $idTipoUsuario != 4 && $idTipoUsuario != 5){
+    header('location: index.php');
+}
+
 
 include('php/global.php');
 
