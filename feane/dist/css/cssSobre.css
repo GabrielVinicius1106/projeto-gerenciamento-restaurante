@@ -1,0 +1,48 @@
+.about-container {
+    text-align: center;
+}
+
+.about-container h2 {
+    margin-bottom: 20px;
+    color: #27233f;
+}
+
+.about-text {
+    margin: 20px 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.area-foto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.foto {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.foto:hover {
+    transform: translateY(-5px);
+}
+
+.foto img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+#png{
+    width: 300px;
+    height: 300px;
+}

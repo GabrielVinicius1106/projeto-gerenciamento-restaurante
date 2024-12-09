@@ -4,33 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Restaurante Gourmet</title>
-    <link href="dist/css/elisson.css" rel="stylesheet" />
+    <link href="dist/css/cssContato.css" rel="stylesheet" />
 </head>
 <body>
-    <center>
     <header>
-        <h1>Contato</h1>
+        <h1>Entre em Contato</h1>
+        <a href="index.php">Voltar</a>
     </header>
     <main>
         <section class="contact-info">
+        <center>
             <h2>Informações de Contato</h2>
-            <p class="ajustebotao"><strong>Endereço:</strong> Rua dos Sabores, 123, Centro, São Paulo</p>
-            <p><strong>Telefone:</strong> (11) 1234-5678</p>
-            <p><strong>Email:</strong> contato@restaurantegourmet.com</p>
-            <p><strong>Horário de Funcionamento:</strong> Seg a Dom: 12h - 22h</p>
+            <p>Alguma duvida ou problema?</p>
+            <p>Entre já em contato</p>
+        </center>
+            <br>
+            <p><strong>Telefone:</strong> (47) 99710-0817 <img src="dist/images/chamada-telefonica.png" class="img-icone" ></p>
+            <p><strong>Telefone:</strong> (47) 99938-8882 <img src="dist/images/chamada-telefonica.png" class="img-icone" ></p>
+            <p><strong>Email:</strong> daniel_mn_costa@estudante.sc.senai.br <img src="dist/images/o-email.png" class="img-icone" ></p>
+            <p><strong>Email:</strong> luis_furlan@estudante.sesisenai.org.br <img src="dist/images/o-email.png" class="img-icone" ></p>
+            <p><strong>Horário de Funcionamento:</strong> Seg a Sab: 10h - 22h</p>
         </section>
 
         <section class="contact-form">
             <h2>Envie uma Mensagem</h2>
             <form action="#" method="post">
                 <label for="name">Nome:</label>
-                <input type="text" id="name" class="ajustebotao" required>
+                <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
                 
                 <label for="email">Email:</label>
-                <input type="email" id="email" class="ajustebotao" required>
+                <input type="email" id="email" name="email" placeholder="Seu email" required>
                 
                 <label for="message">Mensagem:</label>
-                <textarea id="message" class="ajustebotao" rows="5" required></textarea>
+                <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." rows="5" required></textarea>
                 
                 <button type="submit">Enviar</button>
             </form>
@@ -45,7 +51,8 @@
             </iframe>
         </section>
     </main>
-
-    </center>
+    <footer>
+        &copy; 2024 Cantina Pizzaria. Todos os direitos reservados.
+    </footer>
 </body>
 </html>

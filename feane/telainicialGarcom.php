@@ -29,7 +29,7 @@ include 'header.php';
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
         <div class="alert-content">
-            <img src="dist/images/about-img.png" class="alert-img">
+            <img src="dist/images/f6.png" class="alert-img">
             <div class="alert-text">
                 <h2>Bem-vindo!</h2>
                 <p>Estamos muito felizes de te ver</p>
