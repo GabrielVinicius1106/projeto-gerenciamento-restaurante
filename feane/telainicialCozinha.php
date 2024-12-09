@@ -1,19 +1,9 @@
-<?php 
-session_start();
-$idTipoUsuario = $_SESSION['idTipoUsuario'];
-
-if($idTipoUsuario != 3){
-    header('location: index.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial | Cozinha</title>
+    <title>Tela Inicial Admin</title>
     <link rel="shortcut icon" href="dist/images/favicon.png" type="image/x-icon">
     <link href="dist/css/cssTelaInicial.css" rel="stylesheet" />
     
@@ -36,7 +26,7 @@ include 'header.php';
             </div>
         </div>
     </div>
-    <a href="php/validaLogoff.php">Sair</a>
+
     <h1>Cantina Pizzaria</h1>
     <section class="slider_section">
         <div class="container1">
