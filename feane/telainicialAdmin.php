@@ -79,5 +79,10 @@ if($idTipoUsuario != 1){
             document.getElementById('alert-box').style.display = 'none';
         };
     </script>
+<br>
+<br>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

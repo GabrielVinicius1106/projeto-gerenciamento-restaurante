@@ -1,15 +1,15 @@
 <!-- footer.php -->
 
 <style>
-   /* Garantir que o footer ocupe toda a largura da tela */
+
 footer {
-  background-color: #333333; /* Cor de fundo escura */
-  color: #ffffff; /* Cor do texto branca */
+  background-color: #333;
+  color: #ffffff; 
   padding: 0px;
   text-align: center;
-  width: 100%; /* Largura total da tela */
-  box-sizing: border-box; /* Inclui o padding no cálculo da largura */
-  position: relative; /* Garante que o footer se posicione corretamente */
+  width: 100%;
+  box-sizing: border-box; 
+  position: relative; 
 }
 
 footer p {
@@ -31,14 +31,14 @@ footer ul li {
 }
 
 footer ul li a {
-  color: #ffffff; /* Cor branca para os links */
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.9em;
   transition: color 0.3s;
 }
 
 footer ul li a:hover {
-  color: #ffdd57; /* Cor amarela ao passar o mouse */
+  color: #ffdd57;
 }
 </style>
 
