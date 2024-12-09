@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
 
 if($idTipoUsuario != 3){
@@ -42,10 +44,10 @@ include 'header.php';
         <div class="container1">
             <div class="button-container">
                 <div class="btn-item">
-                    <button id="btn1" class="btn btn-large"><a href="mesas.php"><a href="mesas.php"><img src="dist/images/mesa-de-jantar.png" class="img-icone" >Mesas</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php"><img src="dist/images/lista-de-controle.png" class="img-icone" >Pedidos de Item | Cozinha</a></button>
+                    <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
                 </div>
             </div>
         </div>

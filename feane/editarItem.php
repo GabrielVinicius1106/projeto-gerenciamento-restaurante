@@ -1,6 +1,14 @@
 <?php
-session_start(); 
+if(session_status() !== PHP_SESSION_ACTIVE){
+  session_start();
+}
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+if($idTipoUsuario != 1){
+  header('location: index.php');
+}
+
 
 include('php/global.php');
 

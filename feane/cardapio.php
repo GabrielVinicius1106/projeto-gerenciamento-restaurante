@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
     
 include('php/global.php');
