@@ -1,7 +1,7 @@
 <?php
 session_start();
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
-     
+
 include('php/global.php');
 
 ?>
@@ -16,7 +16,28 @@ include('php/global.php');
     <link rel="stylesheet"  href="dist/css/cssModal.css" />
 </head>
 <body>
-    <a href="telainicialAdmin.php">Voltar</a>
+    <?php switch($idTipoUsuario){
+
+            case 1:
+                echo "<a href='telainicialAdmin.php'>Voltar</a>";
+                break;
+            case 2: 
+                echo "<a href='telainicialGarcom.php'>Voltar</a>";
+                break;
+            case 3:
+                echo "<a href='telainicialCozinha.php'>Voltar</a>";
+                break;
+            case 4:
+                echo "<a href='telainicialCopa.php'>Voltar</a>";
+                break;
+            case 5:
+                echo "<a href='telainicialAdmin.php'>Voltar</a>";
+                break;
+            default:
+                echo "ERRO!";
+                break;
+        } 
+    ?>
     <h1 style="text-align: center;">Mesas</h1>
     <table id="tableCardapio"> 
         <tr>
@@ -27,7 +48,7 @@ include('php/global.php');
             <th>Pedidos</th>
         </tr>
         <?php 
-         echo carregaMesa();
+         echo carregaMesa($idTipoUsuario);
          ?>
    </table>
    

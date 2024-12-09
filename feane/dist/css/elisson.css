@@ -151,6 +151,17 @@ input{
   outline: none; /* Remove o contorno padrão ao focar */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
+#botoesphp{
+  margin: 5px;
+  width: 100%; /* Preenche toda a largura disponível */
+  padding: 10px 15px; /* Espaçamento interno */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 8px; /* Bordas arredondadas */
+  outline: none; /* Remove o contorno padrão ao focar */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
 
 .ajustebotao {
   width: 50%;

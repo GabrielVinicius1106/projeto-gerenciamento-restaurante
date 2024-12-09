@@ -73,7 +73,7 @@ function carregaCapacidade($id){
 }
 
 
-function carregaMesa(){
+function carregaMesa($idTipoUsuario){
     $lista = '';
 
     include("conection.php");
@@ -90,15 +90,23 @@ function carregaMesa(){
                         .'<td>'.$campo['ocupacao'].' | '.$campo['capacidade'].'</td>';
 
                         if ($campo['ocupacao'] == 0){
-                            $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>'
-                                      .'<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar Mesa"></td>'
-                                      .'<td><p></p></td>';
+                            $lista .= '<td><a href="opcoesmesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Ocupar"></a></td>';
                         } else {
-                            $lista .= '<td><p></p></td>'
-                                      .'<td><p></p></td>'
-                                      .'<td><a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a></td>';
+                            $lista .= '<td><p></p></td>';
+                        }
 
-                        }                        
+                        if($idTipoUsuario == 1 && $campo['ocupacao'] == 0){
+                            $lista .= '<td><input type="button" class="openModalBtn" data-id="'.$campo['id_mesa'].'" value="Editar Mesa"></td>';
+                        } else {
+                            $lista .= '<td><p></p></td>';
+                        }
+
+                        if($campo['ocupacao'] != 0){
+                            $lista .= '<td><a href="pedidoMesa.php?id='.$campo['id_mesa'].'"><input type="button" value="Acessar Pedido"></a></td>';
+                        } else {
+                            $lista .= '<td></td>';
+                        }
+
                         $lista .= '</tr>';
             }
         }

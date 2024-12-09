@@ -20,7 +20,29 @@ include('php/global.php');
     
 </head>
 <body id="bodyCardapio" class="pagina-cardapio">
-    <a href="telainicialAdmin.php">Voltar</a>
+        <?php switch($idTipoUsuario){
+
+        case 1:
+            echo "<a href='telainicialAdmin.php'>Voltar</a>";
+            break;
+        case 2: 
+            echo "<a href='telainicialGarcom.php'>Voltar</a>";
+            break;
+        case 3:
+            echo "<a href='telainicialCozinha.php'>Voltar</a>";
+            break;
+        case 4:
+            echo "<a href='telainicialCopa.php'>Voltar</a>";
+            break;
+        case 5:
+            echo "<a href='telainicialAdmin.php'>Voltar</a>";
+            break;
+        default:
+            echo "ERRO!";
+            break;
+        } 
+        ?>
+    <!-- <a href="telainicialAdmin.php">Voltar</a> -->
     <h1>Cardápio</h1>
     <table id="tableCardapio">
         <thead>
