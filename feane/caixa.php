@@ -1,6 +1,13 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+if($idTipoUsuario != 1 && $idTipoUsuario != 5){
+    header('location: index.php');
+}
 
 include('php/global.php');
 
@@ -36,15 +43,15 @@ include('php/global.php');
             echo "<a href='telainicialCopa.php'>Voltar</a>";
             break;
         case 5:
-            echo "<a href='telainicialAdmin.php'>Voltar</a>";
+            echo "<a href='telainicialCaixa.php'>Voltar</a>";
             break;
         default:
-            echo "ERRO!";
+            echo "<a href='php/validaLogoff.php'>Voltar para Login</a>";
             break;
         } 
         ?>
     <!-- <a href="telainicialAdmin.php">Voltar</a> -->
-    <h1>Pedidos Caixa</h1>
+    <h1>Caixa - Pedidos</h1>
     <table id="tableCardapio">
         <thead>
             <tr>
@@ -53,7 +60,7 @@ include('php/global.php');
                 <th>Quantidade de Pessoas</th>
                 <th>Data do Pedido</th>
                 <th>ID da Mesa</th>
-                <!-- <th>Opções</th> -->
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>

@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
 
 if($idTipoUsuario != 2){
@@ -27,7 +29,7 @@ include 'header.php';
     <!-- Alerta criativo -->
     <div id="alert-box" class="alert-box">
         <div class="alert-content">
-            <img src="dist/images/about-img.png" class="alert-img">
+            <img src="dist/images/f6.png" class="alert-img">
             <div class="alert-text">
                 <h2>Bem-vindo!</h2>
                 <p>Estamos muito felizes de te ver</p>
@@ -42,16 +44,16 @@ include 'header.php';
         <div class="container1">
             <div class="button-container">
                 <div class="btn-item">
-                    <button id="btn1" class="btn btn-large"><a href="mesas.php">Mesas</a></button>
+                    <button id="btn1" class="btn btn-large"><a href="mesas.php"><img src="dist/images/mesa-de-jantar.png" class="img-icone" >Mesas</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php">Pedidos de Item | Cozinha</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCozinha.php"><img src="dist/images/lista-de-controle.png" class="img-icone" >Pedidos de Item | Cozinha</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php">Pedidos de Item | Copa</a></button>
+                    <button id="btn2" class="btn btn-large"><a href="pedidosItemCopa.php"><img src="dist/images/lista-de-controle.png" class="img-icone" >Pedidos de Item | Copa</a></button>
                 </div>
                 <div class="btn-item">
-                    <button id="btn3" class="btn btn-large"><a href="cardapio.php">Cardápio</a></button>
+                    <button id="btn3" class="btn btn-large"><a href="cardapio.php"><img src="dist/images/cardapio.png" class="img-icone" >Cardápio</a></button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,14 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
+
 $idTipoUsuario = $_SESSION['idTipoUsuario'];
+
+if($idTipoUsuario != 1 && $idTipoUsuario != 2 && $idTipoUsuario != 3 && $idTipoUsuario != 4 && $idTipoUsuario != 5){
+    header('location: index.php');
+}
+
 
 include('php/global.php');
 
@@ -31,14 +39,21 @@ include('php/global.php');
                 echo "<a href='telainicialCopa.php'>Voltar</a>";
                 break;
             case 5:
-                echo "<a href='telainicialAdmin.php'>Voltar</a>";
+                echo "<a href='telainicialCaixa.php'>Voltar</a>";
                 break;
             default:
-                echo "ERRO!";
+                echo "<a href='php/validaLogoff.php'>Voltar para Login</a>";
                 break;
         } 
     ?>
     <h1 style="text-align: center;">Mesas</h1>
+    <?php 
+
+        if($idTipoUsuario == 1){
+            echo '<a href="adicionarMesa.php"><input type="button" class="ajustebotao" value="Adicionar Mesa"></a> ';
+        }
+
+    ?>
     <table id="tableCardapio"> 
         <tr>
             <th>Nr Mesa</th>
@@ -105,8 +120,5 @@ include('php/global.php');
         window.location = "php/excluirMesa.php?id=" + IDMesa;
     };
    </script>
-
-<a href="adicionarMesa.php"><input type="button" class="ajustebotao" value="Adicionar Mesa"></a>    
-
 </body>
 </html>

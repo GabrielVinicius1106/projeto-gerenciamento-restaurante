@@ -1,4 +1,7 @@
 <?php 
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 
 function carregaItensCardapio(){
 
@@ -121,9 +124,6 @@ function carregaPedidosItemCozinha(){
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    // var_dump($result);
-    // die();
-
     if (mysqli_num_rows($result) > 0){
         foreach($result as $campo){
             $list .= '<tr>'
@@ -137,9 +137,15 @@ function carregaPedidosItemCozinha(){
 
             $list .= '<td>'.$campo['pedido_id_pedido'].'</td>'
                     .'<td>'.$campo['item_id_item'].'</td>'
-                    .'<td>'.$campo['status_pedido_item'].'</td>'
-                    .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
-                .'</tr>';
+                    .'<td>'.$campo['status_pedido_item'].'</td>';
+
+            if($_SESSION['idTipoUsuario'] == 3){
+                $list .= '<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=cozinha"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>';
+            } else {
+                $list .= '<td></td>';
+            }
+
+            $list .= '</tr>';
         }
     } else {
         $list = '<script>alert("Não há pedidos de itens da Cozinha!")</script>';
@@ -182,9 +188,15 @@ function carregaPedidosItemCopa(){
 
             $list .=   '<td>'.$campo['pedido_id_pedido'].'</td>'
                       .'<td>'.$campo['item_id_item'].'</td>'
-                      .'<td>'.$campo['status_pedido_item'].'</td>'
-                      .'<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>'
-                    .'</tr>';
+                      .'<td>'.$campo['status_pedido_item'].'</td>';
+
+            if($_SESSION['idTipoUsuario'] == 4){
+                $list .= '<td><a href="php/concluirPedidoItem.php?idPedidoItem='.$campo['id_pedido_item'].'&origem=copa"><button type="button" id="id-marcar-concluido"><i class="fa-solid fa-square-check fa-2xl" style="color: #327bb3;"></i></button></a></td>';
+            } else {
+                $list .= '<td></td>';
+            }
+ 
+            $list .= '</tr>';
         }
     } else {
         $list = '<script>alert("Não há pedidos de itens da Copa!")</script>';
@@ -354,6 +366,22 @@ function criarPedido($idMesa, $ocp){
     }
 }
 
+function getPedidoItens($idPedido){
+    $list = 0;
+
+    $sql = "SELECT * FROM pedido_item WHERE pedido_id_pedido = $idPedido;";
+
+    include('conection.php');
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 function carregaPedidos(){
 
     $list = '';
@@ -366,6 +394,10 @@ function carregaPedidos(){
     mysqli_close($conn);
 
     if(mysqli_num_rows($result)){
+
+        // Retorna 1 se HAVER PEDIDO DE ITENS e 0 se NÃO HOUVER
+        // $existePedidoItens = getPedidoItens($idPedido);
+
         foreach($result as $campo){
             $list .= '<tr>'
                         .'<td>'.$campo['status_pedido'].'</td>'
@@ -373,6 +405,18 @@ function carregaPedidos(){
                         .'<td>'.$campo['quantidade_pessoas'].'</td>'
                         .'<td>'.$campo['data_pedido'].'</td>'
                         .'<td>'.$campo['mesa_id_mesa'].'</td>';
+            
+            $existePedidoItens = getPedidoItens($campo['id_pedido']);
+            // var_dump($existePedidoItens);
+            // die();
+
+            if($campo['status_pedido'] == 'Fechado' && $existePedidoItens == 1){
+                $list .= '<td><a href="efetuarPagamento.php?idPedido='.$campo['id_pedido'].'"><button type="button">Efetuar Pagamento</button></a></td>';
+            } else if($campo['status_pedido'] == 'Fechado' && $existePedidoItens == 0){
+                $list .= '<td>Não há Itens</td>';
+            } else {
+                $list .= '<td>Pedido em Andamento</td>';
+            }
 
             $list .= '</tr>';
         }
@@ -380,6 +424,103 @@ function carregaPedidos(){
 
     return $list;
 
+}
+
+function carregaPedidoFechamento($idPedido){
+
+    $list = '';
+
+    $sql_pedido = "SELECT * FROM pedido WHERE id_pedido = $idPedido;";
+
+    include('conection.php');
+    $result_pedido = mysqli_query($conn, $sql_pedido);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result_pedido)){
+
+        foreach($result_pedido as $campo){
+            $list .=  '<td>'.$campo['id_pedido'].'</td>'
+                     .'<td>'.$campo['status_pedido'].'</td>'
+                     .'<td>'.$campo['quantidade_pessoas'].'</td>'
+                     .'<td>'.$campo['data_pedido'].'</td>'
+                     .'<td>'.$campo['mesa_id_mesa'].'</td>';
+        }
+
+    }
+
+    return $list;
+
+}
+
+function getValorUnitario($idItem){
+    $valorUnitario = '';
+
+    $sql = "SELECT valor_item FROM item WHERE id_item = $idItem;";
+
+    include('conection.php');
+    $result_item = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result_item)){
+        foreach($result_item as $campo){
+            $valorUnitario = $campo['valor_item'];
+        }
+    }
+
+    return $valorUnitario;
+}
+
+function getItem($idItem){
+    $item = '';
+
+    $sql = "SELECT descricao_item FROM item WHERE id_item = $idItem;";
+
+    include('conection.php');
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result)){
+        foreach($result as $campo){
+            $item .= $campo['descricao_item'];
+        }
+
+        return $item;
+    }
+}
+
+function carregaItensFechamento($idPedido){
+
+    $list = '';
+
+    $sql_pedido_itens = "SELECT * FROM pedido_item WHERE pedido_id_pedido = $idPedido;";
+
+    include('conection.php');
+    $result_pedido_itens = mysqli_query($conn, $sql_pedido_itens);
+    mysqli_close($conn);
+
+    if(mysqli_num_rows($result_pedido_itens)){
+        foreach($result_pedido_itens as $campo){
+            $item = getItem($campo['item_id_item']);
+            $qntdItens = $campo['quantidade_itens'];
+            $valorUnitario = getValorUnitario($campo['item_id_item']);
+            $subtotal = $valorUnitario * $qntdItens;
+            $valorTotal += $subtotal;
+
+            $list .= '<tr>'
+                    .'<td>'.$item.'</td>'
+                    .'<td>'.$qntdItens.'</td>'
+                    .'<td>'.$valorUnitario.'&nbsp</td>'
+                    .'<td>'.$subtotal.'&nbsp</td>'
+                    .'</tr>';
+        }
+
+        $list .= '<tr>'
+                    .'<td><strong>Valor Total: </strong></td>'
+                    .'<td colspan="3"><strong>'.$valorTotal.'&nbsp;R$</strong></td>'
+                .'</tr>';
+    }
+    
+    return $list;
 }
 
 ?>
