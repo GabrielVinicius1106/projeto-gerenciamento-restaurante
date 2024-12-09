@@ -15,7 +15,7 @@
         }
 
         #bodytelainicial {
-            margin: 0;
+            margin: 30px;
             margin-top: 20px;
             margin-bottom: 50px;
             height: 100vh;
@@ -147,3 +147,9 @@
                 opacity: 1;
             }
         }
+        .img-icone {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            vertical-align: middle;
+          }

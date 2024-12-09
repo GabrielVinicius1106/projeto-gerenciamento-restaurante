@@ -47,7 +47,7 @@ include('php/global.php');
 
 <table id="tableCardapio"> 
       <tr>
-         <th>Usuarios</th>
+         <th><img src="dist/images/homem-usuario.png" class="img-icone" alt="Ícone 1">Usuarios</th>
          <th>Cargo</th>
          <th>Login</th>
          <th>Senha</th>

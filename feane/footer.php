@@ -47,6 +47,6 @@ footer ul li a:hover {
     <ul>
         <li><a href="#">Política de Privacidade</a></li>
         <li><a href="#">Termos de Uso</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="contato.php">Contato</a></li>
     </ul>
 </footer>
